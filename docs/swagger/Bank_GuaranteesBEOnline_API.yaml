@@ -1,0 +1,1706 @@
+---
+swagger: "2.0"
+info:
+  description:
+      The OneWeb API for creating and retrieving information about the  Bank Guarantees BE for an identified user
+  version: "49.0.1"
+  title: "Bank GuaranteesBEOnline API"
+  contact:
+    name: "Bank Guarantee-STP"
+    url: "https://touchpoint.ing.net/asm/resources/OpenApiDocument/Bank_GuaranteesBEOnline_API?itProduct=P31464"
+    email: "BankGuarantee-STP@ing.com"
+host: "api.ing.com"
+basePath: "/"
+tags:
+  - name: "BankGuarantees"
+    description: "BankGuarantees"
+schemes:
+  - "https"
+paths:
+  /bank-guarantees/bg-url:
+    get:
+      tags:
+        - "BankGuarantees"
+      summary: "Getting url for details of a bank guarantee type"
+      description: "To return url of bank guarantee details for selected bank guarantee type."
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "bg_type"
+          in: "query"
+          description: "bank guarantee type."
+          required: true
+          type: "string"
+        - name: "bg_subtype"
+          in: "query"
+          description: "bank guarantee sub type."
+          required: true
+          type: "string"
+        - name: "legalEntityId"
+          in: "query"
+          description: "UUID of legal entity."
+          required: true
+          type: "string"
+        - name: X-ING-AccessToken
+          in: header
+          description: Access token containing an access profile UUID.
+          required: true
+          type: string
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/BankGuaranteeLinkResponse"
+        "400":
+          description: "Bad Request"
+          schema:
+            $ref: "#/definitions/error"
+        "401":
+          description: "Unauthorized"
+          schema:
+            $ref: "#/definitions/error"
+        "404":
+          description: "Not Found"
+          schema:
+            $ref: "#/definitions/error"
+        "500":
+          description: "Internal Server Error"
+          schema:
+            $ref: "#/definitions/error"
+  /bank-guarantees/instructing-party-details/{legalEntityId}:
+    get:
+      tags:
+        - "BankGuarantees"
+      summary: "Getting Details of Instructing Party"
+      description: "Endpoint responsible for providing Details of Instructing Party."
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "legalEntityId"
+          type: "string"
+          in: "path"
+          description: "UUID of Legal Entity."
+          required: true
+        - name: X-ING-AccessToken
+          in: header
+          description: Access token containing an access profile UUID.
+          required: true
+          type: string
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/instructingParty"
+        "400":
+          description: "Bad Request"
+          schema:
+            $ref: "#/definitions/error"
+        "401":
+          description: "Unauthorized"
+          schema:
+            $ref: "#/definitions/error"
+        "404":
+          description: "Not Found"
+          schema:
+            $ref: "#/definitions/error"
+        "500":
+          description: "Internal Server Error"
+          schema:
+            $ref: "#/definitions/error"
+  /bank-guarantees/legal-entity-details/{cbe_no}:
+    get:
+      tags:
+        - "BankGuarantees"
+      summary: "Getting Details of Legal Entity "
+      description: "Endpoint responsible for providing Details of Legal Entity."
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "cbe_no"
+          in: "path"
+          description: "KBO of Legal Entity."
+          required: true
+          type: "string"
+        - name: X-ING-AccessToken
+          in: header
+          description: Access token containing an access profile UUID.
+          required: true
+          type: string
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/organisation"
+        "400":
+          description: "Bad Request"
+          schema:
+            $ref: "#/definitions/error"
+        "401":
+          description: "Unauthorized"
+          schema:
+            $ref: "#/definitions/error"
+        "404":
+          description: "Not Found"
+          schema:
+            $ref: "#/definitions/error"
+        "500":
+          description: "Internal Server Error"
+          schema:
+            $ref: "#/definitions/error"
+
+  /bank-guarantees/empty-concept/{bgCode}/{language}:
+    get:
+      tags:
+        - "BankGuarantees"
+      summary: "Retrieve document Empty Concept"
+      description: "Endpoint responsible for get Empty Concept Document"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: path
+          name: bgCode
+          description: bgCode
+          required: true
+          type: string
+          enum: [ "DocumentCode" ]
+        - in: path
+          name: language
+          description: language Type
+          required: true
+          type: string
+
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: file
+        "400":
+          description: "Bad Request"
+          schema:
+            $ref: "#/definitions/error"
+        "401":
+          description: "Unauthorized"
+          schema:
+            $ref: "#/definitions/error"
+        "404":
+          description: "Not Found"
+          schema:
+            $ref: "#/definitions/error"
+        "500":
+          description: "Internal Server Error"
+          schema:
+            $ref: "#/definitions/error"
+
+  /bank-guarantees/countries:
+    get:
+      tags:
+        - "BankGuarantees"
+      summary: "Getting Country List"
+      description: "Endpoint responsible to fetch all country list."
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - name: Accept-Language
+          in: header
+          description: Language to pass through header
+          required: false
+          type: string
+        - name: X-ING-AccessToken
+          in: header
+          description: Access token containing an access profile UUID.
+          required: true
+          type: string
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/CountryListDetails"
+        "400":
+          description: "Bad Request"
+          schema:
+            $ref: "#/definitions/error"
+        "401":
+          description: "Unauthorized"
+          schema:
+            $ref: "#/definitions/error"
+        "404":
+          description: "Not Found"
+          schema:
+            $ref: "#/definitions/error"
+        "500":
+          description: "Internal Server Error"
+          schema:
+            $ref: "#/definitions/error"
+        "406":
+          description: "Not Acceptable"
+          schema:
+            $ref: "#/definitions/error"
+
+  /bank-guarantees/{requestId}/document/{docType}:
+    get:
+      tags:
+        - "BankGuarantees"
+      summary: "Retrieve document with help of requestId and DocType"
+      description: "Endpoint responsible for generate Document"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: path
+          name: requestId
+          description: requestId
+          required: true
+          type: string
+        - in: path
+          name: docType
+          description: Document Type
+          required: true
+          type: string
+
+      responses:
+        "200":
+          description: OK - The document has been retrieved successfully
+          schema:
+            type: file
+        "400":
+          description: "Bad Request"
+          schema:
+            $ref: "#/definitions/error"
+        "401":
+          description: "Unauthorized"
+          schema:
+            $ref: "#/definitions/error"
+        "404":
+          description: "Not Found"
+          schema:
+            $ref: "#/definitions/error"
+        "500":
+          description: "Internal Server Error"
+          schema:
+            $ref: "#/definitions/error"
+
+  /bank-guarantees/{requestId}/document-status/{docType}:
+    get:
+      tags:
+        - "BankGuarantees"
+      summary: "Retrieve document status with help of requestId and DocType"
+      description: "Endpoint responsible to get document status for requestId and DocType"
+      produces:
+        - "application/json"
+      parameters:
+        - in: path
+          name: requestId
+          description: requestId
+          required: true
+          type: string
+        - in: path
+          name: docType
+          description: Document Type
+          required: true
+          type: string
+      responses:
+        "200":
+          description: OK - The document status has been retrieved successfully
+          schema:
+            $ref: "#/definitions/RemoteDocumentStatusResponse"
+        "400":
+          description: "Bad Request"
+          schema:
+            $ref: "#/definitions/error"
+        "401":
+          description: "Unauthorized"
+          schema:
+            $ref: "#/definitions/error"
+        "404":
+          description: "Not Found"
+          schema:
+            $ref: "#/definitions/error"
+        "500":
+          description: "Internal Server Error"
+          schema:
+            $ref: "#/definitions/error"
+
+  /bank-guarantees/submit-request:
+    post:
+      tags:
+        - "BankGuarantees"
+      summary: " Submit Bank Guarantee Details"
+      description: "Endpoint responsible for Submit Bank Guarantee Details."
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: header
+          description: The ING Access Token
+          name: X-ING-AccessToken
+          required: true
+          type: string
+        - in: header
+          description: The ING peer token
+          name: X-ING-PeerToken
+          required: false
+          type: string
+        - name: BankGuaranteeRequestPayload
+          in: body
+          description: BankGuaranteeRequestPayload
+          required: true
+          schema:
+            $ref: '#/definitions/BankGuaranteeSubmitRequest'
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/BankGuaranteeSubmitResponse"
+        "400":
+          description: "Bad Request"
+          schema:
+            $ref: "#/definitions/error"
+        "401":
+          description: "Unauthorized"
+          schema:
+            $ref: "#/definitions/error"
+        "404":
+          description: "Not Found"
+          schema:
+            $ref: "#/definitions/error"
+        "500":
+          description: "Internal Server Error"
+          schema:
+            $ref: "#/definitions/error"
+
+  /bank-guarantees/financial-details/{legalEntityId}:
+    get:
+      tags:
+        - "BankGuarantees"
+      summary: "Getting fiancila Details of legal entity"
+      description: "Endpoint responsible for providing financial details of legal entity."
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "legalEntityId"
+          in: "path"
+          description: "UUID of Legal Entity."
+          required: true
+          type: "string"
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/FinancialDetails"
+        "400":
+          description: "Bad Request"
+          schema:
+            $ref: "#/definitions/error"
+        "401":
+          description: "Unauthorized"
+          schema:
+            $ref: "#/definitions/error"
+        "404":
+          description: "Not Found"
+          schema:
+            $ref: "#/definitions/error"
+        "500":
+          description: "Internal Server Error"
+          schema:
+            $ref: "#/definitions/error"
+
+  /bank-guarantees/get-document/{requestId}/{docType}:
+    get:
+      tags:
+        - "BankGuarantees"
+      summary: "Retrieve document from case management"
+      description: "Endpoint responsible for retrieving the document(filled-in-concept) from cCaaS."
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: path
+          name: requestId
+          description: requestId
+          required: true
+          type: string
+        - in: path
+          name: docType
+          description: Document Type
+          required: true
+          type: string
+
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/GenerateConceptResponse"
+        "400":
+          description: "Bad Request"
+          schema:
+            $ref: "#/definitions/error"
+        "401":
+          description: "Unauthorized"
+          schema:
+            $ref: "#/definitions/error"
+        "404":
+          description: "Not Found"
+          schema:
+            $ref: "#/definitions/error"
+        "500":
+          description: "Internal Server Error"
+          schema:
+            $ref: "#/definitions/error"
+
+  /bank-guarantees/submit-bankguarantee-request:
+    post:
+      tags:
+        - "BankGuarantees"
+      summary: "Sending bank guarantee request"
+      description: "Endpoint responsible for sending request for bank guarantee issuance."
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: header
+          description: The ING Access Token
+          name: X-ING-AccessToken
+          required: true
+          type: string
+        - in: header
+          description: The ING peer token
+          name: X-ING-PeerToken
+          required: false
+          type: string
+        - name: BankGuaranteeRequestPayload
+          in: body
+          description: BankGuaranteeRequestPayload
+          required: true
+          schema:
+            $ref: '#/definitions/BankGuaranteeSubmitRequest'
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/BankGuaranteeSubmitResponse"
+        "400":
+          description: "Bad Request"
+          schema:
+            $ref: "#/definitions/error"
+        "401":
+          description: "Unauthorized"
+          schema:
+            $ref: "#/definitions/error"
+        "404":
+          description: "Not Found"
+          schema:
+            $ref: "#/definitions/error"
+        "500":
+          description: "Internal Server Error"
+          schema:
+            $ref: "#/definitions/error"
+  /bank-guarantees/bank-guarantee-codes:
+    get:
+      tags:
+        - "BankGuarantees"
+      summary: "Getting Details of Bank Guarantee Type Codes"
+      description: "Endpoint responsible for providing Details of Bank Guarantee Type Codes."
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - name: X-ING-AccessToken
+          in: header
+          description: Access token containing an access profile UUID.
+          required: true
+          type: string
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/BankGuaranteeCodes"
+        "400":
+          description: "Bad Request"
+          schema:
+            $ref: "#/definitions/error"
+        "401":
+          description: "Unauthorized"
+          schema:
+            $ref: "#/definitions/error"
+        "404":
+          description: "Not Found"
+          schema:
+            $ref: "#/definitions/error"
+        "500":
+          description: "Internal Server Error"
+          schema:
+            $ref: "#/definitions/error"
+  /bank-guarantees/sign-document:
+    post:
+      tags:
+        - "BankGuarantees"
+      summary: "Signing Documents using DSO API"
+      description: "Endpoint responsible for sending request for bank guarantee issuance."
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: header
+          description: The ING Access Token
+          name: X-ING-AccessToken
+          required: true
+          type: string
+        - in: header
+          description: The ING peer token
+          name: X-ING-PeerToken
+          required: false
+          type: string
+        - in: body
+          name: SignDocumentPayload
+          description: Json Payload
+          required: true
+          schema:
+            $ref: '#/definitions/DocSigningRequest'
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/DocSigningResponse"
+        "400":
+          description: "Bad Request"
+          schema:
+            $ref: "#/definitions/error"
+        "401":
+          description: "Unauthorized"
+          schema:
+            $ref: "#/definitions/error"
+        "404":
+          description: "Not Found"
+          schema:
+            $ref: "#/definitions/error"
+        "500":
+          description: "Internal Server Error"
+          schema:
+            $ref: "#/definitions/error"
+  /bank-guarantees/currencies:
+    get:
+      tags:
+        - "BankGuarantees"
+      summary: "Getting CurrencyList List"
+      description: "Endpoint responsible to fetch all currency  list."
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - name: Accept-Language
+          in: header
+          description: Language to pass through header
+          required: false
+          type: string
+        - name: X-ING-AccessToken
+          in: header
+          description: Access token containing an access profile UUID.
+          required: true
+          type: string
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/CountryListDetails"
+        "400":
+          description: "Bad Request"
+          schema:
+            $ref: "#/definitions/error"
+        "401":
+          description: "Unauthorized"
+          schema:
+            $ref: "#/definitions/error"
+        "404":
+          description: "Not Found"
+          schema:
+            $ref: "#/definitions/error"
+        "500":
+          description: "Internal Server Error"
+          schema:
+            $ref: "#/definitions/error"
+        "406":
+          description: "Not Acceptable"
+          schema:
+            $ref: "#/definitions/error"
+  /bank-guarantees/finalize-bankguarantee-request:
+    post:
+      tags:
+        - "BankGuarantees"
+      summary: "finalize bank guarantee request by sending request to manual flow"
+      description: "Endpoint responsible for sending request for bank guarantee to manual flow."
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: header
+          description: The ING Access Token
+          name: X-ING-AccessToken
+          required: true
+          type: string
+        - in: header
+          description: The ING peer token
+          name: X-ING-PeerToken
+          required: false
+          type: string
+        - in: body
+          name: BankGuaranteeFinalizationPayload
+          description: Json Payload
+          required: true
+          schema:
+            $ref: '#/definitions/FinalizeBankGuaranteeRequest'
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/FinalizeBankGuaranteeResponse"
+        "400":
+          description: "Bad Request"
+          schema:
+            $ref: "#/definitions/error"
+        "401":
+          description: "Unauthorized"
+          schema:
+            $ref: "#/definitions/error"
+        "404":
+          description: "Not Found"
+          schema:
+            $ref: "#/definitions/error"
+        "500":
+          description: "Internal Server Error"
+          schema:
+            $ref: "#/definitions/error"
+  /bank-guarantees/sample-documents/{name}/{language}:
+    get:
+      tags:
+        - "BankGuarantees"
+      summary: "sends sample bank guarantee document."
+      description: "Endpoint responsible for sending sample bank guarantee document."
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: path
+          name: name
+          description: name of document
+          required: true
+          type: string
+        - in: path
+          name: language
+          description: language of document
+          required: true
+          type: string
+
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/GenerateConceptResponse"
+        "400":
+          description: "Bad Request"
+          schema:
+            $ref: "#/definitions/error"
+        "401":
+          description: "Unauthorized"
+          schema:
+            $ref: "#/definitions/error"
+        "404":
+          description: "Not Found"
+          schema:
+            $ref: "#/definitions/error"
+        "500":
+          description: "Internal Server Error"
+          schema:
+            $ref: "#/definitions/error"
+  /bank-guarantees/signatories/selection:
+    post:
+      tags:
+        - "BankGuarantees"
+      summary: "initiate the signatory selection through ALER"
+      description: "Endpoint responsible for initiate the signatory selection through ALER."
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: header
+          description: The ING Access Token
+          name: X-ING-AccessToken
+          required: false
+          type: string
+        - in: header
+          description: The ING peer token
+          name: X-ING-PeerToken
+          required: false
+          type: string
+        - in: body
+          name: SignatoriesSelectionPayload
+          description: Json Payload
+          required: true
+          schema:
+            $ref: '#/definitions/SignatoriesSelectionRequest'
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/SignatoriesSelectionResponse"
+        "400":
+          description: "Bad Request"
+          schema:
+            $ref: "#/definitions/error"
+        "401":
+          description: "Unauthorized"
+          schema:
+            $ref: "#/definitions/error"
+        "404":
+          description: "Not Found"
+          schema:
+            $ref: "#/definitions/error"
+        "500":
+          description: "Internal Server Error"
+          schema:
+            $ref: "#/definitions/error"
+  /bank-guarantees/customer-credit-overview/{ibanNumber}:
+    get:
+      tags:
+        - "BankGuarantees"
+      summary: "fetch credit overview response using iban number ."
+      description: "Endpoint responsible to fetch credit overview response using iban number."
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: path
+          name: ibanNumber
+          description: iban number of document
+          required: true
+          type: string
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/CreditOverviewResponse"
+        "400":
+          description: "Bad Request"
+          schema:
+            $ref: "#/definitions/error"
+        "401":
+          description: "Unauthorized"
+          schema:
+            $ref: "#/definitions/error"
+        "404":
+          description: "Not Found"
+          schema:
+            $ref: "#/definitions/error"
+        "500":
+          description: "Internal Server Error"
+          schema:
+            $ref: "#/definitions/error"
+  /bank-guarantees/default-beneficiary-details/{bankGuaranteeCode}:
+    get:
+      tags:
+        - "BankGuarantees"
+      summary: "Retrieve default beneficiary details"
+      description: "Endpoint responsible for get Empty Concept Document"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: path
+          name: bankGuaranteeCode
+          description: bankGuaranteeCode
+          required: true
+          type: string
+          enum: [ "DocumentCode" ]
+        - name: Accept-Language
+          in: header
+          description: Language to pass through header
+          required: true
+          type: string
+
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/DefaultBeneficiaryResponse"
+        "400":
+          description: "Bad Request"
+          schema:
+            $ref: "#/definitions/error"
+        "401":
+          description: "Unauthorized"
+          schema:
+            $ref: "#/definitions/error"
+        "404":
+          description: "Not Found"
+          schema:
+            $ref: "#/definitions/error"
+        "500":
+          description: "Internal Server Error"
+          schema:
+            $ref: "#/definitions/error"
+        "406":
+          description: "Not Acceptable"
+          schema:
+            $ref: "#/definitions/error"
+  /bank-guarantees-orf/legal-entity-details/{cbeNo}:
+    get:
+      tags:
+        - "BankGuaranteesOrf"
+      summary: "Getting Details of Legal Entity "
+      description: "Endpoint responsible for providing Details of Legal Entity."
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "cbeNo"
+          in: "path"
+          description: "KBO of Legal Entity."
+          required: true
+          type: "string"
+        - name: X-ING-AccessToken
+          in: header
+          description: Access token containing an access profile UUID.
+          required: true
+          type: string
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/organisation"
+        "400":
+          description: "Bad Request"
+          schema:
+            $ref: "#/definitions/error"
+        "401":
+          description: "Unauthorized"
+          schema:
+            $ref: "#/definitions/error"
+        "404":
+          description: "Not Found"
+          schema:
+            $ref: "#/definitions/error"
+        "500":
+          description: "Internal Server Error"
+          schema:
+            $ref: "#/definitions/error"
+
+  /bank-guarantees/dossier-upload-details:
+    put:
+      tags:
+        - "BankGuarantees"
+      summary: "Retrieve information of dossier for custom doc upload"
+      description: "Endpoint responsible for get information of dossier for custom doc upload"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: header
+          description: The ING Access Token
+          name: X-ING-AccessToken
+          required: false
+          type: string
+        - in: body
+          name: DossierSubmissionPayload
+          description: Json Payload
+          required: true
+          schema:
+            $ref: '#/definitions/DossierSubmissionPayload'
+
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/DossierSubmissionResponse"
+        "400":
+          description: "Bad Request"
+          schema:
+            $ref: "#/definitions/error"
+        "401":
+          description: "Unauthorized"
+          schema:
+            $ref: "#/definitions/error"
+        "404":
+          description: "Not Found"
+          schema:
+            $ref: "#/definitions/error"
+        "500":
+          description: "Internal Server Error"
+          schema:
+            $ref: "#/definitions/error"
+        "406":
+          description: "Not Acceptable"
+          schema:
+            $ref: "#/definitions/error"
+  /bank-guarantees/{legalEntityId}/dossier-upload-details/{bankGuaranteeCode}:
+    get:
+      tags:
+        - "BankGuarantees"
+      summary: "Retrieve information of dossier for custom doc upload"
+      description: "Endpoint responsible for get information of dossier for custom doc upload"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: path
+          name: bankGuaranteeCode
+          description: bankGuaranteeCode
+          required: true
+          type: string
+          enum: [ "DocumentCode" ]
+        - in: path
+          name: legalEntityId
+          description: iban number of document
+          required: true
+          type: string
+
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/DossierUploadDetailResponse"
+        "400":
+          description: "Bad Request"
+          schema:
+            $ref: "#/definitions/error"
+        "401":
+          description: "Unauthorized"
+          schema:
+            $ref: "#/definitions/error"
+        "404":
+          description: "Not Found"
+          schema:
+            $ref: "#/definitions/error"
+        "500":
+          description: "Internal Server Error"
+          schema:
+            $ref: "#/definitions/error"
+        "406":
+          description: "Not Acceptable"
+          schema:
+            $ref: "#/definitions/error"
+
+definitions:
+  instructingParty:
+    type: "object"
+    properties:
+      individual:
+        $ref: '#/definitions/individual'
+      organisation:
+        $ref: '#/definitions/organisation'
+  individual:
+    type: "object"
+    properties:
+      legalRepId:
+        type: "string"
+      individualName:
+        $ref: '#/definitions/individualName'
+      digitalAddresses:
+        $ref: '#/definitions/digitalAddresses'
+  individualName:
+    type: "object"
+    properties:
+      firstName:
+        type: "string"
+      lastName:
+        type: "string"
+      fullName:
+        type: "string"
+  digitalAddresses:
+    type: array
+    items:
+      type: object
+      properties:
+        digitalAddressType:
+          type: "string"
+        digitalAddressUsageType:
+          type: "string"
+        fullDigitalAddress:
+          type: "string"
+  organisation:
+    type: "object"
+    properties:
+      legalEntityId:
+        type: "string"
+      cinNumber:
+        type: "string"
+      postalAddress:
+        $ref: '#/definitions/postalAddress'
+      digitalAddresses:
+        $ref: '#/definitions/digitalAddresses'
+      organisationName:
+        $ref: '#/definitions/organisationName'
+
+  contacts:
+    type: "object"
+    properties:
+      emailAddress:
+        type: "string"
+      landLineNo:
+        description: "Landline phone number."
+        type: "string"
+  NavigationData:
+    type: "object"
+    properties:
+      bgType:
+        type: "string"
+        description: "bank guarantee type"
+      bgSubType:
+        type: "string"
+        description: "bank guarantee sub type"
+      leId:
+        type: "string"
+        description: "legal entity id"
+  BankGuaranteeLinkResponse:
+    type: "object"
+    properties:
+      inScope:
+        type: boolean
+        description: "Scope of Guarantee"
+      navigationData:
+        type: "object"
+        $ref: '#/definitions/NavigationData'
+      _links:
+        $ref: '#/definitions/BankGuaranteeURLResponse'
+  BankGuaranteeURLResponse:
+    description: URL of an entity.
+    properties:
+      self:
+        $ref: '#/definitions/BankGuaranteeURL'
+  BankGuaranteeURL:
+    description: A Hypertext Application Language (HAL) link object.
+    properties:
+      href:
+        description: URL of the entity.
+        example: 'https://apis.ing.com/bank-guarantees/bg-url'
+        format: url
+        type: string
+    required:
+      - href
+  error:
+    type: "object"
+    properties:
+      requestID:
+        type: "string"
+        x-ing-type: "string"
+      code:
+        type: "string"
+        x-ing-type: "string"
+      message:
+        type: "string"
+        x-ing-type: "string"
+      severity:
+        type: "string"
+        x-ing-type: "string"
+      source:
+        type: "string"
+        x-ing-type: "string"
+      target:
+        type: "string"
+        x-ing-type: "string"
+      innerMessage:
+        type: "string"
+        x-ing-type: "string"
+      timestamp:
+        type: "string"
+        x-ing-type: "string"
+
+  postalAddress:
+    type: "object"
+    properties:
+      countryCode:
+        type: "string"
+      cityName:
+        type: "string"
+      postalCode:
+        type: "string"
+      firstAddress:
+        type: "string"
+  postalAddressForBeneficiery:
+    type: "object"
+    properties:
+      countryCode:
+        type: "string"
+      cityName:
+        type: "string"
+      postalCode:
+        type: "string"
+      firstAddress:
+        type: "string"
+      streetName:
+        type: "string"
+      houseNumber:
+        type: "string"
+  emailAddress:
+    type: "object"
+    properties:
+      emailIdInformation:
+        type: "string"
+  organisationName:
+    type: "object"
+    properties:
+      Type:
+        type: "string"
+        description: "Type of organisation."
+      fullName:
+        type: "string"
+        description: "Name of organisation."
+  FinancialDetails:
+    type: "object"
+    properties:
+      creditLineDetails:
+        type: "object"
+        $ref: '#/definitions/CreditLineDetail'
+        description: "credit line details"
+      currentAccountDetails:
+        type: "object"
+        $ref: '#/definitions/CurrentAccountDetail'
+
+  CreditLineDetail:
+    type: "object"
+    properties:
+      contractDetails:
+        type: "array"
+        items:
+          $ref: '#/definitions/ContractDetail'
+  ContractDetail:
+    type: "object"
+    properties:
+      ibanNumber:
+        type: "string"
+      contractNumber:
+        type: "integer"
+        format: "int64"
+        description: "Contract Number"
+        x-ing-type: "integer"
+      availableAmount:
+        $ref: '#/definitions/AvailableAmount'
+      foreignAvailableAmount:
+        $ref: '#/definitions/AvailableAmount'
+  AvailableAmount:
+    type: "object"
+    properties:
+      currency:
+        type: "string"
+      amount:
+        type: "integer"
+        format: "int64"
+        x-ing-type: "integer"
+      decimal:
+        type: "integer"
+        x-ing-type: "integer"
+  CurrentAccountDetail:
+    type: "object"
+    properties:
+      accounts:
+        type: "array"
+        items:
+          $ref: '#/definitions/Account'
+  Account:
+    type: "object"
+    properties:
+      accountName:
+        type: "string"
+      accountStatus:
+        "type": "integer"
+        "example": "0"
+        "x-ing-type": "integer"
+      ibanNumber:
+        type: "string"
+      accountCurrency:
+        "type": "string"
+      balanceAmount:
+        "type": "number"
+        "example": "95272.71"
+        "description": "Balance amount"
+        "x-ing-type": "number"
+
+  GuaranteeDetails:
+    type: "object"
+    properties:
+      contractType:
+        type: "string"
+      contractDescription:
+        type: "string"
+      titleOfContract:
+        type: "string"
+      contractReference:
+        type: "string"
+      endDate:
+        type: "string"
+        description: "intermediate maturity date if any"
+      postalAddress:
+        $ref: '#/definitions/postalAddress'
+      contractSignDate:
+        type: "string"
+      bankAccountCredit:
+        type: "string"
+        description: "Account number to which advance payment will be credited to"
+      bgLang:
+        type: "string"
+      bgAmount:
+        type: "number"
+      bgExpiry:
+        type: "string"
+
+  FinancialInformation:
+    type: "object"
+    properties:
+      bgAmount:
+        type: "number"
+      bgCurrency:
+        type: "string"
+        x-java-annotations:
+          - "@NotEmpty"
+      accountToBeDebited:
+        $ref: '#/definitions/Account'
+      creditLine:
+        $ref: '#/definitions/ContractDetail'
+
+  BankGuaranteeSubmitResponse:
+    type: "object"
+    properties:
+      allowSigning:
+        type: "boolean"
+      message:
+        type: "string"
+      requestId:
+        type: "string"
+
+  DocumentStatusResponse:
+    type: "object"
+    properties:
+      status:
+        type: "string"
+        enum: [READY,NEW,ERROR]
+      type:
+        type: "string"
+        enum: [BG_DRAFT,BG_FINAL,CONTRACT]
+
+  RemoteDocumentStatusResponse:
+    type: "object"
+    properties:
+      status:
+        type: "string"
+        enum: [READY,NEW,ERROR]
+
+  GenerateConceptRequest:
+    type: "object"
+    properties:
+      bgId:
+        type: "string"
+      benificiaryDetail:
+        type: "object"
+        $ref: "#/definitions/organisation"
+      instructingPartyDetail:
+        type: "object"
+        $ref: "#/definitions/organisation"
+      bankGuaranteeDetail:
+        type: "object"
+        $ref: "#/definitions/GuaranteeDetails"
+      financialInformation:
+        type: "object"
+        $ref: "#/definitions/FinancialInformation"
+
+  GenerateConceptResponse:
+    type: "object"
+    properties:
+      requestId:
+        type: "string"
+      status:
+        type: "string"
+        description: "success or failure"
+      message:
+        type: "string"
+        x-ing-type: "string"
+
+  EmptyConceptResponse:
+    type: "object"
+    properties:
+      bgCode:
+        type: "string"
+        enum:
+          - "BankGuaranteeCode"
+      language:
+        type: "string"
+        description: "success or failure"
+      message:
+        type: "string"
+        x-ing-type: "string"
+
+  DocumentResponse:
+    type: "object"
+    properties:
+      docType:
+        type: "string"
+        enum:
+          - ["PUBLIC_CONTRACT","PERFORMANCE_BOND","RENTAL","ADVANCE_PAYMENT","PAYMENT_GUARANTEE","MONEY_RETENTION_BOND","BID_BOND","REAL_ESTATE","STATE_LOTTERY","CUSTOM_1","CUSTOM_2","CUSTOM_4","CUSTOM_5","OVAM"]
+      requestId:
+        type: "string"
+      accessToken:
+        type: "string"
+        description: "success or failure"
+      message:
+        type: "string"
+        x-ing-type: "string"
+
+  Rental:
+    type: "object"
+    properties:
+      expiryDate:
+        type: "string"
+      street:
+        type: "string"
+      postalCode:
+        type: "string"
+      city:
+        type: "string"
+      country:
+        type: "string"
+      referenceNumber:
+        type: "string"
+      contractEndDate:
+        type: "string"
+      rentalEndDate:
+        type: "string"
+      dateOfSignature:
+        type: "string"
+
+  BankGuaranteeSubmitRequest:
+    type: "object"
+    properties:
+      issueToAnotherParty:
+        type: "boolean"
+        example: "true"
+      instructingParty:
+        type: "object"
+        properties:
+          individual:
+            $ref: '#/definitions/individual'
+          organisation:
+            $ref: '#/definitions/organisation'
+      applicant:
+        type: "object"
+        properties:
+          cinNumber:
+            type: "string"
+          postalAddress:
+            $ref: '#/definitions/postalAddress'
+          emailAddress:
+            $ref: '#/definitions/emailAddress'
+          organisationName:
+            $ref: '#/definitions/organisationName'
+      beneficiary:
+        type: "object"
+        properties:
+          cinNumber:
+            type: "string"
+          postalAddress:
+            $ref: '#/definitions/postalAddressForBeneficiery'
+          emailAddress:
+            $ref: '#/definitions/emailAddress'
+          organisationName:
+            $ref: '#/definitions/organisationName'
+      financialInformation:
+        type: "object"
+        properties:
+          accountToBeDebited:
+            $ref: '#/definitions/accountToBeDebited'
+          contractDetails:
+            $ref: '#/definitions/ContractDetailPayload'
+      guaranteeDetails:
+        type: "object"
+        properties:
+          bgCode:
+            type: "string"
+          bgLanguage:
+            type: "string"
+          bgTypesAmtCurrency:
+            type: "string"
+          bgAmount:
+            type: "number"
+          bankGuarantee:
+            type: "object"
+            $ref: "#/definitions/Rental"
+      deliveryInformation:
+        type: "object"
+        properties:
+          recipient:
+            type: "string"
+            enum:
+              - [ "ME","BENEFICIARY" ]
+          mode:
+            type: "string"
+            enum:
+              - [ "EMAIL_ONLY", "REGISTERED_POST","COURIER_SERVICE" ]
+
+  CountryListDetails:
+    type: "object"
+    properties:
+      countryData:
+        type: "array"
+        minItems: 0
+        items:
+          $ref: '#/definitions/CountryData'
+
+  ContractDetailPayload:
+    type: "object"
+    properties:
+      uuid:
+        type: "string"
+      accountName:
+        type: "string"
+      creditLineAccountNumber:
+        type: "number"
+      klcNumber:
+        type: "number"
+      ibanNumber:
+        type: "string"
+      currency:
+        type: "string"
+      amount:
+        type: "number"
+
+  accountToBeDebited:
+    type: "object"
+    properties:
+      uuid:
+        type: "string"
+      accountName:
+        type: "string"
+      accountCurrency:
+        type: "string"
+      ibanNumber:
+        type: "string"
+      balanceAmount:
+        type: "number"
+
+  CountryData:
+    type: "object"
+    properties:
+      business_key:
+        type: "string"
+      language:
+        type: "string"
+      translation:
+        type: "string"
+
+  CurrencyDataSet:
+    type: "object"
+    properties:
+      currencies:
+        type: "array"
+        minItems: 0
+        items:
+          $ref: '#/definitions/CurrencyDataResponse'
+  CurrencyDataResponse:
+    type: "object"
+    properties:
+      code:
+        type: "string"
+      value:
+        type: "string"
+
+
+  BankGuaranteeCodes:
+    type: "object"
+    properties:
+      codeList:
+        type: "array"
+        minItems: 0
+        items:
+          $ref: '#/definitions/BankGuaranteeCode'
+
+  BankGuaranteeCode:
+    type: "object"
+    properties:
+      code:
+        type: "string"
+      bgType:
+        type: "string"
+      bgSubType:
+        type: "string"
+
+  DocSigningRequest:
+    type: "object"
+    properties:
+      requestId:
+        type: "string"
+
+  DocSigningResponse:
+    type: "object"
+    properties:
+      darId:
+        type: "string"
+
+  FinalizeBankGuaranteeRequest:
+    type: "object"
+    properties:
+      requestId:
+        type: "string"
+
+  FinalizeBankGuaranteeResponse:
+    type: "object"
+    properties:
+      requestId:
+        type: "string"
+
+  SignatoriesSelectionRequest:
+    type: "object"
+    properties:
+      legalEntityId:
+        type: "string"
+      guaranteeDetails:
+        type: "object"
+        properties:
+          bgCode:
+            type: "string"
+          bgLanguage:
+            type: "string"
+          bgTypesAmtCurrency:
+            type: "string"
+          bgAmount:
+            type: "number"
+          bankGuarantee:
+            type: "object"
+            $ref: "#/definitions/Rental"
+
+  SignatoriesSelectionResponse:
+    type: "object"
+    properties:
+      invokeAler:
+        type: "boolean"
+        example: "true"
+      transactionId:
+         type : "string"
+      lrCount:
+        type: "number"
+
+  CreditOverviewResponse:
+    type: "object"
+    properties:
+      codeLanguage:
+        type: "number"
+      contraNotariety:
+        type: "number"
+      loanStatusManual:
+        type: "number"
+      segMis:
+        type: "number"
+      codeXy:
+        type: "number"
+      respCommercialManagerNo:
+        type: "number"
+      ssomi:
+        type: "string"
+      availableAmount:
+        type: "number"
+      creditType:
+        type: "number"
+      contractType:
+        type: "number"
+      status:
+        type: "number"
+      identifiers:
+        type: array
+        items:
+          type: object
+          properties:
+            type:
+              type: "string"
+            value:
+              type: "string"
+
+  DefaultBeneficiaryResponse:
+    type: "object"
+    properties:
+      pageDescription:
+        type: "string"
+      email:
+        type: "string"
+      name:
+        type: "string"
+      firstAddress:
+        type: "string"
+      postalCode:
+        type: "string"
+      cityName:
+        type: "string"
+      countryCode:
+        type: "string"
+  DossierUploadDetailResponse:
+    type: "object"
+    properties:
+      pageDescription:
+        type: "string"
+      email:
+        type: "string"
+      name:
+        type: "string"
+      firstAddress:
+        type: "string"
+      postalCode:
+        type: "string"
+      cityName:
+        type: "string"
+      countryCode:
+        type: "string"
+  DossierSubmissionResponse:
+    type: "object"
+    properties:
+      status:
+        type: "string"
+      email:
+        type: "string"
+      name:
+        type: "string"
+      firstAddress:
+        type: "string"
+      postalCode:
+        type: "string"
+      cityName:
+        type: "string"
+      countryCode:
+        type: "string"
+  DossierSubmissionPayload:
+    type: "object"
+    properties:
+      status:
+        type: "string"
+      email:
+        type: "string"
+      name:
+        type: "string"
+      firstAddress:
+        type: "string"
+      postalCode:
+        type: "string"
+      cityName:
+        type: "string"
+      countryCode:
+        type: "string"

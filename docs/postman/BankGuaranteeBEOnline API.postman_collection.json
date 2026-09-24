@@ -1,0 +1,705 @@
+{
+	"info": {
+		"_postman_id": "f56655ba-cfcf-440c-8ef1-0d4767a65b70",
+		"name": "BankGuaranteeBEOnline API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40540483"
+	},
+	"item": [
+		{
+			"name": "AccessToken",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json();\r",
+							"pm.environment.set(\"token\", response[0].access_token);\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "Cookie_1=value; T-SESSION-ID=wCMTzGkEvmOue6naOCi1-dmiIDVXo4DK-E3aOYiAAVhBrIaKKVpOVo0ZRdhplAoE"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"access_token\": {\r\n            \"issuer\": \"api.ebanking.at.ing.be\",\r\n            \"customer_service_organisation\": \"CSO_BE\",\r\n            \"client_id\": \"aClientId\",\r\n            \"executor\": {\r\n                \"level_of_assurance\": 5,\r\n                \"means\": [\r\n                    {\r\n                        \"id\": \"d548e2c8-e183-4c5b-8011-f1dc570e1f45\",\r\n                        \"type\": \"BE_MEANS_CAP_UCR_ID\"\r\n                    }\r\n                ],\r\n                \"person\": \"{{personid}}\",\r\n                \"profile\": \"{{profileid}}\",\r\n                \"type\": \"customer\"\r\n            },\r\n            \"not_before\": {{$timestamp}},\r\n            \"time_to_live\": 60000,\r\n            \"pinning_type\": \"cookie\",\r\n            \"pinning_value\": \"thisisalongpinningvalue12334\",\r\n            \"trace_enabled\": true\r\n        },\r\n        \"refresh_token\": {\r\n            \"time_to_live\": 600000\r\n        },\r\n        \"token_identifier\": \"aobeapi\",\r\n        \"unencrypted\": true\r\n    }\r\n]"
+				},
+				"url": {
+					"raw": "https://{{domain}}/security-tokens/access-tokens",
+					"protocol": "https",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"security-tokens",
+						"access-tokens"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-bg-url",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "nl-NL",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"value": "spin=thisisalongpinningvalue12334",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{domain}}/bank-guarantees/bg-url?bg_type=OVAM&legalEntityId=42af6ed2-9d5f-4676-ba72-2caac2942635&bg_subtype=OVAM",
+					"protocol": "https",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"bank-guarantees",
+						"bg-url"
+					],
+					"query": [
+						{
+							"key": "bg_type",
+							"value": "OVAM"
+						},
+						{
+							"key": "legalEntityId",
+							"value": "42af6ed2-9d5f-4676-ba72-2caac2942635"
+						},
+						{
+							"key": "bg_subtype",
+							"value": "OVAM"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sample-documents",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "fr-BE",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"value": "spin=thisisalongpinningvalue12334",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{domain}}/bank-guarantees/sample-documents/RENTAL/en",
+					"protocol": "https",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"bank-guarantees",
+						"sample-documents",
+						"RENTAL",
+						"en"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getOrgDetails",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "nl-NL",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"value": "spin=thisisalongpinningvalue12334",
+						"type": "text"
+					},
+					{
+						"key": "X-ING-PeerToken",
+						"value": "eyJhbGciOiJSUzI1NiIsIng1dCI6IjQ5OkVEOjU1OjhBOjlBOkUyOkZFOjFGOjMzOjg4OkM3OkNFOjVDOkZGOjhBOkUwOjBBOkVEOkNBOjFDIiwia2lkIjoiNDlFRDU1OEE5QUUyRkUxRjMzODhDN0NFNUNGRjhBRTAwQUVEQ0ExQyJ9.eyJzdWIiOiJCYW5rR3VhcmFudGVlc0JFT25saW5lX0FQSSIsInNwaWZmZSI6InNwaWZmZTovL25vbnByb2QuaW5nLmNvbS92MS9QMzE0NjQvVFNUL0JhbmtHdWFyYW50ZWVzQkVPbmxpbmVfQVBJIiwiZW5kcG9pbnRzIjpbeyJtZXRob2QiOiJHRVQiLCJob3N0IjoiYXBpcy5pbmcuY29tIiwicGF0aFRlbXBsYXRlIjoiL3Y1L2ludm9sdmVkLXBhcnRpZXMve3V1aWR9L2dyYW50ZWVzIiwidmVyc2lvbiI6ImxhdGVzdCJ9LHsibWV0aG9kIjoiR0VUIiwiaG9zdCI6ImFwaXMuaW5nLmNvbSIsInBhdGhUZW1wbGF0ZSI6Ii92NS9pbnZvbHZlZC1wYXJ0aWVzL3t1dWlkfS9leHRlcm5hbC1pZGVudGlmaWVycyIsInZlcnNpb24iOiJsYXRlc3QifSx7Im1ldGhvZCI6IkdFVCIsImhvc3QiOiJhcGlzLmluZy5jb20iLCJwYXRoVGVtcGxhdGUiOiIvdjYvaW52b2x2ZWQtcGFydGllcy97dXVpZH0vMzYwdmlldyIsInZlcnNpb24iOiJsYXRlc3QifV0sInZlciI6IjEuMCIsImp0aSI6ImQxMDJiMGZiLWM3ZWYtNGFmMC04NDhjLWM3YTFmMDQ3ZWFlZCIsInR5cCI6InBlZXIiLCJleHAiOjE4NDI2ODAxMzksIm5iZiI6MTc0ODAwOTM2MSwiaWF0IjoxNzQ4MDA5MzYxLCJpc3MiOiJBUElSZWdpc3RyeUFQSSJ9.mY_QnT3LIKIY0pV0F_P2ERDmhvjnanBERfMIf5LPbIU2s7IThwpQjUVv_pCcxsRlnrkZrGVQfn1g68K9JQZjIK7LEMtlaj0ykaim07k-YYnIDqegtNHzcb12OEt3H-rIx3J7apsDpakriNKg4nmiWJDcQw5ky06l-sEpFpUJvE-EGcR5lAGiRJk795kjWb9TWHl58s6Jjs4w-tRaGv0-89Vi8JiVstzWFgVGoE2mLAwesCfMOy550Jk-qEvzgl7CdroOMiLRoWGRbo-LpmQLRVeupAIRMMujIU39rvMqeHUThBuvklYBJyMkuDov0gFPZeXk-yusXlTAcGXyAcsuBcRedUPuLhIisidpMgVPrjiovfauASzrv4pEOVucPX5A5l15Ri2ALmsMe-wpP6GdjgKLppgYpRON0qqJRIJBeXE_Nl5smD0ubQB_MhGhQZRceZLq1WdY4DAjCB_zsY4HyXHsLpv2hkEutdWZJPg3AaM7IHDcJfFm3eWYJsXTTW69SE3k5Z_-FW_faYSNodPLFpUoeDuylny_sRmFc9L3lunHVqw2GwTf9nwPvzVt82DzAVsHutWQfd-bxFVi1XlOLJ4GllSmnz9ZHPml5hRpqJrQWnfdp5Ea4_FR0PgqPrDALJR3vucPt3BK3gdKupbigb5aF5zJER_YvSbEXhJyv2k",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://{{domain}}/bank-guarantees/instructing-party-details/:legalEntityId",
+					"protocol": "https",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"bank-guarantees",
+						"instructing-party-details",
+						":legalEntityId"
+					],
+					"variable": [
+						{
+							"key": "legalEntityId",
+							"value": "41744b35-1152-453a-8ca4-5a48db2b5625"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getLegalEntity",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "nl-NL",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"value": "spin=thisisalongpinningvalue12334",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{domain}}/bank-guarantees/legal-entity-details/0841441940",
+					"protocol": "https",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"bank-guarantees",
+						"legal-entity-details",
+						"0841441940"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Financial Information",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "nl-NL",
+						"type": "text"
+					},
+					{
+						"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2Q0JDLUhTNTEyIiwia2lkIjoidHN0LTRjOGI1Mzk3LTFhYjgtNDFhOC1hNTViLWE3MTk5MTJiODNkMiIsImN0eSI6IkpXVCJ9..NthKHYS-NxFre_u_dTzUQg.wkHfEwaMeIj772-p81UlxEOTEQArg9wnCAT4mCOZ_xvjjY5dElVCzUWx58u3gu92n6RxicsS4-ukZ8y2JKcsCzsvYVqGdWaXTbdq2HptJrR-2bhDYaFVcXMipXbLh66qF_dl53vyguDNIa4YpRB97zkoQWBnnTpRVeL1hnb9hIeiXWgq1fFh3APlxeDr8FR-QryI8JOxf0A8NLHzOToYDOHdqS_jIYxIu2pwCMD_fGSNWR2TTeZTXi4ojYpvwIc8yABGskZOqKy_OgUdx7QT9yFDoJvdgJTA_-WPAzsqO8W4CNIbDXNqvN5-i24PCDJUMAYXBLjCbSgO9bGhI2O7ObWIsQf5jVV_YgcIZS502bwYoFvyi1z6cv6JMDu7Qq_uMEQ38tK6boo80hy8jyBPRc5SpBaazSr3xEEbZKkQ8rsc7a8pMkCxdH5FSwPDFazvaje4BTnyrOLCohSk1YxCw3qnm3XniO7g_eW2yxgVprs96VYS2N8u9bumV584sOoIAP6AaTMbHaiAgoz9FippjtUfcQjyq5l6ImDhk8BYFUZnZiStokXlf5Ahh-nCqbY9I4erf4NFd4jHxpiDo5ZPCMHw999zXKpeGMjQREKRfMAtxTjoBzXmuQDCaFpZpoJ52B87ID-uqzR92VYkGvmU8570xjKeY3fyA0nlIhwXK5F0CwwtruBHRIJPvLyUwUdfW1zlQIwNjLfcCrRwA5IseofHcrxLABl1q_QZAm9w7xdVr2lgMP7JkvKhjSwKiiIO-LuCDKsoh1NN7o6hgB2tM3O88Yyfzr9gaIsRbFb_pjyvYBTinGTxh46fP2xWh41dnQ_hqj4wy2FBmXpTLBWU0nrISGpWgVBfxQNSrTqEjCP1p9SmmcDuJXahMykkz1mpAnHNARMV2hmvyQh4JrHX3Bqpy6437sMIilrjC69HywQFufajoE2lJ22Q_Ck3IDimW0gu3LdLQuy_qQFLPfINY6YSDFUsHL-UjFfCCq2iqMLZhWBnOVPzY9rcBKPdyPiawY61TPWi-uwl6in-g7cTvrYwOzOlW0rJb3bVLDIDg70M4NiRd3P_xMqAbO55DsWloklr__R-2VWVYP1vcUfb3tex3YMPMal8K2xmknZcS-fWK7yi_urhqaTzuEht6xZtKN9eAJZJSIMjGT9948iSdbMu8x46PY_txQFK11lYBbnMZgQPA9eObZZtUrok9NSjnuZ6p6VivDk2o5hNzQdLjqENXOowRf-R5yPYHYN13CgS6mxvi607gfBREfL-WMlBcagEClx5i3U0Jm77bWj4S4vx20PHWZsrerxAN1KGQcxVKlLs6Ge7sWGF_wT_HRZ1rlqvKAuLZ2_NufAmjw9SZvfS_XYZXnwztKURpPZoiADFlAdrj8Cn7R71eI0RG29sdhW0Qh38lpIu1fk3dtBaDbjkM8HlZ-8VZjIzSLRYIBio4YHZuVAMfs9WzqeiIPc8wd8PNfD__53u-lORQU3rcoIE5SBgzrg96r2As1rY5N95aaVb5cKaaGcGOpLc-1R4F2Hd7vl7XjjsOCvugPfU0g.2CXH3N5cEzWJy6twDHF-2eAyGJe63hu2TC8gZGHJiM8",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"value": "spin=thisisalongpinningvalue12334",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{domain}}/bank-guarantees/financial-details/:legalEntityId",
+					"protocol": "https",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"bank-guarantees",
+						"financial-details",
+						":legalEntityId"
+					],
+					"variable": [
+						{
+							"key": "legalEntityId",
+							"value": "41744b35-1152-453a-8ca4-5a48db2b5625"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Country List",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "nl-BE",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"value": "spin=thisisalongpinningvalue12334",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{domain}}/bank-guarantees/countries",
+					"protocol": "https",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"bank-guarantees",
+						"countries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Currencies",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"value": "spin=thisisalongpinningvalue12334",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{domain}}/bank-guarantees/currencies",
+					"protocol": "https",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"bank-guarantees",
+						"currencies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BankGuaranteeCodes",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "nl-NL",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"value": "spin=thisisalongpinningvalue12334",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{domain}}/bank-guarantees/bank-guarantee-codes",
+					"protocol": "https",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"bank-guarantees",
+						"bank-guarantee-codes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Submit Bank Gurantee",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "fr-BE",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"value": "spin=thisisalongpinningvalue12334",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"issueToAnotherParty\": false,\r\n    \"instructingParty\": {\r\n        \"individual\": {\r\n            \"legalRepId\": \"63bc7bf0-9d0e-4feb-b9bc-4a7e4a98e819\",\r\n            \"individualName\": {\r\n                \"firstName\": \"CARLOS ANTONIOTD\",\r\n                \"lastName\": \"SIEBERTTD\",\r\n                \"fullName\": \"CARLOS ANTONIOTD SIEBERTTD\"\r\n            },\r\n            \"digitalAddresses\": [\r\n                {\r\n                    \"digitalAddressType\": \"EMAIL_ADR\",\r\n                    \"digitalAddressUsageType\": \"PSN_EMAIL\",\r\n                    \"fullDigitalAddress\": \"ljhjozcv.hvmms@example.com\"\r\n                },\r\n                {\r\n                    \"digitalAddressType\": \"TEL_ADR\",\r\n                    \"digitalAddressUsageType\": \"LANDLINE_TEL_NBR\",\r\n                    \"fullDigitalAddress\": \"+3210284008\"\r\n                }\r\n            ]\r\n        },\r\n        \"organisation\": {\r\n            \"legalEntityId\": \"41744b35-1152-453a-8ca4-5a48db2b5625\",\r\n            \"cinNumber\": \"1058264357\",\r\n            \"organisationName\": {\r\n                \"type\": \"LGL_NM\",\r\n                \"fullName\": \"TRANSCRANEX RENTING TRADING NVTD\"\r\n            },\r\n            \"postalAddress\": {\r\n                \"countryCode\": \"BE\",\r\n                \"cityName\": \"WAVRE\",\r\n                \"postalCode\": \"1300\",\r\n                \"firstAddress\": \"PLACE ALBERT 1ER 2/3\",\r\n                \"usageType\": \"CRSPD_ADR\"\r\n            },\r\n            \"digitalAddresses\": [\r\n                {\r\n                    \"digitalAddressType\": \"EMAIL_ADR\",\r\n                    \"digitalAddressUsageType\": \"BSN_EMAIL\",\r\n                    \"fullDigitalAddress\": \"ynelbdk.vdbnkkd@example.com\"\r\n                }\r\n            ]\r\n        }\r\n    },\r\n    \"beneficiary\": {\r\n        \"organisationName\": {\r\n            \"fullName\": \"DÉPARTEMENT COMPTABILITÉ DES DOUANES ET ACCISES\"\r\n        },\r\n        \"postalAddress\": {\r\n            \"countryCode\": \"BE\",\r\n            \"cityName\": \"BRUSSELS\",\r\n            \"postalCode\": \"1030\",\r\n            \"firstAddress\": \"NORTH GALAXY A7 BOULEVARD DU ROI ALBERT II 33 BOÎTE 388\"\r\n        },\r\n        \"emailAddress\": {\r\n            \"emailIdInformation\": \"da.accounting.guarantees@minfin.fed.be\"\r\n        }\r\n    },\r\n    \"financialInformation\": {\r\n        \"accountToBeDebited\": {\r\n            \"uuid\": \"c68de901-b2f1-49e3-bbac-2dba5063871a\",\r\n            \"accountName\": \"a_988755717034711247\",\r\n            \"accountStatus\": 0,\r\n            \"ibanNumber\": \"BE86310147902050\",\r\n            \"accountCurrency\": \"003\",\r\n            \"balanceAmount\": 339434.71\r\n        }\r\n    },\r\n    \"guaranteeDetails\": {\r\n        \"bgCode\": \"RENTAL\",\r\n        \"bgLanguage\": \"ENGLISH\",\r\n        \"bgAmount\": 5000,\r\n        \"bgTypesAmtCurrency\": \"003\",\r\n        \"bankGuarantee\": {\r\n            \"expiryDate\": \"180 days after the contract end date\",\r\n            \"gracePeriod\": \"180\",\r\n            \"rentalEndDate\": \"2025-11-02\",\r\n            \"dateOfSignature\": \"2025-09-11\",\r\n            \"street\": \"Medical Square\",\r\n            \"postalCode\": \"440003\",\r\n            \"city\": \"Nagpur\",\r\n            \"country\": \"LU\",\r\n            \"contractEndDate\": \"2025-09-30\"\r\n        }\r\n    },\r\n    \"deliveryInformation\": {\r\n        \"recipient\": \"BENEFICIARY\",\r\n        \"mode\": \"EMAIL_ONLY\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{domain}}/bank-guarantees/submit-bankguarantee-request",
+					"protocol": "https",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"bank-guarantees",
+						"submit-bankguarantee-request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_document",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "nl-NL",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"value": "spin=thisisalongpinningvalue12334",
+						"type": "text"
+					},
+					{
+						"key": "Origin",
+						"value": "http://localhost:3000",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://{{domain}}/bank-guarantees/get-document/:requestId/BG_DRAFT",
+					"protocol": "https",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"bank-guarantees",
+						"get-document",
+						":requestId",
+						"BG_DRAFT"
+					],
+					"query": [
+						{
+							"key": "requestId",
+							"value": null,
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "requestId",
+							"value": "08561d4a-49ef-4268-b94a-b07f152eb4c7"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sign-document",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "fr-BE",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"value": "spin=thisisalongpinningvalue12334",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"requestId\":\"08561d4a-49ef-4268-b94a-b07f152eb4c7\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{domain}}/bank-guarantees/sign-document",
+					"protocol": "https",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"bank-guarantees",
+						"sign-document"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "finalize",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "fr-BE",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"value": "spin=thisisalongpinningvalue12334",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"requestId\":\"08561d4a-49ef-4268-b94a-b07f152eb4c7\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{domain}}/bank-guarantees/finalize-bankguarantee-request",
+					"protocol": "https",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"bank-guarantees",
+						"finalize-bankguarantee-request"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJSUzI1NiIsIng1dCI6IjY0RTg5MUY3NEJDM0NDQUIyNjVFQkY4MTc1M0YxMUE3NDg3NkM1RTQiLCJraWQiOiI2NEU4OTFGNzRCQzNDQ0FCMjY1RUJGODE3NTNGMTFBNzQ4NzZDNUU0In0.eyJjaWQiOiJkNjIwY2RiYi1mMjk2LTRkMzctOTcyYy03MWM5YjQ3NTUwMTkiLCJza3kiOiIyYTIyZmJjMDE5YjE4NWM2ZTI4OTQ0ODk4ZDlhYzMzYjBmNmQ1YmFhZDVmZmM3NzMyZDA5NTFmMTViYjMzMTQ4IiwidHJjIjpmYWxzZSwic2NvcGUiOiIiLCJpbmEiOjAsImV4ZSI6eyJwZXJzb24iOiJDRjgzWU8iLCJwcm9maWxlIjoiQ0Y4M1lPIiwibWVhbnMiOlt7InR5cCI6ImNvcnBvcmF0ZWtleS1wYXNzd29yZCIsImlkIjoiIn1dLCJsb2EiOjUsInR5cCI6ImVtcGxveWVlIn0sInJlcSI6eyJwZXJzb24iOiI5NDU5YTA5Ni1jMDU4LTRmZTYtYTU4Yi1hMDU0YWZiYmUzM2UiLCJwcm9maWxlIjoiYjBjYTVkMDktNTViNS00MDgwLWJkYzctNjE1OGY5ZGUxZGYzIiwibWVhbnMiOlt7InR5cCI6Im5sLWN1c3RvbWVyLXNlYXJjaCIsImlkIjoiIn1dLCJsb2EiOjUsInR5cCI6ImN1c3RvbWVyIn0sInB0eSI6ImNvb2tpZSIsInB2ZSI6InRoaXNpc2Fsb25ncGlubmluZ3ZhbHVlIiwic2lkIjoiNzhkNTQ1Y2EtOGI1NS00ODllLWFlYmYtZjU0N2M2Njc0NjU5IiwidmVyIjoiMS40IiwianRpIjoiMGY4NjUzN2MtNTY5YS00NWNkLWE3NDAtNTBlMWNhN2ViNmQ3IiwidHlwIjoiYWNjZXNzIiwiZXhwIjoxNzM3OTY3MDA3LCJuYmYiOjE3MzczNjIyMDcsImlhdCI6MTczNzM2MjIwOCwiaXNzIjoiYXBpLnRlc3QuaXJpcy5pbmcubmV0In0.p2H49VnZK3FneqIu22Z3U5n-Kqs-CtVU7NcgTZH7Vq2fVd8eDvTmuALm5_1WwjKytZDGN74TigcDWYr7M7RiXkwI0vYnqsuD_p_h2rTd72ye5MJiA2TD-4ENjVuAZcmIvHut4l2er0-q-AUJP0I4nfZfcoWpMMOqeZ3KKSy6_sLpmZvprZhLXmjojkGvrV3EEOki44rKwamyuXhgZzLIFnP4SqwjdZmJdH2scgw-Jeh_WwI947vdhutV12RY2PiKQJ6__q2uskyo-EpOWOi1ax9Or_U1IHns5iGN54cnzikrkSl9A8uDhYj6zLKQJRRr2UDzF3lBSgkHpKt8MQ0kNg",
+			"type": "string"
+		},
+		{
+			"key": "local",
+			"value": "localhost:8442",
+			"type": "string"
+		},
+		{
+			"key": "ptdomain",
+			"value": "test.pt.ing.net",
+			"type": "string"
+		},
+		{
+			"key": "global",
+			"value": "{{local}}",
+			"type": "string"
+		},
+		{
+			"key": "accpptdomain",
+			"value": "accp.pt.ing.net",
+			"type": "string"
+		}
+	]
+}
