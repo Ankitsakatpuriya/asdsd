@@ -1,0 +1,379 @@
+trigger: none
+variables:
+  incomingFeed: 'P31464-incoming-maven'
+  projectName: 'P31464-BankGuaranteesBEOnline'
+  checkmarxSC: 'P31464-CheckmarxOne-SVC'
+  targetBinaryDirectory: 'web/target'
+  targetConfigurationDirectory: 'conf/target/'
+  mvnVerifyGoal: 'package'
+  pipelineIdentity_nonprod: 'P31464-pipelineidentity-svc-non-prod'
+  pipelineIdentity_prod: 'P31464-pipelineidentity-prd-svc'
+  appName: 'BankGuaranteesBEOnline_API'
+  manageApplication: true
+  manageCommonServices: true
+  purposeID: 'P31464'
+  enforcedJdkVersion: '21'
+  dockerImageVersion: 'release.ww.bi.6.0.1/standalone-java/rhel9-micro/openjdk21'
+  dockerImageTag: 'latest'
+  targetRepository: 'p31464bankguaranteesbeonlineacr.azurecr.io'
+  targetACR: 'P31464-BankGuaranteesBEONlineACR-ACR-write'
+  acrRegistry: 'p31464bankguaranteesbeonlineacr.azurecr.io'
+  prismaAzureSC: 'P31464--BankGuaranteesBEOnline_API-Prisma-NONPROD'
+  whitelist_file: './whitelist.yaml'
+  squad: 'Bank Guarantee-STP'
+  certificateStoreType: 'pkcs12'
+  acrEndpoint: 'P31464-BankGuaranteesBEONlineACR-ACR-write'
+  keyVaultName_TST: 'P31464-BankGua-KvT'
+  KeyVaultNAme_ACC: 'P31464-BankGua-KvA'
+  keyVaultName_PRD: 'P31464-BankGua-KvP'
+  ICHPNameSpace_TST_DCR: 'P31464-buba-bgo-tst.api.cluster0046.non-prod.ichp.ing.net'
+  ICHPNameSpace_TST_WPR: 'P31464-buba-bgo-tst.api.cluster0047.non-prod.ichp.ing.net'
+  ICHPNameSpace_ACC_DCR: 'P31464-buba-bgo-acc.api.cluster0046.non-prod.ichp.ing.net'
+  ICHPNameSpace_ACC_WPR: 'P31464-buba-bgo-acc.api.cluster0047.non-prod.ichp.ing.net'
+  ICHPNameSpace_PRD_DCR: 'P31464-buba-bgo-prd.api.cluster0048.prod.ichp.ing.net'
+  ICHPNameSpace_PRD_WPR: 'P31464-buba-bgo-prd.api.cluster0049.prod.ichp.ing.net'
+parameters:
+  - name: deployMode
+    type: string
+    default: 'manual'
+    values:
+      - manual
+      - auto
+  - name: runCheckmarx
+    type: boolean
+    default: true
+  - name: specific_build
+    type: string
+    default: 'none'
+
+  - name: action
+    type: string
+    default: build_only
+    values:
+      - build_only
+      - deploy
+      - delete
+      - wipe_all
+      - rescale
+      - rollback
+      - helmrollback
+  - name: deploymentStrategy
+    type: string
+    default: 'rolling_update'
+    values:
+      - rolling_update
+      - canary_v1
+      - canary_v2
+  - name: env_tst
+    type: boolean
+    default: true
+  - name: env_acc
+    type: boolean
+    default: false
+  - name: env_prd
+    type: boolean
+    default: false
+  - name: target_DC
+    type: string
+    default: 'both'
+    values:
+      - dcr
+      - wpr
+      - both
+  - name: rescale_count
+    type: string
+    default: 'ONLY_IF_YOU_WANT_TO_RESCALE'
+
+  - { name: manageApplication, type: boolean, default: true, displayName: 'Used to perform actions on Application components'}
+  - { name: manageAutocert, type: boolean, default: true, displayName: 'Used to perform actions on Autocert components'}
+  - { name: manageAutoscaling, type: boolean, default: false, displayName: 'Used to perform actions on Application Autoscaling (HPA)'}
+  - { name: manageMonitoring, type: boolean, default: true, displayName: 'Used to perform actions on Monitoring components (ServiceMonitor, Prometheus)'}
+  - { name: manageMaintenance, type: boolean, default: false, displayName: 'Used to perform actions on Maintenance components (CronJobs)'}
+  - { name: manageCommonServices, type: boolean, default: true, displayName: 'Used to perform actions on common services objects (QuotaAutoscaler, Network policy)'}
+
+  - name: delete_confidence_check_only
+    type: boolean
+    default: false
+  - name: delete_canary_only
+    type: boolean
+    default: false
+  - name: delete_autocert_only
+    type: boolean
+    default: false
+  - name: serviceNowChangeID
+    displayName: 'Approved ServiceNow ChangeID'
+    type: string
+    default: 'none'
+
+  - name: breaktheglass
+    type: string
+    default: 'ONLY_FOR_PRODUCTION'
+
+resources:
+  repositories:
+    - repository: tp
+      type: git
+      name: IngOne/P02670-1es-templates
+      ref: refs/tags/ww.10.11.0
+    - repository: int #default repository alias, can also be a custom value
+      type: git
+      name: IngOne/P02670-kingsroad-integrations
+      ref: main
+      
+stages:
+  - ${{ if and(in(parameters.action, 'build_only','deploy'), eq(parameters.specific_build, 'none')) }}:
+      - template: api/push-to-checkmarx/template.yml@tp
+        parameters:
+          incomingFeed: '${{ variables.incomingFeed }}'
+          projectName: '${{ variables.projectName }}'
+          checkmarxSC: '${{ variables.checkmarxSC }}'
+      - template: api/build-app/maven/template.yml@tp
+        parameters:
+          incomingFeed: '${{ variables.incomingFeed }}'
+          targetBinaryDirectory: '${{ variables.targetBinaryDirectory }}'
+          targetConfigurationDirectory: '${{ variables.targetConfigurationDirectory }}'
+          mvnVerifyGoal: '${{ variables.mvnVerifyGoal }}'
+          ${{ if or(parameters.env_tst, parameters.env_acc) }}:
+            pipelineIdentity: '${{ variables.pipelineIdentity_nonprod }}'
+          ${{ if parameters.env_prd }}:
+            pipelineIdentity: '${{ variables.pipelineIdentity_prod }}'
+          appName: '${{ variables.appName }}'
+          purposeID: '${{ variables.purposeID }}'
+          enforcedJdkVersion: '${{ variables.enforcedJdkVersion }}'
+          extraMvnOptions: '-DskipTests'
+      - template: api/build-docker-image/template.yml@tp
+        parameters:
+          appName: '${{ variables.appName }}'
+          dockerImageVersion: '${{ variables.dockerImageVersion }}'
+          dockerImageTag: '${{ variables.dockerImageTag }}'
+          targetRepository: '${{ variables.targetRepository }}'
+          targetACR: '${{ variables.targetACR }}'
+          prismaAzureSC: '${{ variables.prismaAzureSC }}'
+          whitelist: '${{ variables.whitelist_file }}'
+          integrationsParameters:
+            dockerLoginParameters:
+            useFederatedServiceConnection: true
+            containerScanningParameters:
+              useFederatedServiceConnection: true
+  - ${{ if and(ne(parameters.action, 'build_only'), ne(parameters.action, 'redeploy')) }}:
+      - template: api/release-app/template.yml@tp
+        parameters:
+          purposeID: '${{ variables.purposeID }}'
+          appName: '${{ variables.appName }}'
+          squad: '${{ variables.squad }}'
+          certificateStoreType: '${{ variables.certificateStoreType }}'
+          deployTimeout: '60m'
+          integrationsParameters:
+            dockerLoginParameters:
+            useFederatedServiceConnection: true
+            deployParameters:
+              useFederatedServiceConnection: true
+              acrEndpoint: '${{ variables.acrEndpoint }}'
+              acrRegistry: '${{ variables.acrRegistry }}'         
+            
+          ${{ if ne(parameters.specific_build, 'none') }}:
+            buildId: '${{ parameters.specific_build }}'
+          action: '${{ parameters.action }}'
+          deploymentStrategy: '${{ parameters.deploymentStrategy }}'
+          envProp:
+            ### TST ###
+            - ${{ if and(parameters.env_tst, ne(parameters.action, 'rescale'), in(parameters.target_DC,'dcr','both')) }}:
+                - {
+                  envType: 'tst',
+                  envDcr: 'dcr',             ### pick your datacenter
+                  serviceConnection: '${{ variables.ICHPNameSpace_TST_DCR }}',
+                  pipelineIdentity: '${{ variables.pipelineIdentity_nonprod }}',
+                  secretManagementProp: {
+                    azureVault: {
+                      azureSubscription: '${{ variables.purposeID }}-Federated-NonProd',
+                      azureKeyVault: '${{ variables.keyVaultName_TST }}'
+                    }
+                  },
+                  releaseComponents:
+                    {
+                      manageApplication: '${{ parameters.manageApplication }}',
+                      manageAutocert: '${{ parameters.manageAutocert }}',
+                      manageAutoscaling: '${{ parameters.manageAutoscaling }}',
+                      manageMaintenance: '${{ parameters.manageMaintenance }}',
+                      manageMonitoring: '${{ parameters.manageMonitoring }}',
+                      manageCommonServices: '${{ parameters.manageCommonServices }}'
+                    },
+                  deployConfidence: false,
+                  deleteConfidenceOnly: '${{ parameters.delete_confidence_check_only }}',
+                  deleteCanaryOnly: '${{ parameters.delete_canary_only }}',
+                  deleteAutocertOnly: '${{ parameters.delete_autocert_only }}'
+                }
+            - ${{ if and(parameters.env_tst, ne(parameters.action, 'rescale'), in(parameters.target_DC,'wpr','both')) }}:
+                - {
+                  envType: 'tst',
+                  envDcr: 'wpr',             ### pick your datacenter
+                  serviceConnection: '${{ variables.ICHPNameSpace_TST_WPR }}',
+                  pipelineIdentity: '${{ variables.pipelineIdentity_nonprod }}',
+                  secretManagementProp: {
+                    azureVault: {
+                      azureSubscription: '${{ variables.purposeID }}-Federated-NonProd',
+                      azureKeyVault: '${{ variables.keyVaultName_TST }}'
+                    }
+                  },
+                  releaseComponents:
+                    {
+                      manageApplication: '${{ parameters.manageApplication }}',
+                      manageAutocert: '${{ parameters.manageAutocert }}',
+                      manageAutoscaling: '${{ parameters.manageAutoscaling }}',
+                      manageMaintenance: '${{ parameters.manageMaintenance }}',
+                      manageMonitoring: '${{ parameters.manageMonitoring }}',
+                      manageCommonServices: '${{ parameters.manageCommonServices }}'
+                    },
+                  deployConfidence: false,
+                  deleteConfidenceOnly: '${{ parameters.delete_confidence_check_only }}',
+                  deleteCanaryOnly: '${{ parameters.delete_canary_only }}',
+                  deleteAutocertOnly: '${{ parameters.delete_autocert_only }}'
+                }
+            - ${{ if and(parameters.env_tst, eq(parameters.action, 'rescale'), in(parameters.target_DC,'dcr','both')) }}:
+                - {
+                  envType: 'tst',
+                  envDcr: 'dcr',             ### pick your datacenter
+                  serviceConnection: '${{ variables.ICHPNameSpace_TST_DCR }}',
+                  scalingReplicas: '${{ parameters.rescale_count }}'
+                }
+            - ${{ if and(parameters.env_tst, eq(parameters.action, 'rescale'), in(parameters.target_DC,'wpr','both')) }}:
+                - {
+                  envType: 'tst',
+                  envDcr: 'wpr',             ### pick your datacenter
+                  serviceConnection: '${{ variables.ICHPNameSpace_TST_WPR }}',
+                  scalingReplicas: '${{ parameters.rescale_count }}'
+                }
+            ### ACC ###
+            - ${{ if and(parameters.env_acc, ne(parameters.action, 'rescale'), in(parameters.target_DC,'dcr','both')) }}:
+                - {
+                  envType: 'acc',
+                  envDcr: 'dcr',             ### pick your datacenter
+                  serviceConnection: '${{ variables.ICHPNameSpace_ACC_DCR }}',
+                  pipelineIdentity: '${{ variables.pipelineIdentity_nonprod }}',
+                  secretManagementProp: {
+                    azureVault: {
+                      azureSubscription: '${{ variables.purposeID }}-Federated-NonProd',
+                      azureKeyVault: '${{ variables.keyVaultName_ACC }}'
+                    }
+                  },
+                  releaseComponents:
+                    {
+                      manageApplication: '${{ parameters.manageApplication }}',
+                      manageAutocert: '${{ parameters.manageAutocert }}',
+                      manageAutoscaling: '${{ parameters.manageAutoscaling }}',
+                      manageMaintenance: '${{ parameters.manageMaintenance }}',
+                      manageMonitoring: '${{ parameters.manageMonitoring }}',
+                      manageCommonServices: '${{ parameters.manageCommonServices }}'
+                    },
+                  deployConfidence: false,
+                  deleteConfidenceOnly: '${{ parameters.delete_confidence_check_only }}',
+                  deleteCanaryOnly: '${{ parameters.delete_canary_only }}',
+                  deleteAutocertOnly: '${{ parameters.delete_autocert_only }}'
+                }
+            - ${{ if and(parameters.env_acc, ne(parameters.action, 'rescale'), in(parameters.target_DC,'wpr','both')) }}:
+                - {
+                  envType: 'acc',
+                  envDcr: 'wpr',             ### pick your datacenter
+                  serviceConnection: '${{ variables.ICHPNameSpace_ACC_WPR }}',
+                  pipelineIdentity: '${{ variables.pipelineIdentity_nonprod }}',
+                  secretManagementProp: {
+                    azureVault: {
+                      azureSubscription: '${{ variables.purposeID }}-Federated-NonProd',
+                      azureKeyVault: '${{ variables.keyVaultName_ACC }}'
+                    }
+                  },
+                  releaseComponents:
+                    {
+                      manageApplication: '${{ parameters.manageApplication }}',
+                      manageAutocert: '${{ parameters.manageAutocert }}',
+                      manageAutoscaling: '${{ parameters.manageAutoscaling }}',
+                      manageMaintenance: '${{ parameters.manageMaintenance }}',
+                      manageMonitoring: '${{ parameters.manageMonitoring }}',
+                      manageCommonServices: '${{ parameters.manageCommonServices }}'
+                    },
+                  deployConfidence: false,
+                  deleteConfidenceOnly: '${{ parameters.delete_confidence_check_only }}',
+                  deleteCanaryOnly: '${{ parameters.delete_canary_only }}',
+                  deleteAutocertOnly: '${{ parameters.delete_autocert_only }}'
+                }
+            - ${{ if and(parameters.env_acc, eq(parameters.action, 'rescale'), in(parameters.target_DC,'dcr','both')) }}:
+                - {
+                  envType: 'acc',
+                  envDcr: 'dcr',             ### pick your datacenter
+                  serviceConnection: '${{ variables.ICHPNameSpace_ACC_DCR }}',
+                  scalingReplicas: '${{ parameters.rescale_count }}'
+                }
+            - ${{ if and(parameters.env_acc, eq(parameters.action, 'rescale'), in(parameters.target_DC,'wpr','both')) }}:
+                - {
+                  envType: 'acc',
+                  envDcr: 'wpr',             ### pick your datacenter
+                  serviceConnection: '${{ variables.ICHPNameSpace_ACC_WPR }}',
+                  scalingReplicas: '${{ parameters.rescale_count }}'
+                }
+            ### PRD ###
+            - ${{ if and(parameters.env_prd, ne(parameters.action, 'rescale'), in(parameters.target_DC,'dcr','both')) }}:
+                - {
+                  envType: 'prd',
+                  envDcr: 'dcr',             ### pick your datacenter
+                  serviceConnection: '${{ variables.ICHPNameSpace_PRD_DCR }}',
+                  pipelineIdentity: '${{ variables.pipelineIdentity_prod }}',
+                  secretManagementProp: {
+                    azureVault: {
+                      azureSubscription: '${{ variables.purposeID }}-Federated-Prod',
+                      azureKeyVault: '${{ variables.keyVaultName_PRD }}'
+                    }
+                  },
+                  releaseComponents:
+                    {
+                      manageApplication: '${{ parameters.manageApplication }}',
+                      manageAutocert: '${{ parameters.manageAutocert }}',
+                      manageAutoscaling: '${{ parameters.manageAutoscaling }}',
+                      manageMaintenance: '${{ parameters.manageMaintenance }}',
+                      manageMonitoring: '${{ parameters.manageMonitoring }}',
+                      manageCommonServices: '${{ parameters.manageCommonServices }}'
+                    },
+                  deployConfidence: true,
+                  deleteConfidenceOnly: '${{ parameters.delete_confidence_check_only }}',
+                  deleteCanaryOnly: '${{ parameters.delete_canary_only }}',
+                  deleteAutocertOnly: '${{ parameters.delete_autocert_only }}'
+                }
+            - ${{ if and(parameters.env_prd, ne(parameters.action, 'rescale'), in(parameters.target_DC,'wpr','both')) }}:
+                - {
+                  envType: 'prd',
+                  envDcr: 'wpr',             ### pick your datacenter
+                  serviceConnection: '${{ variables.ICHPNameSpace_PRD_WPR }}',
+                  pipelineIdentity: '${{ variables.pipelineIdentity_prod }}',
+                  secretManagementProp: {
+                    azureVault: {
+                      azureSubscription: '${{ variables.purposeID }}-Federated-Prod',
+                      azureKeyVault: '${{ variables.keyVaultName_PRD }}'
+                    }
+                  },
+                  releaseComponents:
+                    {
+                      manageApplication: '${{ parameters.manageApplication }}',
+                      manageAutocert: '${{ parameters.manageAutocert }}',
+                      manageAutoscaling: '${{ parameters.manageAutoscaling }}',
+                      manageMaintenance: '${{ parameters.manageMaintenance }}',
+                      manageMonitoring: '${{ parameters.manageMonitoring }}',
+                      manageCommonServices: '${{ parameters.manageCommonServices }}'
+                    },
+                  deployConfidence: true,
+                  deleteConfidenceOnly: '${{ parameters.delete_confidence_check_only }}',
+                  deleteCanaryOnly: '${{ parameters.delete_canary_only }}',
+                  deleteAutocertOnly: '${{ parameters.delete_autocert_only }}'
+                }
+            - ${{ if and(parameters.env_prd, eq(parameters.action, 'rescale'), in(parameters.target_DC,'dcr','both')) }}:
+                - {
+                  envType: 'prd',
+                  envDcr: 'dcr',             ### pick your datacenter
+                  serviceConnection: '${{ variables.ICHPNameSpace_PRD_DCR }}',
+                  scalingReplicas: '${{ parameters.rescale_count }}'
+                }
+            - ${{ if and(parameters.env_prd, eq(parameters.action, 'rescale'), in(parameters.target_DC,'wpr','both')) }}:
+                - {
+                  envType: 'prd',
+                  envDcr: 'wpr',             ### pick your datacenter
+                  serviceConnection: '${{ variables.ICHPNameSpace_PRD_WPR }}',
+                  scalingReplicas: '${{ parameters.rescale_count }}'
+                }

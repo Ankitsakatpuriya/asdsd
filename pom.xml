@@ -1,324 +1,249 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.ing.bankguarantees</groupId>
+    <artifactId>BankGuaranteesBEOnline_API</artifactId>
+    <version>1.0.0</version>
+    <modules>
+        <module>conf</module>
+        <module>web</module>
+    </modules>
+    <packaging>pom</packaging>
 
     <parent>
-        <artifactId>BankGuaranteesBEOnline_API</artifactId>
-        <groupId>com.ing.bankguarantees</groupId>
-        <version>1.0.0</version>
+        <groupId>com.ing.apisdk</groupId>
+        <artifactId>merak-spring-boot-starter-parent_2.13</artifactId>
+        <version>33.1.0</version>
     </parent>
 
-    <artifactId>web</artifactId>
-    <name>web</name>
-    <packaging>jar</packaging>
-    <modelVersion>4.0.0</modelVersion>
-
     <properties>
-        <jacoco-maven-plugin.unit.line.coverage.minimum>0.8</jacoco-maven-plugin.unit.line.coverage.minimum>
-        <jacoco-maven-plugin.unit.branch.coverage.minimum>0.6</jacoco-maven-plugin.unit.branch.coverage.minimum>
+        <java.version>21</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <lombok-mapstruct.version>0.2.0</lombok-mapstruct.version>
+        <lombok.version>1.18.38</lombok.version>
+        <engagement-suit.version>6.5.8</engagement-suit.version>
+        <shedlock.version>7.7.0</shedlock.version>
+        <kafkaclient.version>4.3.1</kafkaclient.version>
+        <mapstruct.version>1.6.3</mapstruct.version>
+        <tomcat-embed-core.version>11.0.25</tomcat-embed-core.version>
+        <yawk-lz4-java.version>1.10.2</yawk-lz4-java.version>
+        <qos.logback.version>1.5.35</qos.logback.version>
+        <apache-collection.version>4.5.0</apache-collection.version>
+        <asertj-version>3.27.7</asertj-version>
+        <spring-kafka.version>3.3.16</spring-kafka.version>
+        <netty-handler.version>4.2.17.Final</netty-handler.version>
+        <core-jackson-databind.version>2.21.5</core-jackson-databind.version>
+        <tools-jackson-databind.version>3.1.5</tools-jackson-databind.version>
+        <log4j-api.version>2.25.5</log4j-api.version>
+        <httpcore5.version>5.4.3</httpcore5.version>
+        <httpclient5.version>5.6.4</httpclient5.version>
+
+        <plugins.jacoco.version>0.8.12</plugins.jacoco.version>
+        <plugins.maven.surefire.version>3.5.3</plugins.maven.surefire.version>
+        <maven.assembly.plugin.version>3.7.1</maven.assembly.plugin.version>
+        <avro-maven.version>1.12.0</avro-maven.version>
     </properties>
 
-    <dependencies>
+    <dependencyManagement>
 
-        <dependency>
-            <groupId>com.ing.apisdk</groupId>
-            <artifactId>merak-springmvc-spring-boot-starter_${scala-compiler.version}</artifactId>
-        </dependency>
+        <dependencies>
 
-        <dependency>
-            <groupId>com.ing.apisdk</groupId>
-            <artifactId>merak-kafka-application-logging-spring-boot-starter_${scala-compiler.version}</artifactId>
-        </dependency>
+            <dependency>
+                <groupId>org.apache.kafka</groupId>
+                <artifactId>kafka-clients</artifactId>
+                <version>${kafkaclient.version}</version>
+            </dependency>
 
-        <dependency>
-            <groupId>com.ing.apisdk</groupId>
-            <artifactId>merak-prometheus-spring-boot-starter_${scala-compiler.version}</artifactId>
-        </dependency>
+            <dependency>
+                <groupId>org.springframework.kafka</groupId>
+                <artifactId>spring-kafka</artifactId>
+                <version>${spring-kafka.version}</version>
+            </dependency>
 
-        <dependency>
-            <groupId>com.ing.apisdk</groupId>
-            <artifactId>toolkit-connectivity-transport-routing-http_${scala-compiler.version}</artifactId>
-        </dependency>
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId>
+                <version>${mapstruct.version}</version>
+            </dependency>
 
-        <dependency>
-            <groupId>com.ing.apisdk</groupId>
-            <artifactId>toolkit-connectivity-kafka-avro-serialization_${scala-compiler.version}</artifactId>
-        </dependency>
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-processor</artifactId>
+                <version>${mapstruct.version}</version>
+            </dependency>
 
-        <dependency>
-            <groupId>com.ing.apisdk</groupId>
-            <artifactId>toolkit-connectivity-kafka-protobuf-serialization_${scala-compiler.version}</artifactId>
-        </dependency>
+            <dependency>
+                <groupId>com.ing.tpa.esuite.oee</groupId>
+                <artifactId>oee-external-feedback-event</artifactId>
+                <version>${engagement-suit.version}</version>
+            </dependency>
 
-        <dependency>
-            <groupId>com.ing.apisdk</groupId>
-            <artifactId>merak-sem-a-spring-boot-starter_${scala-compiler.version}</artifactId>
-            <version>${apisdk.version}</version>
-        </dependency>
+            <dependency>
+                <groupId>com.ing.tpa.esuite.oee</groupId>
+                <artifactId>oee-engagement-suite-notification-event</artifactId>
+                <version>${engagement-suit.version}</version>
+            </dependency>
 
-        <dependency>
-            <groupId>com.ing.apisdk</groupId>
-            <artifactId>merak-phoenix-spring-boot-starter_${scala-compiler.version}</artifactId>
-        </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-cache</artifactId>
-        </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok-mapstruct-binding</artifactId>
+                <version>${lombok-mapstruct.version}</version>
+            </dependency>
 
-        <dependency>
-            <groupId>com.github.ben-manes.caffeine</groupId>
-            <artifactId>caffeine</artifactId>
-        </dependency>
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjweaver</artifactId>
+                <version>${aspectj.version}</version>
+            </dependency>
 
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-aop</artifactId>
-        </dependency>
+            <dependency>
+                <groupId>net.javacrumbs.shedlock</groupId>
+                <artifactId>shedlock-spring</artifactId>
+                <version>${shedlock.version}</version>
+            </dependency>
 
-        <dependency>
-            <groupId>com.oracle.database.jdbc</groupId>
-            <artifactId>ojdbc17</artifactId>
-        </dependency>
+            <dependency>
+                <groupId>net.javacrumbs.shedlock</groupId>
+                <artifactId>shedlock-provider-jdbc-template</artifactId>
+                <version>${shedlock.version}</version>
+            </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>${apache-collection.version}</version>
+            </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents.client5</groupId>
+                <artifactId>httpclient5</artifactId>
+                <version>${httpclient5.version}</version>
+            </dependency>
 
-        <dependency>
-            <groupId>com.ing.tpa.esuite.oee</groupId>
-            <artifactId>oee-external-feedback-event</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.ing.tpa.esuite.oee</groupId>
-            <artifactId>oee-engagement-suite-notification-event</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok-mapstruct-binding</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.mapstruct</groupId>
-            <artifactId>mapstruct</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.mapstruct</groupId>
-            <artifactId>mapstruct-processor</artifactId>
-        </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 
-        <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjweaver</artifactId>
-        </dependency>
+    <distributionManagement>
+        <repository>
+            <id>P31464-incoming-maven</id>
+            <url>https://pkgs.dev.azure.com/IngEurCDaaS01/IngOne/_packaging/P31464-incoming-maven/maven/v1</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
 
-        <dependency>
-            <groupId>net.javacrumbs.shedlock</groupId>
-            <artifactId>shedlock-spring</artifactId>
-        </dependency>
+    </distributionManagement>
 
-        <dependency>
-            <groupId>net.javacrumbs.shedlock</groupId>
-            <artifactId>shedlock-provider-jdbc-template</artifactId>
-        </dependency>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>P31464-incoming-maven</id>
+            <url>https://pkgs.dev.azure.com/IngEurCDaaS01/IngOne/_packaging/P31464-incoming-maven/maven/v1</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
 
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-collections4</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.kafka</groupId>
-            <artifactId>spring-kafka</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.awaitility</groupId>
-            <artifactId>awaitility</artifactId>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <scope>test</scope>
-        </dependency>
-
-    </dependencies>
-
-    <profiles>
-        <profile>
-            <id>local</id>
-            <build>
-                <resources>
-                    <resource>
-                        <directory>src/main/resources</directory>
-                        <filtering>false</filtering>
-                    </resource>
-                    <resource>
-                        <directory>${project.basedir}/../conf/src/main/local</directory>
-                        <includes>
-                            <include>**/*</include>
-                        </includes>
-                        <filtering>false</filtering>
-                    </resource>
-                </resources>
-                <plugins>
-                    <plugin>
-                        <groupId>org.springframework.boot</groupId>
-                        <artifactId>spring-boot-maven-plugin</artifactId>
-                        <configuration>
-                            <jvmArguments>
-                                -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005
-                            </jvmArguments>
-                            <mainClass>com.ing.bankguarantees.Application</mainClass>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-        <profile>
-            <id>H2DB</id>
-            <dependencies>
-                <dependency>
-                    <groupId>com.h2database</groupId>
-                    <artifactId>h2</artifactId>
-                    <scope>runtime</scope>
-                </dependency>
-            </dependencies>
-        </profile>
-    </profiles>
+    <repositories>
+        <repository>
+            <id>P31464-incoming-maven</id>
+            <url>https://pkgs.dev.azure.com/IngEurCDaaS01/IngOne/_packaging/P31464-incoming-maven/maven/v1</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-failsafe-plugin</artifactId>
-            </plugin>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>${plugins.jacoco.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-failsafe-plugin</artifactId>
+                    <configuration>
+                        <argLine>
+                            @{argLine}
+                            --add-opens java.base/java.util=ALL-UNNAMED
+                            --add-opens java.base/java.lang=ALL-UNNAMED
+                            -javaagent:${settings.localRepository}/org/mockito/mockito-core/${mockito.version}/mockito-core-${mockito.version}.jar
+                        </argLine>
+                        <environmentVariables>
+                            <LOG_PATH>${project.build.directory}/logs</LOG_PATH>
+                        </environmentVariables>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <configuration>
+                        <argLine>
+                            @{argLine}
+                            --add-opens java.base/java.util=ALL-UNNAMED
+                            --add-opens java.base/java.lang=ALL-UNNAMED
+                            -javaagent:${settings.localRepository}/org/mockito/mockito-core/${mockito.version}/mockito-core-${mockito.version}.jar
+                        </argLine>
+                        <environmentVariables>
+                            <LOG_PATH>${project.build.directory}/logs</LOG_PATH>
+                        </environmentVariables>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                        <annotationProcessorPaths>
+                            <path>
+                                <groupId>org.projectlombok</groupId>
+                                <artifactId>lombok</artifactId>
+                                <version>${lombok.version}</version>
+                            </path>
+                            <path>
+                                <groupId>org.mapstruct</groupId>
+                                <artifactId>mapstruct-processor</artifactId>
+                                <version>${mapstruct.version}</version>
+                            </path>
+                        </annotationProcessorPaths>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.avro</groupId>
+                    <artifactId>avro-maven-plugin</artifactId>
+                    <version>${avro-maven.version}</version>
+                </plugin>
 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <mainClass>com.ing.bankguarantees.Application</mainClass>
-                    <layout>ZIP</layout>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <configuration>
-                    <excludes>
-                        <exclude>**/Application.*</exclude>
-                        <exclude>**/*Mock*.class</exclude>
-                        <exclude>**/*Config.*</exclude>
-                        <exclude>**/*Properties.*</exclude>
-                        <exclude>**/model/**</exclude>
-                        <exclude>**/saac/**</exclude>
-                        <exclude>**/mapper/**</exclude>
-                        <exclude>**/logger/**</exclude>
-                        <exclude>**/*model*/**</exclude>
-                        <exclude>**/configuration/**</exclude>
-                        <exclude>**/interceptors/**</exclude>
-                    </excludes>
-                    <outputDirectory>${project.reporting.outputDirectory}/jacoco</outputDirectory>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>jacoco-initialize</id>
-                        <goals>
-                            <goal>prepare-agent</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>jacoco-report</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>report</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>unit</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                        <configuration>
-                            <rules>
-                                <rule>
-                                    <element>BUNDLE</element>
-                                    <limits>
-                                        <limit>
-                                            <counter>LINE</counter>
-                                            <value>COVEREDRATIO</value>
-                                            <minimum>${jacoco-maven-plugin.unit.line.coverage.minimum}</minimum>
-                                        </limit>
-                                        <limit>
-                                            <counter>BRANCH</counter>
-                                            <value>COVEREDRATIO</value>
-                                            <minimum>${jacoco-maven-plugin.unit.branch.coverage.minimum}</minimum>
-                                        </limit>
-                                    </limits>
-                                </rule>
-                            </rules>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.avro</groupId>
-                <artifactId>avro-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>schema</goal>
-                        </goals>
-                        <configuration>
-                            <stringType>String</stringType>
-                            <enableDecimalLogicalType>true</enableDecimalLogicalType>
-                            <sourceDirectory>src/main/resources/avroschema</sourceDirectory>
-                            <outputDirectory>${project.basedir}/target/generated-sources</outputDirectory>
-                            <fieldVisibility>PRIVATE</fieldVisibility>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <version>${maven-assembly-plugin.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
     </build>
 </project>
