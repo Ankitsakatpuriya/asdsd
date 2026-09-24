@@ -1,0 +1,35 @@
+{
+  "transactionId": "3f97bf90-9dd9-4acb-b99a-d4c49be71ec3",
+  "transactionStatus": "SUCCESS",
+  "signatoryResponse": {
+    "purposeId": "1013",
+    "onlyActiveSignatories": false,
+    "requestorIdentifier": "e20b9980-cbc3-4ae6-beae-77fe39eee4eb",
+    "organisationIdentifier": "3f97bf90-9dd9-4acb-b99a-d4c49be71ece",
+    "organisationName": "JAN DE NUL NV",
+    "signatories": [
+      {
+        "individualIdentifier": "d8f80f8d-1b90-4ad7-b8c5-3b4d22e8c864",
+        "individualName": "MOHAMMAD ALI JANCLAES",
+        "isActive": true,
+        "signingPower": {
+          "signingPowerValue": 2,
+          "signingPowerDescription": "The signatory can sign by two"
+        }
+      },
+      {
+        "individualIdentifier": "e20b9980-cbc3-4ae6-beae-77fe39eee4eb",
+        "isActive": true,
+        "signingPower": {
+          "signingPowerValue": 2,
+          "signingPowerDescription": "The signatory can sign by two"
+        }
+      }
+    ]
+  },
+  "errorResponseDetails": {
+    "serviceOrigin": "RetrieveOrganisationDetailsInteraction",
+    "code": "1002",
+    "message": "Segment ineligible for the requested organisation"
+  }
+}

@@ -1,0 +1,279 @@
+{
+  "involvedPartyInvolvedPartyRelationships": {
+    "associatedPartyRelationships": [
+      {
+        "involvedPartyInvolvedPartyRelationshipIdentifier": "e41f5537-ba08-4a27-ad47-69e281a31ef9",
+        "involvedPartyInvolvedPartyRelationshipType": "UBO",
+        "mixableIndicatorType": "Y",
+        "operationalLifeCycleStatusType": "EFF",
+        "effectiveDate": "2024-10-21T22:00:00.000Z",
+        "dataSource": "CSI_BE",
+        "lastUpdateUser": "CSI_BE",
+        "lastUpdateDate": "2024-10-22T22:49:32.300Z",
+        "logicalDataDomain": "ING_BE",
+        "associatedPartyRelationshipLifeCycleStatusType": "ASSC_P",
+        "ingEntity": "3180",
+        "grantee": {
+          "id": "7f9ace8c-6ad2-4af6-aaac-da19b15b716d",
+          "type": "UBO",
+          "involvedPartyType": "INDIV"
+        },
+        "grantors": [
+          {
+            "id": "c135b9ae-d6ee-4898-b236-f33a400d09fd",
+            "type": "BENF_ENT",
+            "involvedPartyType": "ORG"
+          }
+        ]
+      },
+      {
+        "involvedPartyInvolvedPartyRelationshipIdentifier": "d46274fd-65bb-47d8-a6e4-b4f8e2d73e43",
+        "involvedPartyInvolvedPartyRelationshipType": "LGL_RPRS_NO_AHR",
+        "mixableIndicatorType": "Y",
+        "operationalLifeCycleStatusType": "EFF",
+        "effectiveDate": "2023-12-28T23:00:00.000Z",
+        "dataSource": "CSI_BE",
+        "lastUpdateUser": "CSI_BE",
+        "lastUpdateDate": "2024-11-30T10:19:39.787Z",
+        "logicalDataDomain": "ING_BE",
+        "associatedPartyRelationshipLifeCycleStatusType": "ASSC_P",
+        "ingEntity": "3180",
+        "grantee": {
+          "id": "7f9ace8c-6ad2-4af6-aaac-da19b15b716d",
+          "type": "LGL_REP",
+          "involvedPartyType": "INDIV"
+        },
+        "grantors": [
+          {
+            "id": "c135b9ae-d6ee-4898-b236-f33a400d09fd",
+            "type": "REPP",
+            "involvedPartyType": "ORG"
+          }
+        ]
+      },
+      {
+        "involvedPartyInvolvedPartyRelationshipIdentifier": "8e2d32d6-392c-41f1-bb55-58d52bbed718",
+        "involvedPartyInvolvedPartyRelationshipType": "UBO",
+        "mixableIndicatorType": "Y",
+        "operationalLifeCycleStatusType": "EFF",
+        "effectiveDate": "2013-04-16T22:00:00.000Z",
+        "dataSource": "CSI_BE",
+        "lastUpdateUser": "OnePAM IL",
+        "lastUpdateDate": "2024-05-10T13:58:59.510Z",
+        "logicalDataDomain": "ING_BE",
+        "associatedPartyRelationshipLifeCycleStatusType": "ASSC_P",
+        "ingEntity": "3180",
+        "grantee": {
+          "id": "2ca57336-2f2a-4d1f-9dc1-3f2ae5ab3af4",
+          "type": "UBO",
+          "involvedPartyType": "INDIV"
+        },
+        "grantors": [
+          {
+            "id": "c135b9ae-d6ee-4898-b236-f33a400d09fd",
+            "type": "BENF_ENT",
+            "involvedPartyType": "ORG"
+          }
+        ]
+      },
+      {
+        "involvedPartyInvolvedPartyRelationshipIdentifier": "7815fe8f-305a-4300-b633-cfa1baf9457e",
+        "involvedPartyInvolvedPartyRelationshipType": "UBO",
+        "mixableIndicatorType": "Y",
+        "operationalLifeCycleStatusType": "EFF",
+        "effectiveDate": "2013-04-16T22:00:00.000Z",
+        "dataSource": "CSI_BE",
+        "lastUpdateUser": "OnePAM IL",
+        "lastUpdateDate": "2024-05-10T07:58:02.664Z",
+        "logicalDataDomain": "ING_BE",
+        "associatedPartyRelationshipLifeCycleStatusType": "ASSC_P",
+        "ingEntity": "3180",
+        "grantee": {
+          "id": "b8e85273-7a42-487a-8bdb-7ca4c5350385",
+          "type": "UBO",
+          "involvedPartyType": "INDIV"
+        },
+        "grantors": [
+          {
+            "id": "c135b9ae-d6ee-4898-b236-f33a400d09fd",
+            "type": "BENF_ENT",
+            "involvedPartyType": "ORG"
+          }
+        ]
+      },
+      {
+        "involvedPartyInvolvedPartyRelationshipIdentifier": "cfb3e0f7-e860-4350-8496-e65de4c1a175",
+        "involvedPartyInvolvedPartyRelationshipType": "UBO",
+        "mixableIndicatorType": "Y",
+        "operationalLifeCycleStatusType": "EFF",
+        "effectiveDate": "2013-04-16T22:00:00.000Z",
+        "dataSource": "CSI_BE",
+        "lastUpdateUser": "OnePAM IL",
+        "lastUpdateDate": "2024-05-11T07:48:15.366Z",
+        "logicalDataDomain": "ING_BE",
+        "associatedPartyRelationshipLifeCycleStatusType": "ASSC_P",
+        "ingEntity": "3180",
+        "grantee": {
+          "id": "07873b5c-489d-43cb-9cba-77f81905e682",
+          "type": "UBO",
+          "involvedPartyType": "INDIV"
+        },
+        "grantors": [
+          {
+            "id": "c135b9ae-d6ee-4898-b236-f33a400d09fd",
+            "type": "BENF_ENT",
+            "involvedPartyType": "ORG"
+          }
+        ]
+      },
+      {
+        "involvedPartyInvolvedPartyRelationshipIdentifier": "ca936c4b-373f-4753-9ad8-b93e831c81e6",
+        "involvedPartyInvolvedPartyRelationshipType": "ENDORSEMNT",
+        "mixableIndicatorType": "Y",
+        "operationalLifeCycleStatusType": "EFF",
+        "effectiveDate": "2012-12-17T23:00:00.000Z",
+        "dataSource": "CSI_BE",
+        "lastUpdateUser": "OnePAM IL",
+        "lastUpdateDate": "2024-05-22T10:35:24.802Z",
+        "logicalDataDomain": "ING_BE",
+        "associatedPartyRelationshipLifeCycleStatusType": "ASSC_P",
+        "ingEntity": "3180",
+        "grantee": {
+          "id": "2ca57336-2f2a-4d1f-9dc1-3f2ae5ab3af4",
+          "type": "ENDORSEE",
+          "involvedPartyType": "INDIV"
+        },
+        "grantors": [
+          {
+            "id": "c135b9ae-d6ee-4898-b236-f33a400d09fd",
+            "type": "ENDORSER",
+            "involvedPartyType": "ORG"
+          }
+        ]
+      },
+      {
+        "involvedPartyInvolvedPartyRelationshipIdentifier": "d1828029-0268-4cdb-b22f-388cb9e51941",
+        "involvedPartyInvolvedPartyRelationshipType": "LGL_RPRS_LMTD_AHR",
+        "mixableIndicatorType": "Y",
+        "operationalLifeCycleStatusType": "EFF",
+        "effectiveDate": "2012-11-06T23:00:00.000Z",
+        "dataSource": "CSI_BE",
+        "lastUpdateUser": "OnePAM IL",
+        "lastUpdateDate": "2022-04-07T11:35:14.268Z",
+        "logicalDataDomain": "ING_BE",
+        "associatedPartyRelationshipLifeCycleStatusType": "ASSC_P",
+        "ingEntity": "3180",
+        "grantee": {
+          "id": "b8e85273-7a42-487a-8bdb-7ca4c5350385",
+          "type": "LGL_REP",
+          "involvedPartyType": "INDIV"
+        },
+        "grantors": [
+          {
+            "id": "c135b9ae-d6ee-4898-b236-f33a400d09fd",
+            "type": "REPP",
+            "involvedPartyType": "ORG"
+          }
+        ]
+      },
+      {
+        "involvedPartyInvolvedPartyRelationshipIdentifier": "3d7e4883-93e8-422e-9d9c-7ac84bcc98b5",
+        "involvedPartyInvolvedPartyRelationshipType": "ENDORSEMNT",
+        "mixableIndicatorType": "Y",
+        "operationalLifeCycleStatusType": "EFF",
+        "effectiveDate": "2012-05-30T22:00:00.000Z",
+        "dataSource": "CSI_BE",
+        "lastUpdateUser": "OnePAM IL",
+        "lastUpdateDate": "2024-05-23T12:07:10.857Z",
+        "logicalDataDomain": "ING_BE",
+        "associatedPartyRelationshipLifeCycleStatusType": "ASSC_P",
+        "ingEntity": "3180",
+        "grantee": {
+          "id": "07873b5c-489d-43cb-9cba-77f81905e682",
+          "type": "ENDORSEE",
+          "involvedPartyType": "INDIV"
+        },
+        "grantors": [
+          {
+            "id": "c135b9ae-d6ee-4898-b236-f33a400d09fd",
+            "type": "ENDORSER",
+            "involvedPartyType": "ORG"
+          }
+        ]
+      },
+      {
+        "involvedPartyInvolvedPartyRelationshipIdentifier": "1610527b-04cf-4a82-9a30-5fab87f38192",
+        "involvedPartyInvolvedPartyRelationshipType": "LGL_RPRS_LMTD_AHR",
+        "mixableIndicatorType": "Y",
+        "operationalLifeCycleStatusType": "EFF",
+        "effectiveDate": "2012-02-11T23:00:00.000Z",
+        "dataSource": "CSI_BE",
+        "lastUpdateUser": "OnePAM IL",
+        "lastUpdateDate": "2022-04-07T11:35:15.257Z",
+        "logicalDataDomain": "ING_BE",
+        "associatedPartyRelationshipLifeCycleStatusType": "ASSC_P",
+        "ingEntity": "3180",
+        "grantee": {
+          "id": "2ca57336-2f2a-4d1f-9dc1-3f2ae5ab3af4",
+          "type": "LGL_REP",
+          "involvedPartyType": "INDIV"
+        },
+        "grantors": [
+          {
+            "id": "c135b9ae-d6ee-4898-b236-f33a400d09fd",
+            "type": "REPP",
+            "involvedPartyType": "ORG"
+          }
+        ]
+      },
+      {
+        "involvedPartyInvolvedPartyRelationshipIdentifier": "59da5ea2-375b-4ff2-959c-77d3c5609c16",
+        "involvedPartyInvolvedPartyRelationshipType": "LGL_RPRS_LMTD_AHR",
+        "mixableIndicatorType": "Y",
+        "operationalLifeCycleStatusType": "EFF",
+        "effectiveDate": "2012-02-11T22:00:00.000Z",
+        "dataSource": "CSI_BE",
+        "lastUpdateUser": "CSI_BE",
+        "lastUpdateDate": "2023-04-07T17:59:31.861Z",
+        "logicalDataDomain": "ING_BE",
+        "associatedPartyRelationshipLifeCycleStatusType": "ASSC_P",
+        "ingEntity": "3180",
+        "grantee": {
+          "id": "07873b5c-489d-43cb-9cba-77f81905e682",
+          "type": "LGL_REP",
+          "involvedPartyType": "INDIV"
+        },
+        "grantors": [
+          {
+            "id": "c135b9ae-d6ee-4898-b236-f33a400d09fd",
+            "type": "REPP",
+            "involvedPartyType": "ORG"
+          }
+        ]
+      },
+      {
+        "involvedPartyInvolvedPartyRelationshipType": "PERM_REPN",
+        "grantors": [
+          {
+            "id": "850475a8-c67a-4483-959e-f692c80a020b",
+            "type": "REPP",
+            "involvedPartyType": "ORG"
+          }
+        ],
+        "grantee": {
+          "id": "43b87110-56e8-4388-abbd-a976e6bb8585",
+          "type": "PERM_REP",
+          "involvedPartyType": "INDIV"
+        }
+      }
+    ]
+  },
+  "_links": {
+    "self": {
+      "href": "https://apis.ing.com/v5/involved-parties/c135b9ae-d6ee-4898-b236-f33a400d09fd/grantees?offset=0&limit=10"
+    },
+    "next": {
+      "href": "https://apis.ing.com/v5/involved-parties/c135b9ae-d6ee-4898-b236-f33a400d09fd/grantees?offset=10&limit=10"
+    }
+  }
+}

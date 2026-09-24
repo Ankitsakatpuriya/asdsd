@@ -1,0 +1,16 @@
+{
+  "bankGuarantees": [
+    {
+      "type": "Performance",
+      "subType": "Public Contract",
+      "typeNumber": "",
+      "inScope": true
+    },
+    {
+      "type": "OVAM",
+      "subType": "OVAM -  Soil decontamination",
+      "typeNumber": "133",
+      "inScope": false
+    }
+  ]
+}

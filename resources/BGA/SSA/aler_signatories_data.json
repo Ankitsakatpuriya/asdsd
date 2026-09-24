@@ -1,0 +1,20 @@
+{
+  "transactionId": "3f97bf90-9dd9-4acb-b99a-d4c49be71ec3",
+  "transactionStatus": "SUCCESS",
+  "signatories": [
+    {
+      "signatoryUUID": "d8f80f8d-1b90-4ad7-b8c5-3b4d22e8c864",
+      "signingPower": 2,
+      "isActive": true
+    },
+    {
+      "signatoryUUID": "e20b9980-cbc3-4ae6-beae-77fe39eee4eb",
+      "signingPower": 2,
+      "isActive": true
+    }
+  ],
+  "errorDetails": {
+    "code": "1002",
+    "message": "Segment ineligible for the requested organisation"
+  }
+}

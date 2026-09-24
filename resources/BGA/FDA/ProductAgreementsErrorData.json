@@ -1,0 +1,120 @@
+{
+  "productAgreements": {
+    "data": [
+      {
+        "productType": "BE_ING_CORP_AC",
+        "name": "TRADITIONEEL BOUWEN NV",
+        "lifeCycleStatusType": "EFF_AR",
+        "currency": "EUR",
+        "effectiveDate": "2018-05-15T23:00:00.000Z",
+        "identifiers": [
+          {
+            "type": "BE_PAN",
+            "value": "6301913552920103"
+          },
+          {
+            "type": "BE_CONTR",
+            "value": "30100067574800000103"
+          },
+          {
+            "type": "UUID1",
+            "value": "302802c4-e74f-4f09-87f0-0b54da275589"
+          },
+          {
+            "type": "IBAN1",
+            "value": "BE11301000675748"
+          }
+        ]
+      },
+      {
+        "productType": "BE_ING_MGN_CRN_AC",
+        "name": "TRADITIONEEL BOUWEN NV",
+        "lifeCycleStatusType": "EFF_AR",
+        "currency": "EUR",
+        "effectiveDate": "2018-05-15T23:00:00.000Z",
+        "identifiers": [
+          {
+            "type": "BE_PAN",
+            "value": "6301913552920103"
+          },
+          {
+            "type": "BE_CONTR",
+            "value": "30100067574800000103"
+          },
+          {
+            "type": "UUID",
+            "value": "302802c4-e74f-4f09-87f0-0b54da275591"
+          },
+          {
+            "type": "IBAN",
+            "value": "BE11301000675748"
+          }
+        ]
+      },
+      {
+        "productType": "BE_ING_PROF_CRN_AC",
+        "name": "TRADITIONEEL BOUWEN NV",
+        "lifeCycleStatusType": "EFF_AR",
+        "currency": "EUR",
+        "effectiveDate": "2018-05-15T23:00:00.000Z",
+        "identifiers": [
+          {
+            "type": "BE_PAN",
+            "value": "6301913552920103"
+          },
+          {
+            "type": "BE_CONTR",
+            "value": "30100067574800000103"
+          },
+          {
+            "type": "UUID",
+            "value": "302802c4-e74f-4f09-87f0-0b54da275592"
+          },
+          {
+            "type": "IBAN",
+            "value": "BE11301000675748"
+          }
+        ]
+      },
+      {
+        "productType": "BE_ING_GNT_GVN",
+        "name": "TRADITIONEEL BOUWEN NV",
+        "lifeCycleStatusType": "EFF_AR",
+        "currency": "EUR",
+        "effectiveDate": "2020-09-20T23:00:00.000Z",
+        "identifiers": [
+          {
+            "type": "UUID",
+            "value": "885d30f0-b290-45a7-a7db-f4755e6b6af4"
+          },
+          {
+            "type": "BE_CONTR",
+            "value": "31002800004700000405"
+          },
+          {
+            "type": "BE_KLC",
+            "value": "310051042601"
+          }
+        ],
+        "involvedPartyRelationships": {
+          "data": [
+            {
+              "involvedParty": {
+                "id": "14d8a19e-75bc-416b-b9b6-3aa3d1c7e17d"
+              },
+              "type": "FULL_OWN",
+              "effectiveDate": "2020-09-20T23:00:00.000Z"
+            },
+            {
+              "involvedParty": {
+                "id": "14d8a19e-75bc-416b-b9b6-3aa3d1c7e17d"
+              },
+              "type": "HOLDR",
+              "effectiveDate": "2025-02-05T13:46:36.263Z"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

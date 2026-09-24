@@ -1,0 +1,277 @@
+{
+  "requestId": "f67da295-72fe-4bf2-96f3-2fd36d975a98",
+  "translationLanguage": "en_GB",
+  "issueToAnotherParty": false,
+  "instructingParty": {
+    "individual": {
+      "legalRepId": "07873b5c-489d-43cb-9cba-77f81905e682",
+      "individualName": {
+        "fullName": "NESTORINETD BEN ALAMITD"
+      },
+      "digitalAddresses": [
+        {
+          "digitalAddressType": "EMAIL_ADR",
+          "digitalAddressUsageType": "PSN_EMAIL",
+          "fullDigitalAddress": "dxgxkggk.tkdkiaxgg@nxxgz-xgdik.example.com"
+        },
+        {
+          "digitalAddressType": "TEL_ADR",
+          "digitalAddressUsageType": "MBL_TEL_NBR",
+          "fullDigitalAddress": "+3269866416"
+        }
+      ],
+      "internalIdentifiers": [
+        {
+          "type": "GRID",
+          "value": "48577720"
+        },
+        {
+          "type": "ING_ID_BE",
+          "value": "0345050925"
+        },
+        {
+          "type": "RGB_NL",
+          "value": "741282992"
+        },
+        {
+          "type": "UUID",
+          "value": "07873b5c-489d-43cb-9cba-77f81905e682"
+        },
+        {
+          "type": "CSI_BE",
+          "value": "0741138594"
+        }
+      ]
+    },
+    "organisation": {
+      "legalEntityId": "c135b9ae-d6ee-4898-b236-f33a400d09fd",
+      "cinNumber": "0828434042",
+      "legalForm": "BE_017",
+      "organisationName": {
+        "type": "LGL_NM",
+        "fullName": "ASSOCIATIONPSYCHANALYSES COMPAREESTD"
+      },
+      "postalAddress": {
+        "countryCode": "BE",
+        "cityName": "RAMEGNIES-CHIN",
+        "postalCode": "7520",
+        "firstAddress": "RUE DU NOIR BOEUF 2 3"
+      },
+      "digitalAddresses": [
+        {
+          "digitalAddressType": "EMAIL_ADR",
+          "digitalAddressUsageType": "PSN_EMAIL"
+        }
+      ],
+      "internalIdentifiers": [
+        {
+          "type": "UUID",
+          "value": "c135b9ae-d6ee-4898-b236-f33a400d09fd"
+        },
+        {
+          "type": "GRID",
+          "value": "37650110"
+        },
+        {
+          "type": "CSI_BE",
+          "value": "0246913401"
+        }
+      ]
+    }
+  },
+  "beneficiary": {
+    "cinNumber": "0828434042",
+    "beneficiaryType": "COMPANY",
+    "organisationName": {
+      "fullName": "LA LOTERIE NATIONALE"
+    },
+    "privateIndividual": {
+      "belgiumCitizen": true,
+      "primaryBeneficiaryName": "John Doe",
+      "primaryIdentificationReference": "45621378",
+      "primaryBeneficiaryDob": "1995-02-01",
+      "secondaryBeneficiaryName": "Adrian Doe",
+      "secondaryIdentificationReference": "45621378",
+      "secondaryBeneficiaryDob": "1995-02-01"
+    },
+    "postalAddress": {
+      "countryCode": "BE",
+      "cityName": "BRUSSELS",
+      "postalCode": "1040",
+      "firstAddress": "RUE BELLIARD 25 - 33"
+    },
+    "emailAddress": {
+      "emailIdInformation": "sophie.dandoy@loterie-nationale.be"
+    }
+  },
+  "applicant": {
+    "cinNumber": "0828434042",
+    "organisationName": {
+      "fullName": "LA LOTERIE NATIONALE"
+    },
+    "postalAddress": {
+      "countryCode": "BE",
+      "cityName": "BRUSSELS",
+      "postalCode": "1040",
+      "firstAddress": "RUE BELLIARD 25 - 33"
+    },
+    "emailAddress": {
+      "emailIdInformation": "sophie.dandoy@loterie-nationale.be"
+    }
+  },
+  "financialInformation": {
+    "accountToBeDebited": {
+      "accountName": "a_731655752852422952",
+      "uuid": "1673d7a4-2f40-452d-b94e-053a4b063da5",
+      "ibanNumber": "BE82375084388968",
+      "accountCurrency": "003",
+      "balanceAmount": 22837.64
+    },
+    "creditLine": {
+      "accountName": "a_731655752852422952",
+      "uuid": "1673d7a4-2f40-452d-b94e-053a4b063da5",
+      "ibanNumber": "BE82375084388968",
+      "creditLineAccountNumber": 393031512763,
+      "currency": "003",
+      "amount": 22837.64,
+      "klcNumber": 1144071247
+    }
+  },
+  "guaranteeDetails": {
+    "bgCode": "STATE_LOTTERY",
+    "bgLanguage": "FRENCH",
+    "bgAmount": 456,
+    "bgCurrency": "003",
+    "bankGuarantee": {
+      "bankGuaranteeEnd": "Unspecified (with revocation clause)",
+      "bankGuaranteeEndType": "UNSPECIFIED",
+      "dateOfAgreeInPrinc": "2025-07-11"
+    }
+  },
+  "deliveryInformation": {
+    "recipient": "BENEFICIARY",
+    "mode": "EMAIL_ONLY"
+  },
+  "legalRepresentatives": [
+    {
+      "uuid": "07873b5c-489d-43cb-9cba-77f81905e682",
+      "firstSigner": true,
+      "signer": true,
+      "active": true,
+      "preferredLanguage": "fr",
+      "signingPower": 1,
+      "fullName": "NESTORINETD BEN ALAMITD",
+      "emailId": "dxgxkggk.tkdkiaxgg@nxxgz-xgdik.example.com",
+      "internalIdentifiers": [
+        {
+          "type": "GRID",
+          "value": "48577721"
+        },
+        {
+          "type": "ING_ID_BE",
+          "value": "0345050926"
+        },
+        {
+          "type": "RGB_NL",
+          "value": "741282993"
+        },
+        {
+          "type": "UUID",
+          "value": "07873b5c-489d-43cb-9cba-77f81905e682"
+        },
+        {
+          "type": "CSI_BE",
+          "value": "0741138595"
+        }
+      ]
+    },
+    {
+      "uuid": "b8e85273-7a42-487a-8bdb-7ca4c5350385",
+      "firstSigner": false,
+      "signer": true,
+      "active": true,
+      "preferredLanguage": "en",
+      "signingPower": 2,
+      "fullName": "FRANCETD DAENENS ANNA GERDATD",
+      "emailId": "rdcuw.twrf@twurm-wrbcf.example.com",
+      "internalIdentifiers": [
+        {
+          "type": "GRID",
+          "value": "48577722"
+        },
+        {
+          "type": "ING_ID_BE",
+          "value": "0345050927"
+        },
+        {
+          "type": "RGB_NL",
+          "value": "741282994"
+        },
+        {
+          "type": "UUID",
+          "value": "b8e85273-7a42-487a-8bdb-7ca4c5350385"
+        },
+        {
+          "type": "CSI_BE",
+          "value": "0741138596"
+        }
+      ]
+    },
+    {
+      "uuid": "b8e85273-7a42-487a-8bdb-7ca4c5350377",
+      "firstSigner": false,
+      "signer": false,
+      "active": false,
+      "preferredLanguage": "nl",
+      "fullName": "CARLOS ANTONIOTD SIEBERTTD",
+      "emailId": "ljhjozcv.hvmms@example.com",
+      "signingPower": 1,
+      "internalIdentifiers": [
+        {
+          "type": "GRID",
+          "value": "48577722"
+        },
+        {
+          "type": "ING_ID_BE",
+          "value": "0345050927"
+        },
+        {
+          "type": "RGB_NL",
+          "value": "741282994"
+        },
+        {
+          "type": "UUID",
+          "value": "b8e85273-7a42-487a-8bdb-7ca4c5350385"
+        },
+        {
+          "type": "CSI_BE",
+          "value": "0741138596"
+        }
+      ]
+    }
+  ],
+  "dossierInformation": {
+    "dossierResponseId": "0283f2hjbxv",
+    "agreementDossierResponseId": "0283f2hjbxw"
+  },
+  "alerDetails": {
+    "transactionId": "1673d7a4-2f40-452d-b94e-053a4b063df8",
+    "transactionStatus": "SUCCESS",
+    "invokeAler": true,
+    "signers": [
+      "e20b9980-cbc3-4ae6-beae-77fe39eee4eb"
+    ],
+    "alerErrorDetailData": {
+      "code": "1002",
+      "message": "Segment ineligible for the requested organisation"
+    }
+  },
+  "customDocumentDetails": {
+    "requestId": "e20b9980-cbc3-4ae6-beae-77fe39eee4cde",
+    "uploadedFilesNames": [
+      "filename.pdf"
+    ]
+  },
+  "referenceNumber": "BGOW2507121514454633",
+  "darId": "b59f13b6-0fee-468a-8c7f-c1df1a2b5453"
+}

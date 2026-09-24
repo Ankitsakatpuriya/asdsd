@@ -1,0 +1,18 @@
+{
+  "legalForm": "BE_017",
+  "wbCustomer": false,
+  "internalIdentifiers": [
+    {
+      "type": "UUID",
+      "value": "c135b9ae-d6ee-4898-b236-f33a400d09fd"
+    },
+    {
+      "type": "GRID",
+      "value": "37650110"
+    },
+    {
+      "type": "CSI_BE",
+      "value": "0246913401"
+    }
+  ]
+}

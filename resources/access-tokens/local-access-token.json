@@ -1,0 +1,86 @@
+{
+  "default": {
+    "cid": "clientId",
+    "sky": "ABCDEF12ABCDEF12ABCDEF12ABCDEF12ABCDEF12ABCDEF12ABCDEF12ABCDEF12",
+    "trc": false,
+    "scope": "scope",
+    "exe": {
+      "person": "person",
+      "profile": "profile",
+      "means": [
+        {
+          "typ": "meansType",
+          "id": "meansId"
+        }
+      ],
+      "grant": "grant",
+      "loa": 100,
+      "typ": "type"
+    },
+    "req": {
+      "person": "person",
+      "profile": "profile",
+      "means": [
+        {
+          "typ": "meansType",
+          "id": "meansId"
+        }
+      ],
+      "grant": "defaultGrant",
+      "loa": 100,
+      "typ": "type"
+    },
+    "pty": "pinningType",
+    "pve": "pinningValue",
+    "sid": "id",
+    "ver": "1.0",
+    "jti": "dec1d2f7-7a80-4b43-a25b-5dcb0dd20527",
+    "typ": "access",
+    "exp": 13951976160,
+    "nbf": 1495196716,
+    "iat": 1495196716,
+    "iss": "issuer"
+  },
+  "tom": {
+    "cid": "clientId",
+    "sky": "someOtherKey",
+    "trc": false,
+    "scope": "scope",
+    "exe": {
+      "person": "person",
+      "profile": "profile",
+      "means": [
+        {
+          "typ": "meansType",
+          "id": "meansId"
+        }
+      ],
+      "grant": "grant",
+      "loa": 100,
+      "typ": "type"
+    },
+    "req": {
+      "person": "person",
+      "profile": "profile",
+      "means": [
+        {
+          "typ": "meansType",
+          "id": "meansId"
+        }
+      ],
+      "grant": "tomsGrant",
+      "loa": 100,
+      "typ": "type"
+    },
+    "pty": "pinningType",
+    "pve": "pinningValue",
+    "sid": "id",
+    "ver": "1.0",
+    "jti": "dec1d2f7-7a80-4b43-a25b-5dcb0dd20527",
+    "typ": "access",
+    "exp": 14951976160,
+    "nbf": 1495196716,
+    "iat": 1495196716,
+    "iss": "issuer"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "caseTypeID": "ING-WB-TFS-Work-BankGuarantee",
+  "processID": "pyStartCase",
+  "content": {
+    "VATNumber": "0968729595",
+    "Customer": "DOMAINE DE BIAMONT SRLTD",
+    "DateIn": "20250714",
+    "TempDocumentList": [
+      {
+        "DocumentID": "0283f2hjdo7",
+        "Label": "BG_FINAL_VERSION",
+        "DocumentType": "BG_FINAL"
+      },
+      {
+        "DocumentID": "0283f2hjdnw",
+        "Label": "CONTRACT",
+        "DocumentType": "CONTRACT"
+      }
+    ],
+    "CurrencyCode": "EUR",
+    "Currency": "EUR",
+    "DecisionSheetNeeded": "No",
+    "AgreementDossierID": "0283f2hjdnu",
+    "BranchName": "Hub Manila",
+    "IndirectGuarantee": "No",
+    "GridID": "50706392",
+    "ExistingCreditline": "No",
+    "Urgent": "No",
+    "APICaseID": "BGOW2507141514566484",
+    "Amount": 600,
+    "RequestDossierID": "0283f2hjdnt",
+    "CrossBorder": false,
+    "ChannelName": "OneWeb",
+    "GuaranteeType": "Performance Bond Guarantee",
+    "BeneficiaryEmailAddress": "a@gmail.com",
+    "TypeOfSubmission": "Send BG To TI Plus",
+    "StandardOrCustom": "Standard",
+    "Country": "BE",
+    "pyLabel": "Bank Guarantee",
+    "CustomerAcctNumber": "BE77363250337842",
+    "RequestType": "New",
+    "Team": "Hub Manila",
+    "ORFAgreementReceived": "Yes",
+    "ExtraInfo": {
+      "Decision": {
+        "PDLResult": "OK"
+      }
+    },
+    "CreditRiskCheck": "NOK"
+  }
+}

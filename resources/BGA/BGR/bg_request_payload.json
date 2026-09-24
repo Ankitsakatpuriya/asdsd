@@ -1,0 +1,121 @@
+{
+  "issueToAnotherParty": false,
+  "instructingParty": {
+    "individual": {
+      "legalRepId": "e9b5fcdc-7f29-4c81-b804-8ee06603c0c7",
+      "individualName": {
+        "firstName": "EMERICKTD",
+        "lastName": "DURUISSEAUTD",
+        "fullName": "EMERICKTD DURUISSEAUTD"
+      },
+      "digitalAddresses": [
+        {
+          "digitalAddressType": "EMAIL_ADR",
+          "digitalAddressUsageType": "BSN_EMAIL",
+          "fullDigitalAddress": "ruberxjhbixxn@example.com"
+        },
+        {
+          "digitalAddressType": "TEL_ADR",
+          "digitalAddressUsageType": "LANDLINE_TEL_NBR",
+          "fullDigitalAddress": "+3271331653"
+        }
+      ]
+    },
+    "organisation": {
+      "legalEntityId": "b6c4e28c-8a3a-4e58-8063-b86c2f3e84d8",
+      "cinNumber": "0968729595",
+      "organisationName": {
+        "type": "LGL_NM",
+        "fullName": "DOMAINE DE BIAMONT SRLTD"
+      },
+      "postalAddress": {
+        "countryCode": "BE",
+        "cityName": "HAM-SUR-HEURE",
+        "postalCode": "6120",
+        "firstAddress": "RUE DU CHENEAU(NAL) 135/D",
+        "usageType": "CRSPD_ADR"
+      },
+      "digitalAddresses": [
+        {
+          "digitalAddressType": "EMAIL_ADR",
+          "digitalAddressUsageType": "BSN_EMAIL",
+          "fullDigitalAddress": "xsxkxggrxddgv@example.com"
+        }
+      ]
+    }
+  },
+  "beneficiary": {
+    "cinNumber": "0991882309",
+    "beneficiaryType": "PRIVATE_INDIVIDUAL",
+    "organisationName": {
+      "fullName": "IXUDRA BV"
+    },
+    "privateIndividual": {
+      "belgiumCitizen": true,
+      "primaryBeneficiaryName": "primaryBeneficiaryName",
+      "primaryIdentificationReference": "primaryIdentificationReference",
+      "primaryBeneficiaryDob": "1020-02-01",
+      "secondaryBeneficiaryName": "secondaryBeneficiaryName",
+      "secondaryIdentificationReference": "secondaryIdentificationReference",
+      "secondaryBeneficiaryDob": "1020-02-01"
+    },
+    "postalAddress": {
+      "countryCode": "BE",
+      "cityName": "ZOERSEL",
+      "postalCode": "2980",
+      "firstAddress": "SPECHTENDREEF 49",
+      "streetName": "SPECHTENDREEF",
+      "houseNumber": "49"
+    },
+    "emailAddress": {
+      "emailIdInformation": "ankus@ing.com"
+    }
+  },
+  "financialInformation": {
+    "accountToBeDebited": {
+      "uuid": "e2929da5-6d44-475c-ac28-843d0c5a8682",
+      "accountName": "a_722172786729394926",
+      "accountStatus": 0,
+      "ibanNumber": "BE77363250337842",
+      "accountCurrency": "003",
+      "balanceAmount": 150001999.85
+    },
+    "creditLine": {
+      "uuid": "72ad1404-3298-4cf4-8b8d-5e4c3aa56419",
+      "accountName": "a_779166068176006820",
+      "creditLineAccountNumber": 393031512763,
+      "klcNumber": 1144071247,
+      "ibanNumber": "BE40393031512763",
+      "currency": "003",
+      "amount": 90000
+    }
+  },
+  "guaranteeDetails": {
+    "bgCode": "DCK_CDC",
+    "bgLanguage": "ENGLISH",
+    "bgAmount": 5000,
+    "bgTypesAmtCurrency": "003",
+    "bankGuarantee": {
+      "buildingAddress": {
+        "streetNumber": "Medical street 56",
+        "postalCode": "4400024",
+        "city": "Nagpur"
+      },
+      "description": "description",
+      "contractDescription": "contractDescription",
+      "BankGuaranteeEndType": "BankGuaranteeEndType"
+    }
+  },
+  "deliveryInformation": {
+    "recipient": "BENEFICIARY",
+    "mode": "EMAIL_ONLY"
+  },
+  "alerDetails": {
+    "transactionId": "1673d7a4-2f40-452d-b94e-053a4b063df8",
+    "invokeAler": true,
+    "signers": [
+      "e9b5fcdc-7f29-4c81-b804-8ee06603c0c7",
+      "b8e85273-7a42-487a-8bdb-7ca4c5350385"
+    ]
+  }
+}

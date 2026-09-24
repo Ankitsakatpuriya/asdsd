@@ -1,0 +1,121 @@
+{
+  "parameters": {
+    "team": "Hub Manila",
+    "existingCreditLine": "Yes",
+    "indirectGuarantee": "No",
+    "decisionSheetNeeded": "no",
+    "decisionSheetReceived": "20251027",
+    "otherDocumentsNeeded": "no",
+    "orfAgreementReceived": "Yes",
+    "customerSegmentation": "DOMESTIC",
+    "extraInfo": {
+      "decision": {
+        "pdlResult": "OK",
+        "creditLineResult": "OK"
+      }
+    },
+    "documentumIdentifiers": {
+      "requestDossierId": "344135ugtov",
+      "agreementDossierId": "344135ugtow"
+    }
+  },
+  "applicationRequest": {
+    "applicant": {
+      "name": "VER BROUW DUYSTERS OOMS CERCKEL NV",
+      "postalAddress": {
+        "addressLine": "VOORHAVENLAAN 193/1",
+        "postCode": "8400",
+        "townName": "OOSTENDE",
+        "country": "BE"
+      },
+      "contactDetails": {
+        "name": "JAEDEN RUTHERFORD",
+        "phoneNumber": "+26606682",
+        "emailAddress": "asasdgkl@ing.com"
+      },
+      "organisation": {
+        "idType": "grid",
+        "id": "36841850",
+        "name": "VER BROUW DUYSTERS OOMS CERCKEL NV"
+      }
+    },
+    "beneficiary": {
+      "name": "EVOLVE CONSULTING BVBA",
+      "postalAddress": {
+        "addressLine": "BEUKELAARSTRAAT",
+        "postCode": "9000",
+        "townName": "GENT",
+        "country": "BE"
+      },
+      "contactDetails": {
+        "name": "EVOLVE CONSULTING BVBA",
+        "emailAddress": "ankush.sukhdeve2@ing.com"
+      }
+    },
+    "documents": [
+      {
+        "id": "344135ugtox",
+        "type": "REQUEST_DOC"
+      },
+      {
+        "id": "344135ugtoy",
+        "type": "REQUEST_DOC"
+      },
+      {
+        "id": "344135ugtoz",
+        "type": "FINAL_DOC"
+      },
+      {
+        "id": "344135ugtp0",
+        "type": "CREDIT_DOC"
+      }
+    ],
+    "undertakingApplicationDetails": {
+      "purpose": "Belgium Public Contract",
+      "termsAndConditions": "Belgium Public Contract",
+      "type": {
+        "code": "PERF"
+      },
+      "expiryDetails": {
+        "expiryTerms": {
+          "date": "2099-12-31",
+          "openEndedIndicator": "Yes"
+        }
+      },
+      "undertakingAmount": {
+        "amount": 5000.0,
+        "currency": "EUR"
+      },
+      "undertakingWording": {
+        "modelForm": "PUBLIC_CONTRACT",
+        "requestedWordingLanguage": {
+          "code": "nl"
+        }
+      },
+      "obligorChargeAccount": {
+        "currency": "EUR",
+        "identification": {
+          "iban": "BE30380019510411"
+        }
+      },
+      "underlyingTransaction": {
+        "transactionDate": "2025-11-05"
+      },
+      "obligorLiabilityAccount": {
+        "currency": "EUR",
+        "identification": {
+          "iban": "BE89384031884085"
+        }
+      }
+    },
+    "advisingPartyIndicator": "No",
+    "counterUndertakingIndicator": "No",
+    "deliveryChannel": {
+      "deliverToPartyType": "beneficiary"
+    },
+    "masterReferenceId": "BEBTFSBGR6000022",
+    "isStp": "N",
+    "isoIndicName": "No",
+    "team": "TFSBEG"
+  }
+}

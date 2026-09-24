@@ -1,0 +1,48 @@
+{
+  "id": "BGOS-email-cd2db265-1481-404d-bce1-c07cbbf8a595",
+  "expiresAt": null,
+  "notificationTarget": {
+    "recipientAddress": "test@ing.com",
+    "profileId": "e9b5fcdc-7f29-4c81-b804-8ee06603c0c7",
+    "clientIds": null,
+    "contactPointId": null
+  },
+  "notificationMessage": {
+    "attachments": {
+      "templateManagerApi": [
+        {
+          "fileName": "BGOW2507251515630252_bid_bond.xml",
+          "templateName": "P31464/Template/simple-xml-document",
+          "templateParameters": "{\"lgl_rep_count_status\":\"true\",\"sendToZip\":\"7712\",\"sendToCompany\":\"STONEGATE BVBA\",\"sendToName\":\"STONEGATE BVBA\",\"bgAmount\":\"5000\",\"beneficieryName\":\"STONEGATE BVBA\",\"beneficiary_name_screening_status\":\"true\",\"referenceNumber\":\"BGOW2507251515630252\",\"delivery_mode_email_type\":\"DELIVERY_MODE_EMAIL\",\"applicantKbo\":\"1090223877\",\"sendMode\":\"EMAIL_ONLY\",\"bid_bond_not_other_name\":\"Bid Bond End Date Status\",\"bid_bond_not_other_status\":\"false\",\"sds_response_type\":\"SDS_RESPONSE\",\"sendTo\":\"BENEFICIARY\",\"delivery_mode_email_status\":\"true\",\"guarantee_scope_justification\":\"The Guarantee is in scope\",\"applicant_unavailable_type\":\"APPLICANT_UNAVAILABLE\",\"accountToDebit\":\"BE77 3632 5033 7842\",\"beneficiaryCountry\":\"BE\",\"applicantZip\":\"6120\",\"currency_eur_name\":\"Currency EUR\",\"contractReference\":\"BEDX256478912\",\"issueForAnotherParty\":\"1\",\"applicantCountry\":\"BE\",\"updateDate\":\"2025/07/25 11:49:24\",\"applicant_unavailable_timestamp\":\"2025/07/25 11:48:53\",\"sendToStreet\":\"BOULEVARD DU CHAMP D'AVIATION(H)\",\"applicantStreet\":\"RUE DU CHENEAU(NAL) 135/D\",\"party_from_belgium_type\":\"PARTY_FROM_BELGIUM\",\"credit_line_balance_name\":\"Credit Line Information Status\",\"contractDescription\":\"dfdfss\",\"credit_line_balance_justification\":\"NOT_AVAILABLE\",\"delivery_mode_email_justification\":\"Email has been selected as mode of delivery\",\"lgl_rep_count_name\":\"Legal Representative Count\",\"delivery_mode_email_timestamp\":\"2025/07/25 11:48:53\",\"applicant_name_screening_type\":\"APPLICANT_NAME_SCREENING\",\"guarantee_scope_type\":\"GUARANTEE_SCOPE\",\"beneficiary_name_screening_timestamp\":\"2025/07/25 11:48:51\",\"sendToCity\":\"HERSEAUX\",\"beneficiaryCity\":\"HERSEAUX\",\"beneficiaryEmail\":\"ankush@ing.com\",\"currency_eur_type\":\"CURRENCY_EUR\",\"beneficiaryStreet\":\"BOULEVARD DU CHAMP D'AVIATION(H)\",\"bid_bond_not_other_justification\":\"Bid bond expiry selected as Other (e.g. reduction plan and partial releases)\",\"applicant_unavailable_status\":\"true\",\"beneficiary_name_screening_type\":\"BENEFICIARY_NAME_SCREENING\",\"guarantee_scope_status\":\"true\",\"applicant_unavailable_justification\":\"The bank guarantee issue for instructing party\",\"beneficiary_name_screening_justification\":\"Hit Not Found\",\"applicantCity\":\"HAM-SUR-HEURE\",\"party_from_belgium_timestamp\":\"2025/07/25 11:48:53\",\"bid_bond_not_other_type\":\"BID_BOND_NOT_OTHER\",\"credit_line_balance_timestamp\":\"2025/07/25 11:48:51\",\"pam_qualification_response_status\":\"false\",\"typeNumber\":\"119\",\"sds_response_name\":\"SDS Response Status\",\"credit_line_balance_type\":\"CREDIT_LINE_BALANCE\",\"sds_response_justification\":\"Automatic Decision : 7\",\"applicant_name_screening_name\":\"Applicant Name Screening\",\"bid_bond_not_other_timestamp\":\"2025/07/25 11:48:51\",\"guarantee_scope_name\":\"Guarantee Type Status\",\"pam_qualification_response_name\":\"Instructing Party CDD Status\",\"applicant_name_screening_timestamp\":\"2025/07/25 11:48:51\",\"applicantName\":\"DOMAINE DE BIAMONT SRLTD\",\"creationDate\":\"2025/07/25 11:49:24\",\"currency_eur_status\":\"true\",\"guarantee_scope_timestamp\":\"2025/07/25 11:48:51\",\"credit_line_balance_status\":\"false\",\"party_from_belgium_name\":\"Party From Belgium\",\"pam_qualification_response_timestamp\":\"2025/07/25 11:48:51\",\"bgCurrency\":\"EUR\",\"bgExpiry\":\"fddsfdfdssfsd\",\"sendToCountry\":\"BE\",\"pam_qualification_response_justification\":\"Beneficiary CDD Pass and Requester CDD Failed\",\"lgl_rep_count_timestamp\":\"2025/07/25 11:48:53\",\"legalRepName\":\"EMERICKTD DURUISSEAUTD\",\"delivery_mode_email_name\":\"Delivery Mode Email\",\"lgl_rep_count_type\":\"LGL_REP_COUNT\",\"beneficiary_name_screening_name\":\"Beneficiary Name Screening\",\"LegalRepPhone\":\"+3271331653\",\"bgExpiryDt\":\"\",\"party_from_belgium_status\":\"true\",\"bgLang\":\"fr\",\"party_from_belgium_justification\":\"All involved party are based in Belgium\",\"currency_eur_timestamp\":\"2025/07/25 11:48:53\",\"translationCode\":\"en-GB\",\"applicant_name_screening_status\":\"true\",\"applicant_name_screening_justification\":\"Applicant not available\",\"lgl_rep_count_justification\":\"The Instructing party represented by 1 legal representatives\",\"applicant_unavailable_name\":\"Applicant Unavailability Status\",\"beneficiaryZip\":\"7712\",\"currency_eur_justification\":\"The selected currency is EUR\",\"sds_response_status\":\"false\",\"sds_response_timestamp\":\"2025/07/25 11:48:53\",\"bgExpiryDescription\":\"Other (e.g. reduction plan and partial releases)\",\"legalRepEmail\":\"ruberxjhbixxn@example.com\",\"pam_qualification_response_type\":\"PAM_QUALIFICATION_RESPONSE\"}",
+          "templateLocale": "en-US",
+          "fileContentType": "text/xml"
+        }
+      ],
+      "apiEndpointDiscovery": null
+    },
+    "prerenderedContent": null,
+    "templateIdentifier": "P31464/Template/simple-html-document",
+    "templateParameters": "{\"legalRepName\":\"EMERICKTD DURUISSEAUTD\",\"referenceNumber\":\"BGOW2507251515630252\"}",
+    "templateLocale": "en-US",
+    "templateProvider": "TMA",
+    "pushParameters": null,
+    "deliveryProviderParameters": null
+  },
+  "notificationDistributionChannel": {
+    "identifier": "P31464/DistributionChannel/BankguaranteeBE-email",
+    "cso": "CSO_BE",
+    "parameters": "{\"ccAddress\":[\"test@ing.com\",\"testcc@ing.com\"]}"
+  },
+  "archivingInformation": null,
+  "notificationTags": null,
+  "notificationMetadata": {
+    "traceId": "00000000000000000000000000000000",
+    "spanId": "0000000000000000",
+    "profileId": "e9b5fcdc-7f29-4c81-b804-8ee06603c0c7",
+    "sessionId": "N.A",
+    "applicationId": "9b9e83d0-38c4-4281-b250-271d7c9a3355",
+    "locale": "en-GB",
+    "communication": "NON_STP_EMAIL_NOTIFICATION",
+    "parentId": "N.A"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "code": "BGOS-02-008",
+  "severity": "critical",
+  "message": "Technical error",
+  "externalHttpStatus": 500,
+  "internalHttpStatus": 500
+}

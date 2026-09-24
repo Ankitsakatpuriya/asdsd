@@ -1,0 +1,36 @@
+{
+  "data": [
+    {
+      "business_key": "PT",
+      "eff_dt": "1900-01-01",
+      "values": [
+        {
+          "column": "fec_rsk_tp_code",
+          "value": "LOW",
+          "table": "fec_rsk_tp"
+        },
+        {
+          "column": "indpndnt_ind",
+          "value": "Y",
+          "table": "yes_no_indicator"
+        }
+      ]
+    },
+    {
+      "business_key": "BE",
+      "eff_dt": "1900-01-01",
+      "values": [
+        {
+          "column": "fec_rsk_tp_code",
+          "value": "LOW",
+          "table": "fec_rsk_tp"
+        },
+        {
+          "column": "indpndnt_ind",
+          "value": "Y",
+          "table": "yes_no_indicator"
+        }
+      ]
+    }
+  ]
+}

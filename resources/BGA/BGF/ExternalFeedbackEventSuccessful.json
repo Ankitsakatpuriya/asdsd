@@ -1,0 +1,45 @@
+{
+  "id": "cec34562-6720-4e39-bec7-23cb3b93983e",
+  "notificationId": "97313318-5b6e-458a-84d2-de9d7b5eef8d",
+  "notificationRequestId": "dummyId",
+  "notificationFeedback": {
+    "status": "DELIVERED_TO_PROVIDER",
+    "statusDetail": "DELIVERED_TO_PROVIDER",
+    "error": null
+  },
+  "notificationTarget": {
+    "recipientAddress": "tst.instantlending@ing.com",
+    "provider": null,
+    "profileId": null,
+    "contactPointId": null,
+    "clientIds": null
+  },
+  "notificationMessage": {
+    "prerenderedContent": null,
+    "templateIdentifier": "P06947/Template/instant_lending_offer_email",
+    "templateParameters": "{}",
+    "templateLocale": "en-GB",
+    "templateProvider": "TMA"
+  },
+  "notificationDistributionChannel": {
+    "cso": "CSO_BE",
+    "identifier": "P06947/DistributionChannel/BusinessLendingApplicationsEmail"
+  },
+  "notificationTags": null,
+  "notificationMetadata": {
+    "traceId": "undefined",
+    "csiIDLegalRep": "1590464557",
+    "emailUsedForCustomer": "hello@company.com",
+    "contractNumber": "363191490265",
+    "sessionId": "N.A",
+    "locale": "en-GB",
+    "parentId": "undefined",
+    "csiIdOrganisation": "1590217604",
+    "spanId": "undefined",
+    "kboNumberOrganisation": "KBO999100268318",
+    "profileId": "b59f13b6-0fee-468a-8c7f-c1df1a2b5452",
+    "documentId": "documentPlaceholderDossierId",
+    "applicationId": "b59f13b6-0fee-468a-8c7f-c1df1a2b5451",
+    "communication": "LOAN_APPLICATION_OFFER"
+  }
+}

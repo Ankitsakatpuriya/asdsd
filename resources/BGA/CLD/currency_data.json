@@ -1,0 +1,22 @@
+{
+  "currencies": [
+    {
+      "entryId": "CCRYISOBBLAED",
+      "tableName": "CCRYISOBBL",
+      "code": "AED",
+      "valueNL": "970",
+      "valueFR": "970",
+      "valueEN": "970"
+    },
+    {
+      "entryId": "CCRYISOBBLAFN",
+      "tableName": "CCRYISOBBL",
+      "code": "AFN",
+      "valueNL": "961",
+      "valueFR": "961",
+      "valueEN": "961",
+      "valueDE": "961"
+    }
+  ]
+}
+

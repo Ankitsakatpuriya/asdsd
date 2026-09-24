@@ -1,0 +1,116 @@
+{
+  "stpResults": [
+    {
+      "name": "Party From Belgium",
+      "type": "PARTY_FROM_BELGIUM",
+      "stpPossible": true,
+      "timestamp": "2025-07-12T08:05:00.195",
+      "justification": "All involved party are based in Belgium"
+    },
+    {
+      "name": "Instructing Party CDD Status",
+      "type": "INSTRUCTING_PARTY_CDD",
+      "stpPossible": true,
+      "timestamp": "2025-07-12T08:04:59.809",
+      "justification": "Instructing Party cdd paas"
+    },
+    {
+      "name": "Beneficiary Name Screening",
+      "type": "BENEFICIARY_NAME_SCREENING",
+      "stpPossible": true,
+      "timestamp": "2025-07-12T08:05:00.194",
+      "justification": "Hit Not Found"
+    },
+    {
+      "name": "SDS Response stpPossible",
+      "type": "SDS_RESPONSE",
+      "stpPossible": true,
+      "timestamp": "2025-07-12T08:04:59.691",
+      "justification": "Automatic Decision : 1"
+    },
+    {
+      "name": "Applicant Name Screening",
+      "type": "APPLICANT_NAME_SCREENING",
+      "stpPossible": true,
+      "timestamp": "2025-07-12T08:04:59.698",
+      "justification": "Applicant not available"
+    },
+    {
+      "name": "Credit Line Information stpPossible",
+      "type": "CREDIT_LINE_BALANCE",
+      "stpPossible": false,
+      "timestamp": "2025-07-12T08:04:59.705",
+      "justification": "NOT_AVAILABLE"
+    },
+    {
+      "name": "Guarantee Type stpPossible",
+      "type": "GUARANTEE_SCOPE",
+      "stpPossible": true,
+      "timestamp": "2025-07-12T08:04:59.705",
+      "justification": "The Guarantee is in scope"
+    },
+    {
+      "name": "Bid Bond End Date stpPossible",
+      "type": "BID_BOND_NOT_OTHER",
+      "stpPossible": true,
+      "timestamp": "2025-07-12T08:04:59.705",
+      "justification": "No Bid bond guarantee has been requested "
+    },
+    {
+      "name": "Delivery Mode Email",
+      "type": "DELIVERY_MODE_EMAIL",
+      "stpPossible": true,
+      "timestamp": "2025-07-12T08:05:00.196",
+      "justification": "Email has been selected as mode of delivery"
+    },
+    {
+      "name": "Currency EUR",
+      "type": "CURRENCY_EUR",
+      "stpPossible": true,
+      "timestamp": "2025-07-12T08:05:00.196",
+      "justification": "The selected currency is EUR"
+    },
+    {
+      "name": "Legal Representative Count",
+      "type": "LGL_REP_COUNT",
+      "stpPossible": true,
+      "timestamp": "2025-07-12T08:05:00.196",
+      "justification": "The Instructing party represented by 2 legal representatives"
+    },
+    {
+      "name": "Applicant Availability stpPossible",
+      "type": "APPLICANT_UNAVAILABLE",
+      "stpPossible": true,
+      "timestamp": "2025-07-12T08:05:00.196",
+      "justification": "The bank guarantee issue for instructing party"
+    },
+    {
+      "name": "Guarantee STP ALlowed",
+      "type": "GUARANTEE_STP_ALLOWED",
+      "stpPossible": true,
+      "timestamp": "2025-10-12T08:05:00.196",
+      "justification": "BG is not allowed to process via STP"
+    },
+    {
+      "name": "Promise replacing status",
+      "type": "PROMISE_REPLACER",
+      "stpPossible": true,
+      "timestamp": "2025-10-12T08:05:00.196",
+      "justification": " bank guarantee is not replacing promise"
+    },
+    {
+      "name": "Customer signing allowed Status",
+      "type": "CUSTOMER_SIGN_ALLOWED",
+      "stpPossible": true,
+      "timestamp": "2025-07-12T08:05:00.196",
+      "justification": "customer is allowed to sign the documents"
+    },
+    {
+      "name": "Signer signing power Status",
+      "type": "SIGNER_POWER",
+      "stpPossible": true,
+      "timestamp": "2025-07-12T08:05:00.196",
+      "justification": "All signers  have complete authority to sign the documents"
+    }
+  ]
+}

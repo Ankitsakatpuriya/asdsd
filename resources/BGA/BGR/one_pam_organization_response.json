@@ -1,0 +1,120 @@
+{
+  "organisation": {
+    "involvedPartyIdentifier": "c135b9ae-d6ee-4898-b236-f33a400d09fd",
+    "involvedPartyType": "ORG",
+    "dataSource": "CSI_BE",
+    "logicalDataDomain": "ING_BE_SHARED",
+    "countryOfResidence": "BE",
+    "preferredLanguage": "fr",
+    "financialLegalStatusType": "LGL_UNRSTD",
+    "legalForm": "BE_017",
+    "countryOfIncorporation": "BE",
+    "organisationLifeCycleStatusType": "ACTV_ORG",
+    "dateOfFoundation": "1989-04-03",
+    "effectiveDate": "1989-08-21T23:00:00.000Z",
+    "dateCreated": "2019-04-24T16:20:41.275Z",
+    "lastUpdateUser": "CSI_BE",
+    "lastUpdateDate": "2024-11-04T13:40:05.385Z",
+    "postalAddresses": [
+      {
+        "postalAddressUsageType": "INC_ADR",
+        "countryCode": "BE",
+        "cityName": "RAMEGNIES-CHIN",
+        "postalCode": "7520",
+        "streetName": "Rue Joseph Hinnisdaels",
+        "houseNumber": "6",
+        "unstructuredAddressLine1": "RUE DU NOIR BOEUF 2 3",
+        "unstructuredAddressLine2": "4257        BERLOZ",
+        "dataSource": "CSI_BE",
+        "lastUpdateUser": "OnePAM IL",
+        "lastUpdateDate": "2024-04-30T11:06:06.805Z",
+        "effectiveDate": "1988-12-31T23:00:00.000Z"
+      },
+      {
+        "postalAddressUsageType": "CRSPD_ADR",
+        "countryCode": "BE",
+        "cityName": "RAMEGNIES-CHIN",
+        "postalCode": "7520",
+        "streetName": "Rue Joseph Hinnisdaels",
+        "houseNumber": "6",
+        "unstructuredAddressLine1": "RUE DU NOIR BOEUF 2 3",
+        "unstructuredAddressLine2": "4257        BERLOZ",
+        "dataSource": "CSI_BE",
+        "lastUpdateUser": "OnePAM IL",
+        "lastUpdateDate": "2024-04-30T11:06:06.511Z",
+        "effectiveDate": "1988-12-31T23:00:00.000Z"
+      }
+    ],
+    "digitalAddresses": [
+      {
+        "digitalAddressType": "TEL_ADR",
+        "digitalAddressUsageType": "LANDLINE_TEL_NBR",
+        "fullDigitalAddress": "+3269243606",
+        "effectiveDate": "1988-12-31T23:00:00.000Z",
+        "dataSource": "CSI_BE",
+        "lastUpdateUser": "OnePAM IL",
+        "lastUpdateDate": "2024-04-17T14:30:40.265Z"
+      }
+    ],
+    "involvedPartyInternalIdentifiers": [
+      {
+        "involvedPartyInternalIdentifierType": "UUID",
+        "involvedPartyInternalIdentifierValue": "c135b9ae-d6ee-4898-b236-f33a400d09fd",
+        "lastUpdateUser": "OnePAM IL",
+        "lastUpdateDate": "2019-04-24T16:20:41.381Z"
+      },
+      {
+        "involvedPartyInternalIdentifierType": "GRID",
+        "involvedPartyInternalIdentifierValue": "37650110",
+        "lastUpdateUser": "OnePAM IL",
+        "lastUpdateDate": "2019-04-24T16:20:41.372Z"
+      },
+      {
+        "involvedPartyInternalIdentifierType": "CSI_BE",
+        "involvedPartyInternalIdentifierValue": "0246913401",
+        "lastUpdateUser": "OnePAM IL",
+        "lastUpdateDate": "2019-04-24T16:20:41.363Z"
+      }
+    ],
+    "involvedPartyGroups": [
+      {
+        "involvedPartyGroupType": "SVC_SEGM_BE",
+        "involvedPartyGroupCode": "362",
+        "effectiveDate": "1989-08-21T22:00:00.000Z",
+        "lastUpdateUser": "CSI_BE/CSI_BRIDGE",
+        "lastUpdateDate": "2023-06-05T11:24:17.138Z"
+      }
+    ],
+    "managingEntities": [
+      {
+        "managingEntityType": "RLTNP_MGR_PRTFL_BE",
+        "managingEntityCode": "03290",
+        "effectiveDate": "2023-04-27T22:00:00.000Z",
+        "lastUpdateDate": "2023-06-07T12:17:56.096Z",
+        "lastUpdateUser": "OnePAM IL"
+      },
+      {
+        "managingEntityType": "BR_OFFC_BE",
+        "managingEntityCode": "375900",
+        "effectiveDate": "1989-08-21T22:00:00.000Z",
+        "lastUpdateDate": "2019-07-24T13:38:23.229Z",
+        "lastUpdateUser": "OnePAM IL"
+      }
+    ],
+    "organisationNames": [
+      {
+        "organisationNameType": "LGL_NM",
+        "organisationName": "ASSOCIATIONPSYCHANALYSES COMPAREESTD",
+        "effectiveDate": "2023-10-17T00:34:20.000Z",
+        "dataSource": "CSI_BE",
+        "lastUpdateUser": "CSI_BE/CSI_BRIDGE",
+        "lastUpdateDate": "2023-10-17T00:34:20.470Z"
+      }
+    ],
+    "_links": {
+      "self": {
+        "href": "https://apis.ing.com/v6/involved-parties/c135b9ae-d6ee-4898-b236-f33a400d09fd"
+      }
+    }
+  }
+}

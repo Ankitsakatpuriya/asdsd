@@ -1,0 +1,161 @@
+{
+  "individual": {
+    "involvedPartyIdentifier": "07873b5c-489d-43cb-9cba-77f81905e682",
+    "involvedPartyType": "INDIV",
+    "dataSource": "CSI_BE",
+    "logicalDataDomain": "ING_BE",
+    "countryOfResidence": "BE",
+    "preferredLanguage": "fr",
+    "financialLegalStatusType": "LGL_UNRSTD",
+    "legalCompetencyStatusType": "LGL_CMP_ADLT",
+    "individualLifeCycleStatusType": "LIVING_IDV",
+    "countryOfBirth": "BE",
+    "cityOfBirth": "LAPY",
+    "dateOfBirth": "1958-10-08",
+    "dateOfBirthQualityIndicator": "COMPL",
+    "gender": "FEML",
+    "maritalStatus": "UNMR",
+    "effectiveDate": "2012-05-30T22:00:00.000Z",
+    "dateCreated": "2018-10-13T09:03:21.700Z",
+    "lastUpdateUser": "OnePAM IL",
+    "lastUpdateDate": "2024-04-19T09:02:13.133Z",
+    "postalAddresses": [
+      {
+        "postalAddressUsageType": "CRSPD_ADR",
+        "countryCode": "BE",
+        "cityName": "RAMEGNIES-CHIN",
+        "postalCode": "7520",
+        "streetName": "Rue Joseph Hinnisdaels",
+        "houseNumber": "6",
+        "unstructuredAddressLine1": "RUE DU NOIR BOEUF 2 3",
+        "unstructuredAddressLine2": "4257        BERLOZ",
+        "dataSource": "CSI_BE",
+        "lastUpdateUser": "OnePAM IL",
+        "lastUpdateDate": "2024-05-01T16:59:25.103Z",
+        "effectiveDate": "2012-05-23T22:00:00.000Z"
+      },
+      {
+        "postalAddressUsageType": "RSDNT_ADR",
+        "countryCode": "BE",
+        "cityName": "RAMEGNIES-CHIN",
+        "postalCode": "7520",
+        "streetName": "Rue Joseph Hinnisdaels",
+        "houseNumber": "6",
+        "unstructuredAddressLine1": "RUE DU NOIR BOEUF 2 3",
+        "unstructuredAddressLine2": "4257        BERLOZ",
+        "dataSource": "CSI_BE",
+        "lastUpdateUser": "OnePAM IL",
+        "lastUpdateDate": "2024-05-01T16:59:25.124Z",
+        "effectiveDate": "2012-05-23T22:00:00.000Z"
+      }
+    ],
+    "digitalAddresses": [
+      {
+        "digitalAddressType": "NL_MING_INBOX",
+        "digitalAddressUsageType": "STD",
+        "fullDigitalAddress": "12088313",
+        "effectiveDate": "2021-05-10T19:21:26.160Z",
+        "lastUpdateUser": "loadUUIDByMDMteam",
+        "lastUpdateDate": "2024-05-14T12:24:19.851Z"
+      },
+      {
+        "digitalAddressType": "EMAIL_ADR",
+        "digitalAddressUsageType": "PSN_EMAIL",
+        "fullDigitalAddress": "dxgxkggk.tkdkiaxgg@nxxgz-xgdik.example.com",
+        "effectiveDate": "2017-11-26T23:00:00.000Z",
+        "dataSource": "CSI_BE",
+        "lastUpdateUser": "OnePAM IL",
+        "lastUpdateDate": "2024-04-19T09:02:13.407Z"
+      },
+      {
+        "digitalAddressType": "TEL_ADR",
+        "digitalAddressUsageType": "LANDLINE_TEL_NBR",
+        "fullDigitalAddress": "+3269866416",
+        "effectiveDate": "2003-03-13T23:00:00.000Z",
+        "dataSource": "CSI_BE",
+        "lastUpdateUser": "OnePAM IL",
+        "lastUpdateDate": "2024-04-19T09:02:13.371Z"
+      },
+      {
+        "digitalAddressType": "TEL_ADR",
+        "digitalAddressUsageType": "MBL_TEL_NBR",
+        "fullDigitalAddress": "+32495114946",
+        "effectiveDate": "2003-03-13T23:00:00.000Z",
+        "dataSource": "CSI_BE",
+        "lastUpdateUser": "OnePAM IL",
+        "lastUpdateDate": "2024-04-19T09:02:13.329Z"
+      }
+    ],
+    "involvedPartyInternalIdentifiers": [
+      {
+        "involvedPartyInternalIdentifierType": "GRID",
+        "involvedPartyInternalIdentifierValue": "48577720",
+        "lastUpdateUser": "OnePAM IL",
+        "lastUpdateDate": "2019-04-27T14:41:52.304Z"
+      },
+      {
+        "involvedPartyInternalIdentifierType": "ING_ID_BE",
+        "involvedPartyInternalIdentifierValue": "0345050925",
+        "lastUpdateUser": "CHG0115328",
+        "lastUpdateDate": "2019-01-18T09:00:34.917Z"
+      },
+      {
+        "involvedPartyInternalIdentifierType": "RGB_NL",
+        "involvedPartyInternalIdentifierValue": "741282992",
+        "lastUpdateUser": "CHG0115328",
+        "lastUpdateDate": "2019-01-18T00:29:21.497Z"
+      },
+      {
+        "involvedPartyInternalIdentifierType": "UUID",
+        "involvedPartyInternalIdentifierValue": "07873b5c-489d-43cb-9cba-77f81905e682",
+        "lastUpdateUser": "OnePAM IL",
+        "lastUpdateDate": "2018-10-13T09:03:21.789Z"
+      },
+      {
+        "involvedPartyInternalIdentifierType": "CSI_BE",
+        "involvedPartyInternalIdentifierValue": "0741138594",
+        "lastUpdateUser": "OnePAM IL",
+        "lastUpdateDate": "2018-10-13T09:03:21.780Z"
+      }
+    ],
+    "involvedPartyGroups": [
+      {
+        "involvedPartyGroupType": "SVC_SEGM_BE",
+        "involvedPartyGroupCode": "7610",
+        "effectiveDate": "2012-05-30T22:00:00.000Z",
+        "lastUpdateUser": "OnePAM IL",
+        "lastUpdateDate": "2025-01-08T11:04:59.826Z"
+      }
+    ],
+    "individualName": {
+      "lastName": "BEN ALAMITD",
+      "firstName1": "NESTORINETD",
+      "dataSource": "CSI_BE",
+      "effectiveDate": "2012-05-30T22:00:00.000Z",
+      "lastUpdateUser": "CSI_BE",
+      "lastUpdateDate": "2025-01-01T13:53:05.471Z"
+    },
+    "individualFormattedNames": [
+      {
+        "individualNameType": "NL_AANHEF_NM",
+        "individualNameValue": "BEN ALAMITD",
+        "effectiveDate": "2021-09-08T17:18:23.812Z",
+        "lastUpdateUser": "IL-BE-CAKE",
+        "lastUpdateDate": "2021-09-08T17:18:23.812Z"
+      },
+      {
+        "individualNameType": "CORRPDC_NM",
+        "individualNameValue": "BEN ALAMITD",
+        "effectiveDate": "2018-10-13T09:03:21.745Z",
+        "dataSource": "CSI_BE",
+        "lastUpdateUser": "IL-BE-CAKE",
+        "lastUpdateDate": "2021-09-08T17:18:23.940Z"
+      }
+    ],
+    "_links": {
+      "self": {
+        "href": "https://apis.ing.com/v6/involved-parties/07873b5c-489d-43cb-9cba-77f81905e682"
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "code": "BGOS-01-01",
+    "severity": "critical",
+    "message": "BankGuaranteeBEOnlineApplicationAPI encountered an unexpected condition that prevented it from fulfilling the request",
+    "externalHttpStatus": 9999,
+    "internalHttpStatus": 400
+  },
+  {
+    "code": "BGOS-01-01",
+    "severity": "critical",
+    "message": "BankGuaranteeBEOnlineApplicationAPI encountered an unexpected condition that prevented it from fulfilling the request",
+    "externalHttpStatus": 500,
+    "internalHttpStatus": 401
+  }
+]

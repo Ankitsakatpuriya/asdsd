@@ -1,0 +1,75 @@
+{
+  "headerMessage": {
+    "originTAPLcode": "TIP",
+    "messageTypeCMSG": "2",
+    "cupdCode": "0"
+  },
+  "arrangements": [
+    {
+      "specificElements": {
+        "eventType": "50",
+        "applicationTAPLcode": "TIP",
+        "arrangementFormatCode": "27",
+        "generalRegulationOfCreditsVersion": "9",
+        "lineOfCreditSpecificElements": {
+          "lineOfCreditComponentType": "0",
+          "lineOfCreditComponentLifecycleStatus": "10",
+          "authorizedUsageFlag": true,
+          "conventionCondition": "10",
+          "securityFlag": false,
+          "coordinationCenterFlag": false,
+          "capitalCreditFlag": false,
+          "lineOfCreditComponentAmount": {
+            "theCurrencyAmount": 600,
+            "theCurrencyCode": "003"
+          },
+          "lineOfCreditComponentAutomaticExtensionFlag": false,
+          "lineOfCreditComponentForeignAmount": {
+            "theCurrencyAmount": 600,
+            "theCurrencyCode": "003"
+          },
+          "lineOfCreditComponentFullyCollectedFlag": false,
+          "lineOfCreditType": "60",
+          "usageCode": "2",
+          "codeXY": "0",
+          "isSubjectOfLaw": false
+        },
+        "collateralSpecificElements": {
+          "collateralArrangementLifecyclestatus": "90"
+        }
+      },
+      "arrangement": {
+        "lineOfCreditArrangement": {
+          "arrangementIdentifier": [
+            {
+              "arrangementIdentifier": "9660003941001"
+            }
+          ],
+          "approvalDate": [
+            2025,
+            11,
+            24
+          ],
+          "isOwnedBy": [
+            {
+              "intervenient": {
+                "roleIsParticipantIn": [
+                  {
+                    "currentAccountArrangement": {
+                      "arrangementIdentifier": [
+                        {
+                          "arrangementIdentifier": "880471659113"
+                        }
+                      ],
+                      "name": "Reference Account number"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
