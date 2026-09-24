@@ -1,0 +1,41 @@
+bgos:
+  scheduled-job:
+    select-record-before:
+      abandoned-days-threshold: 90
+      cancelled-days-threshold: 90
+      fulfilled-days-threshold: 90
+    select-reporting-record:
+      reporting-days-threshold: 1
+    select-failed-fulfilment-record:
+      failed-fulfilment-hours-threshold: 40
+    cleanup-abandoned-requests:
+      cron: '0 0 22 * * ?'  #every night between 10 pm to 12 am
+      name: 'UNIQUE_KEY_CLEANUP_ABANDONED'
+      min: '5m'
+      max: '10m'
+    cleanup-canceled-requests:
+      cron: '0 10 22 * * ?'  #every night between 10 pm to 12 am
+      name: 'UNIQUE_KEY_CLEANUP_CANCELED'
+      min: '5m'
+      max: '10m'
+    cleanup-fulfilled-requests:
+      cron: '0 20 22 * * ?'  #every night between 10 pm to 12 am
+      name: 'UNIQUE_KEY_CLEANUP_FULFILLED'
+      min: '5m'
+      max: '10m'
+    reporting-requests:
+      cron: '0 59 23 * * ?' #every day 11:59 PM
+      name: 'UNIQUE_KEY_DATALAKE_REPORTING'
+      min: '5m'
+      max: '10m'
+      enabled: false
+    fulfilment-failed-requests:
+      cron: '0 0 * * * *'  #every hour
+      name: 'UNIQUE_KEY_FAILED_FULFILMENT_DETECTOR'
+      min: '5m'
+      max: '10m'
+    signature-reminder-requests:
+      cron: '0 0 11 * * *' #every day at 11 Am
+      name: 'UNIQUE_KEY_SIGNATURE_REMINDER'
+      min: '5m'
+      max: '10m'

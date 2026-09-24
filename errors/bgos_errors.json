@@ -1,0 +1,143 @@
+[
+  {
+    "code": "BGOS-00-000",
+    "message": "Not found",
+    "severity": "critical",
+    "externalHttpStatus": 404,
+    "internalHttpStatus": 404
+  },
+  {
+    "code": "BGOS-00-001",
+    "message": "Technical error",
+    "severity": "critical",
+    "externalHttpStatus": 500,
+    "internalHttpStatus": 500
+  },
+  {
+    "code": "BGOS-00-002",
+    "message": "Invalid Response from client",
+    "severity": "critical",
+    "externalHttpStatus": 403
+  },
+  {
+    "code": "BGOS-00-003",
+    "message": "Invalid request",
+    "severity": "critical",
+    "externalHttpStatus": 400
+  },
+  {
+    "code": "BGOS-00-004",
+    "severity": "critical",
+    "message": "Access forbidden",
+    "externalHttpStatus": 403,
+    "internalHttpStatus": 401
+  },
+  {
+    "code": "BGOS-00-005",
+    "message": "Client is not eligible",
+    "severity": "warning",
+    "externalHttpStatus": 400
+  },
+  {
+    "code": "BGOS-00-006",
+    "message": "Invalid Access Token",
+    "severity": "warning",
+    "externalHttpStatus": 400
+  },
+  {
+    "code": "BGOS-00-007",
+    "message": "Not found",
+    "severity": "critical",
+    "externalHttpStatus": 404
+  },
+  {
+    "code": "BGOS-00-008",
+    "message": "Technical error",
+    "severity": "critical",
+    "externalHttpStatus": 500
+  },
+  {
+    "code": "BGOS-00-009",
+    "message": "Technical error",
+    "severity": "critical",
+    "externalHttpStatus": 404
+  },
+  {
+    "code": "BGOS-00-010",
+    "message": "Technical error",
+    "severity": "critical",
+    "externalHttpStatus": 404
+  },
+  {
+    "code": "BGOS-00-011",
+    "message": "Technical error",
+    "severity": "critical",
+    "externalHttpStatus": 400
+  },
+  {
+    "code": "BGOS-00-012",
+    "message": "Technical error",
+    "severity": "critical",
+    "externalHttpStatus": 400
+  },
+  {
+    "code": "BGOS-00-013",
+    "message": "Technical error",
+    "severity": "critical",
+    "externalHttpStatus": 500
+  },
+  {
+    "code": "BGOS-00-014",
+    "message": "Technical error",
+    "severity": "critical",
+    "externalHttpStatus": 500
+  },
+  {
+    "code": "BGOS-00-015",
+    "message": "Technical error",
+    "severity": "critical",
+    "externalHttpStatus": 500
+  },
+  {
+    "code": "BGOS-00-016",
+    "message": "Technical error",
+    "severity": "critical",
+    "externalHttpStatus": 500
+  },
+  {
+    "code": "BGOS-00-017",
+    "message": "Technical error",
+    "severity": "critical",
+    "externalHttpStatus": 500
+  },
+  {
+    "code": "BGOS-00-018",
+    "message": "Technical error",
+    "severity": "critical",
+    "externalHttpStatus": 500
+  },
+  {
+    "code": "BGOS-00-019",
+    "message": "Technical error",
+    "severity": "critical",
+    "externalHttpStatus": 500
+  },
+  {
+    "code": "BGOS-00-020",
+    "message": "Technical error",
+    "severity": "critical",
+    "externalHttpStatus": 404
+  },
+  {
+    "code": "BGOS-00-021",
+    "message": "Technical error",
+    "severity": "critical",
+    "externalHttpStatus": 500
+  },
+  {
+    "code": "BGOS-00-022",
+    "message": "Technical error",
+    "severity": "critical",
+    "externalHttpStatus": 500
+  }
+]

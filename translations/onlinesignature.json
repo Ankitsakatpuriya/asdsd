@@ -1,0 +1,56 @@
+{
+  "BANK_GUARANTEE": {
+    "code": 1,
+    "texts": {
+      "en": "Bank Guarantee",
+      "fr": "Garantie bancaire",
+      "nl": "Bankgarantie",
+      "de": "Bankgarantie"
+    }
+  },
+  "FILLED_IN_CONCEPT": {
+    "code": 2,
+    "texts": {
+      "en": "Bank Guarantee",
+      "fr": "Avant-projet de Garantie Bancaire",
+      "nl": "Bankgarantie Ontwerp",
+      "de": "Bankgarantieentwurf"
+    }
+  },
+  "CONTRACT": {
+    "code": 3,
+    "texts": {
+      "en": "Credit contract",
+      "fr": "Contrat de crédit",
+      "nl": "Kredietcontract",
+      "de": "Kreditvertrag"
+    }
+  },
+  "SIGNATORY_NOTICE": {
+    "code": 4,
+    "texts": {
+      "en": "Read and approved",
+      "fr": "Lu et approuvé",
+      "nl": "Gelezen en goedgekeurd",
+      "de": "Gelesen und einverstanden"
+    }
+  },
+  "FRONTEND_CALLBACK": {
+    "code": 5,
+    "texts": {
+      "en": "Next",
+      "fr": "Suivant",
+      "nl": "Volgende",
+      "de": "Next"
+    }
+  },
+  "AGREEMENT_ID_REPLACER": {
+    "code": 6,
+    "texts": {
+      "en": "referenceId",
+      "fr": "referenceId",
+      "nl": "referenceId",
+      "de": "referenceId"
+    }
+  }
+}

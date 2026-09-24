@@ -1,0 +1,284 @@
+{
+  "bankGuarantees": [
+    {
+      "bankGuaranteeCode": "PUBLIC_CONTRACT",
+      "type": "Performance",
+      "subType": "Public Contract",
+      "typeNumber": "121",
+      "inScope": true
+    },
+    {
+      "bankGuaranteeCode": "PERFORMANCE_BOND",
+      "type": "Performance",
+      "subType": "Performance Bond",
+      "typeNumber": "115",
+      "inScope": true
+    },
+    {
+      "bankGuaranteeCode": "RENTAL",
+      "type": "Rental",
+      "subType": "Rental",
+      "typeNumber": "114",
+      "inScope": true
+    },
+    {
+      "bankGuaranteeCode": "ADVANCE_PAYMENT",
+      "type": "Payment",
+      "subType": "Advance Payment",
+      "typeNumber": "117",
+      "inScope": true
+    },
+    {
+      "bankGuaranteeCode": "PAYMENT_GUARANTEE",
+      "type": "Payment",
+      "subType": "Payment",
+      "typeNumber": "116",
+      "inScope": true
+    },
+    {
+      "bankGuaranteeCode": "MONEY_RETENTION_BOND",
+      "type": "Payment",
+      "subType": "Money Retention Bond",
+      "typeNumber": "118",
+      "inScope": true
+    },
+    {
+      "bankGuaranteeCode": "BID_BOND",
+      "type": "Bid Bond",
+      "subType": "Bid Bond",
+      "typeNumber": "119",
+      "inScope": true
+    },
+    {
+      "bankGuaranteeCode": "REAL_ESTATE",
+      "type": "Real Estate",
+      "subType": "Real Estate",
+      "typeNumber": "138",
+      "inScope": true
+    },
+    {
+      "bankGuaranteeCode": "STATE_LOTTERY",
+      "type": "State Lottery",
+      "subType": "State Lottery",
+      "typeNumber": "131",
+      "inScope": true
+    },
+    {
+      "bankGuaranteeCode": "CUSTOM_1",
+      "type": "Customs",
+      "subType": "Customs Type 1",
+      "typeNumber": "124",
+      "inScope": true
+    },
+    {
+      "bankGuaranteeCode": "CUSTOM_2",
+      "type": "Customs",
+      "subType": "Customs Type 2",
+      "typeNumber": "126",
+      "inScope": true
+    },
+    {
+      "bankGuaranteeCode": "CUSTOM_4",
+      "type": "Customs",
+      "subType": "Customs Type 4",
+      "typeNumber": "123",
+      "inScope": true
+    },
+    {
+      "bankGuaranteeCode": "CUSTOM_5",
+      "type": "Customs",
+      "subType": "Customs Type 5",
+      "typeNumber": "125",
+      "inScope": true
+    },
+    {
+      "bankGuaranteeCode": "OVAM",
+      "type": "OVAM",
+      "subType": "OVAM",
+      "typeNumber": "134",
+      "inScope": true
+    },
+    {
+      "bankGuaranteeCode": "WOODS_PROM_A",
+      "type": "cover a forestry activity",
+      "subType": "Standard Promise - Wallonia",
+      "typeNumber": "304",
+      "inScope": true
+    },
+    {
+      "bankGuaranteeCode": "WOODS_PROM_B",
+      "type": "cover a forestry activity",
+      "subType": "Blank Promise - Wallonia",
+      "typeNumber": "305",
+      "inScope": true
+    },
+    {
+      "bankGuaranteeCode": "DCK_CDC",
+      "type": "DCK/CDC",
+      "subType": "DCK/CDC",
+      "typeNumber": "154",
+      "inScope": true
+    },
+    {
+      "bankGuaranteeCode": "WOODS_PROM_VLA",
+      "type": "cover a forestry activity",
+      "subType": "Standard Promise - Flanders",
+      "typeNumber": "304",
+      "inScope": true
+    },
+    {
+      "bankGuaranteeCode": "WOODS_BGWAL_PUBLIC",
+      "type": "cover a forestry activity",
+      "subType": "Forestry Wallonia with or without cash",
+      "typeNumber": "143",
+      "inScope": true
+    },
+    {
+      "bankGuaranteeCode": "WOODS_BG_PRIVATE",
+      "type": "cover a forestry activity",
+      "subType": "Forestry woods Private",
+      "typeNumber": "143",
+      "inScope": true
+    },
+    {
+      "bankGuaranteeCode": "WOODS_BG_DISCHARGE",
+      "type": "cover a forestry activity",
+      "subType": "Forestry Wallonia - Remaining Amount",
+      "typeNumber": "143",
+      "inScope": true
+    },
+    {
+      "bankGuaranteeCode": "WOODS_BGVLA_PUBLIC",
+      "type": "cover a forestry activity",
+      "subType": "Forestry Flanders",
+      "typeNumber": "143",
+      "inScope": true
+    },
+    {
+      "bankGuaranteeCode": "ABSTRACT_PROM",
+      "type": "Promise (other than forestry)",
+      "subType": "Promise - Call for tender",
+      "typeNumber": "300",
+      "inScope": true
+    },
+    {
+      "bankGuaranteeCode": "PUBLIC_CONTRACT_PROM",
+      "type": "Promise (other than forestry)",
+      "subType": "Promise - Call for public contract",
+      "typeNumber": "301",
+      "inScope": true
+    },
+    {
+      "bankGuaranteeCode": "CUSTOMIZED_TEXT",
+      "type": "Customize Text",
+      "subType": "Customize Text",
+      "typeNumber": "145",
+      "inScope": true
+    },
+    {
+      "bankGuaranteeCode": "PUBLIC_CONTRACT",
+      "type": "Guarantee Fund holidays",
+      "subType": "Guarantee Fund holidays",
+      "typeNumber": "130",
+      "inScope": false
+    },
+    {
+      "bankGuaranteeCode": "PUBLIC_CONTRACT",
+      "type": "Allotment licence/licence for urban development",
+      "subType": "FLANDERS :Guarantee for which a permit has already been given",
+      "typeNumber": "160",
+      "inScope": false
+    },
+    {
+      "bankGuaranteeCode": "PUBLIC_CONTRACT",
+      "type": "Allotment licence/licence for urban development",
+      "subType": "FLANDERS :Guarantee for which a permit has not yet been given",
+      "typeNumber": "135",
+      "inScope": false
+    },
+    {
+      "bankGuaranteeCode": "PUBLIC_CONTRACT",
+      "type": "Allotment licence/licence for urban development",
+      "subType": "WALLONIA :Guarantee for which a permit has already been given",
+      "typeNumber": "161",
+      "inScope": false
+    },
+    {
+      "bankGuaranteeCode": "PUBLIC_CONTRACT",
+      "type": "Allotment licence/licence for urban development",
+      "subType": "WALLONIA :Guarantee for which a permit has not yet been given",
+      "typeNumber": "141",
+      "inScope": false
+    },
+    {
+      "bankGuaranteeCode": "PUBLIC_CONTRACT",
+      "type": "Allotment licence/licence for urban development",
+      "subType": "BRUSSELS :Guarantee for which a permit has already been given",
+      "typeNumber": "162",
+      "inScope": false
+    },
+    {
+      "bankGuaranteeCode": "PUBLIC_CONTRACT",
+      "type": "Allotment licence/licence for urban development",
+      "subType": "BRUSSELS : Guarantee for which a permit has not yet been given",
+      "typeNumber": "148",
+      "inScope": false
+    },
+    {
+      "bankGuaranteeCode": "PUBLIC_CONTRACT",
+      "type": "Works on the public roads",
+      "subType": "FLANDERS : Guarantee for Bank guarantee for Town Planning - Works on the public roads",
+      "typeNumber": "136",
+      "inScope": false
+    },
+    {
+      "bankGuaranteeCode": "PUBLIC_CONTRACT",
+      "type": "Works on the public roads",
+      "subType": "WALLONIA :Guarantee for Bank guarantee for Town Planning - Works on the public roads",
+      "typeNumber": "142",
+      "inScope": false
+    },
+    {
+      "bankGuaranteeCode": "PUBLIC_CONTRACT",
+      "type": "Appeal against judgment",
+      "subType": "Appeal against judgment",
+      "typeNumber": "158",
+      "inScope": false
+    },
+    {
+      "bankGuaranteeCode": "PUBLIC_CONTRACT",
+      "type": "Amendment",
+      "subType": "",
+      "url": "/banking/bankguarantee",
+      "inScope": false
+    },
+    {
+      "bankGuaranteeCode": "PUBLIC_CONTRACT",
+      "type": "Counter-Guarantee & Swift sending",
+      "subType": "",
+      "typeNumber": "",
+      "inScope": false
+    },
+    {
+      "bankGuaranteeCode": "GOODS_TRANSPORT",
+      "type": "Transports",
+      "subType": "Goods Transport",
+      "typeNumber": "127",
+      "inScope": true
+    },
+    {
+      "bankGuaranteeCode": "PASSENGER_TRANSPORT",
+      "type": "Transports",
+      "subType": "Passenger Transport",
+      "typeNumber": "128",
+      "inScope": true
+    },
+    {
+      "bankGuaranteeCode": "OPERATORS_TRANSPORT",
+      "type": "Transports",
+      "subType": "Transport Operator",
+      "typeNumber": "129",
+      "inScope": true
+    }
+  ]
+}

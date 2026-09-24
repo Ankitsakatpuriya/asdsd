@@ -1,0 +1,29 @@
+{
+  "type": "record",
+  "name": "CallbackEvent",
+  "namespace": "com.ing.docsign",
+  "doc": "Callback event from the DocSign application, linked to a status change of a DAR, to a customer",
+  "fields": [
+    {
+      "name": "darUuid",
+      "type": "string",
+      "doc": "The uuid of the DAR, provided at creation time, for which the status has changed"
+    },
+    {
+      "name": "agreementId",
+      "type": "string",
+      "doc": "The agreementId of the DAR, provided at creation time, for which the status has changed"
+    },
+    { "name": "status", "type": "string", "doc": "The new status of the DAR" },
+    {
+      "name": "creationDateTime",
+      "type": "string",
+      "doc": "The creation timestamp of the DAR in the following format yyyy-MM-ddTHH:mm:ss.SSS"
+    },
+    {
+      "name": "statusChangeDateTime",
+      "type": "string",
+      "doc": "The timestamp of status change of the DAR in the following format yyyy-MM-ddTHH:mm:ss.SSS"
+    }
+  ]
+}

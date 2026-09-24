@@ -1,0 +1,203 @@
+remote:
+  rest:
+    credit-risk:
+      request-type: '6'
+      default-branch: '390012'
+      eur-currency: '003'
+      csi-length: 10
+      private-use: '2'
+      product-type: '15'
+      product-Nature-Type: "0416"
+      individual-partnership-type: '20'
+      organisation-partnership-type: '10'
+      legal-entity-work-stability: '0'
+      self-employed-work-stability: '0'
+      request-channel: '01'
+      capital-payment-frequency: 1
+      organisation-intervenient-type: '1'
+      individual-intervenient-type: '9'
+      green-pdl-business-line-duration-in-months: 84
+    name-screening:
+      business-unit: 'BEIBB'
+      actor-country: 'BE'
+      screening-type: 'TER'
+      alert-generate: '0'
+      party-type: 'C'
+    product-agreement:
+      product-types: 'BE_ING_PROF_CRN_AC, BE_ING_MGN_CRN_AC, BE_ING_CORP_AC, BE_ING_GNT_GVN'
+      current-account-product-types: 'BE_ING_PROF_CRN_AC, BE_ING_MGN_CRN_AC, BE_ING_CORP_AC'
+      credit-line-product-types: 'BE_ING_GNT_GVN'
+      product-status: 'EFF_AR'
+    pam-qualification-checks:
+      operation: '1061'
+      ingEntity: '3180'
+      uuidCode: '36'
+    reference-data:
+      multilingual:
+        table-distribution-name: CTRY
+        language: FR, EN, NL, DE
+        columns: END_DT, INDPNDNT_IND, FEC_RSK_TP_CODE
+    connect-dot:
+      costCenter: 'SPRD0011585'
+      entityCode: '3180'
+      initiatingCI: 'BankGuaranteesBEOnline_API'
+      recipient-type: 'custom-recipient'
+      recipient-partyType: 'ORG'
+      destination-output: 'PAPER/PDF'
+      destination-type: 'case-management'
+      destination-output-final: 'PAPER/DOCX'
+      channels-importance: 'required'
+      periodicity-for-rental-en: 'year'
+      periodicity-for-rental-fr: 'année'
+      periodicity-for-rental-nl: 'jaar'
+      periodicity-for-others-en: 'quarter'
+      periodicity-for-others-fr: 'trimestre'
+      periodicity-for-others-nl: 'kwartaal'
+      rate-per-year: '2'
+      minimum-per-record: '50.00'
+      minimum-per-record-for-dck: '25.00'
+      first-ing-signer-name: 'Aleksandar Bosnjak'
+      second-ing-signer-name: 'Kurt Thielemans'
+      publication-belgian-gazette-nL: 'handelend krachtens de machten verleend bij authentieke akte verleden voor Meester Peter Van Melkebeke, notaris te Brussel op 26 juni 2026, bekendgemaakt in de Bijlagen bij het Belgisch Staatsblad van 30 juni 2026, onder nummer 26340587'
+      publication-belgian-gazette-fR: 'agissant en vertu des pouvoirs conférés par acte authentique passé devant Maître Peter Van Melkebeke, notaire à Bruxelles le 26 juin 2026, publié aux Annexes du Moniteur Belge du 30 juin 2026 sous le n° 26340793'
+      type-amount:
+        en: [ 'INITIAL' , 'ADDITIONAL' ]
+        nl: [ 'OORSPRONKELIJK' , 'BIJKOMEND' ]
+        fr: [ 'INITIAL' , 'SUPPLEMENTAIRE' ]
+    dar:
+      business-line: 'ING Bank Guarantee Team'
+      days-to-add: 05
+      document-sign-callback: 'bgos-docsign-callback'
+      document-sign-intermediate-callback: 'P31464.bgos-docsign-intermediate-callback'
+      sign-name-prefix: 'sign_action_%d'
+      document-uri-prefix: '/case-management/documents/%s'
+      frontend-callback-url: '/banking/bank-guarantee?flow-step=success'
+      first-confirmation-link: '/banking/bank-guarantee?flow-step=single-lr-sign-success'
+      second-confirmation-link: '/banking/bank-guarantee?flow-step=success'
+      cancel-url: '/banking/be-bankguarantee?flow-step=cancel-page'
+      close-url: '/banking/be-bankguarantee?flow-step=close-page'
+      tribe: 'Business lending'
+      expiry-message-fr: 'Vous pouvez introduire une nouvelle demande de garantie bancaire via le Portail des Garanties Bancaires ING.'
+      expiry-message-nl: 'Een nieuwe aanvraag voor bankgarantie kan je indienen via ING Bankgaranties Portaal.'
+      expiry-message-en: 'You can submit a new bank guarantee request via the ING Bank Guarantees Portal.'
+    master-reference:
+      branch-id: 'BEB'
+      product-id: 'BGI'
+    pega:
+      case-type-id: 'ING-WB-TFS-Work-BankGuarantee'
+      process-id: 'pyStartCase'
+      branch-name: 'Hub Manila'
+      indirect-guarantee: 'No'
+      type-urgent: 'No'
+      channel-name: 'OneWeb'
+      type-standard: 'Standard'
+      py-label: 'Bank Guarantee'
+      request-type: 'New'
+      request-type-amend: 'Amend'
+      currency: 'EUR'
+      type-of-submission: 'Send BG To TI Plus'
+      cross-border: false
+      team: 'Hub Manila'
+      orf-agreement-received: 'Yes'
+    intake:
+      team: 'Hub Manila'
+      other-documents-needed: 'No'
+      ing-channel: 'MingZBE'
+      orf-agreement-received: 'Yes'
+      indirect-guarantee: 'No'
+      ti-team: 'TFSBEG'
+      customer-segment: 'DOMESTIC'
+      desk-name: 'N/A'
+      gar-cover: 'NO'
+    creditlinearrangement:
+      origin-tapl-code: 'TIP'
+      message-type-cmsg: '2'
+      cupd-code: '0'
+      name: 'Reference Account number'
+      event-type: '59'
+      create-event-type: '50'
+      application-tapl-code: 'TIP'
+      arrangement-format-code: '27'
+      general-regulation-of-credits-version: '9'
+      line-of-credit-component-lifecycle-status: '10'
+      delete-line-of-credit-component-lifecycle-status: '99'
+      line-of-credit-component-type: '6000'
+      authorized-usage-flag: true
+      convention-condition: '10'
+      security-flag: false
+      coordination-center-flag: false
+      capital-credit-flag: false
+      automatic-extension-flag: false
+      fully-collected-flag: false
+      line-of-credit-type: '60'
+      usage-code: '2'
+      code-xy: '0'
+      is-subject-of-law: true
+      collateral-arrangement-lifecyclestatus: '90'
+    booking:
+      data-source: 'TIP'
+      event-identifier-type: 'TIP'
+      mutation-code: 12
+      create-mutation-code: 10
+      status-lot-avoi: 31
+      create-status-lot-avoi: 30
+      creation-link-code: 1
+      range-number: 'T002'
+      agreement-identifier-type: 'BE_KLC'
+      agreement-identifier-value: '2121'
+      product-code: 6000
+    kfc-credit-overview:
+      involve-party-type: 'ACC'
+      employee-id-type: 'MATRICULE'
+      employee-id-value: '841020413'
+      level: 21
+    fulfilment:
+      errors:
+        BGOS-19: "Technical error occurred while signing the Final bank guarantee by the bank"
+        BGOS-18: "Technical error occurred while creating the request in TI+ via IntakeAPI"
+        BGOS-11: "Technical error occurred while fetching the collaterals details from GAR"
+        BGOS-09: "Technical error occurred while generating the Final BG and Credit contract through Inspire"
+        BGOS-08: "Technical error occurred while generating the dossier placeholders in documentum"
+        BGOS-00-023: "Technical error occurred while generating the Final BG and Credit contract through Inspire"
+    gess:
+      sign-position: 'BOTTOM_LEFT'
+      coordinate-config:
+        public-contract:
+          first: [ 10, 95, 150, 50, 2 ]
+          second: [ 50, 95, 400, 50, 2 ]
+        abstract-model:
+          first: [ 25, 95, 150, 50, 2 ]
+          second: [ 55, 95, 400, 50, 2 ]
+        real-estate:
+          first: [ 30, 95, 150, 50, 2 ]
+          second: [ 55, 95, 400, 50, 2 ]
+        rental:
+          first: [ 30, 95, 150, 50, 3 ]
+          second: [ 55, 95, 400, 50, 3 ]
+        custom-one:
+          first: [ 30, 95, 150, 50, 4 ]
+          second: [ 55, 95, 400, 50, 4 ]
+        custom-two:
+          first: [ 30, 95, 150, 50, 4 ]
+          second: [ 55, 95, 400, 50, 4 ]
+        custom-four-dutch:
+          first: [ 30, 95, 150, 50, 4 ]
+          second: [ 55, 95, 400, 50, 4 ]
+        custom-four-french:
+          first: [ 30, 95, 150, 50, 3 ]
+          second: [ 55, 95, 400, 50, 3 ]
+        custom-five:
+          first: [ 30, 95, 150, 50, 3 ]
+          second: [ 55, 95, 400, 50, 3 ]
+        state-lottery:
+          first: [ 30, 95, 150, 50, 3 ]
+          second: [ 55, 95, 400, 50, 3 ]
+        ovam:
+          first: [ 30, 95, 150, 50, 2 ]
+          second: [ 55, 95, 400, 50, 2 ]
+        woods:
+          first: [ 30, 95, 150, 50, -1 ]
+          second: [ 55, 95,400, 50, -1 ]
+        contract-letter:
+          first: [ 30, 95, 150, 50, -1 ]
+          second: [ 55, 95,400, 50, -1 ]

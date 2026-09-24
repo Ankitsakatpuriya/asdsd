@@ -1,0 +1,58 @@
+[
+  {
+    "code": "BGOS-20-000",
+    "severity": "critical",
+    "message": "Technical error",
+    "externalHttpStatus": 500,
+    "internalHttpStatus": 400
+  },
+  {
+    "code": "BGOS-20-001",
+    "severity": "critical",
+    "message": "Technical error",
+    "externalHttpStatus": 500,
+    "internalHttpStatus": 401
+  },
+  {
+    "code": "BGOS-20-002",
+    "severity": "critical",
+    "message": "Technical error",
+    "externalHttpStatus": 500,
+    "internalHttpStatus": 403
+  },
+  {
+    "code": "BGOS-20-003",
+    "severity": "critical",
+    "message": "Technical error",
+    "externalHttpStatus": 500,
+    "internalHttpStatus": 404
+  },
+  {
+    "code": "BGOS-20-004",
+    "severity": "critical",
+    "message": "Technical error",
+    "externalHttpStatus": 500,
+    "internalHttpStatus": 406
+  },
+  {
+    "code": "BGOS-20-005",
+    "severity": "critical",
+    "message": "Technical error",
+    "externalHttpStatus": 500,
+    "internalHttpStatus": 408
+  },
+  {
+    "code": "BGOS-20-006",
+    "severity": "critical",
+    "message": "Technical error",
+    "externalHttpStatus": 500,
+    "internalHttpStatus": 500
+  },
+  {
+    "code": "BGOS-20-007",
+    "severity": "critical",
+    "message": "Technical error",
+    "externalHttpStatus": 500,
+    "internalHttpStatus": 503
+  }
+]

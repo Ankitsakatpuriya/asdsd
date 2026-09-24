@@ -1,0 +1,18 @@
+{
+  "type": "record",
+  "name": "ReleaseNotificationEvent",
+  "namespace": "com.ing.bodega",
+  "doc": "Release notification event, created by Undertakings API from a received release notification by TI+ when a bank guarantee has been successfully processed",
+  "fields": [
+    {
+      "name": "masterReference",
+      "type": "string",
+      "doc": "The master reference associated to the bank guarantee that has been processed"
+    },
+    {
+      "name": "status",
+      "type": "string",
+      "doc": "The status of the bank guarantee in TI after processing: either 'live' or 'review'"
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "type": "record",
+  "name": "DetailedCallbackEvent",
+  "namespace": "com.ing.docsign.callback",
+  "fields": [
+    {
+      "doc": "The new intermediate operation statuses of the DAR",
+      "name": "operations",
+      "type": [
+        "null",
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "avro.java.string": "String"
+          }
+        }
+      ],
+      "default": null
+    },
+    {
+      "doc": "The signer UUID that initiate the callback",
+      "name": "operationActorUuid",
+      "type": "string"
+    },
+    {
+      "doc": "The operation timestamp of the action in the following format yyyy-MM-ddTHH:mm:ss.SSS",
+      "name": "operationDateTime",
+      "type": "string"
+    },
+    {
+      "doc": "The document name on which the operation was done that triggered the callback",
+      "name": "operationDocumentName",
+      "type": "string"
+    },
+    {
+      "doc": "The document uri on which the operation was done that triggered the callback",
+      "name": "operationDocumentUri",
+      "type": "string"
+    },
+    {
+      "name": "darInfo",
+      "type": {
+        "type": "record",
+        "name": "DarInfo",
+        "fields": [
+          {
+            "doc": "The uuid of the DAR, provided at creation time, for which the status has changed",
+            "name": "darUuid",
+            "type": "string"
+          },
+          {
+            "doc": "The agreementId of the DAR, provided at creation time, for which the status has changed",
+            "name": "agreementId",
+            "type": "string"
+          },
+          {
+            "doc": "The new status of the DAR",
+            "name": "status",
+            "type": "string"
+          },
+          {
+            "doc": "The creation timestamp of the DAR in the following format yyyy-MM-ddTHH:mm:ss.SSS",
+            "name": "creationDateTime",
+            "type": "string"
+          },
+          {
+            "doc": "The timestamp of status change of the DAR in the following format yyyy-MM-ddTHH:mm:ss.SSS",
+            "name": "statusChangeDateTime",
+            "type": [
+              "null",
+              {
+                "type": "string",
+                "avro.java.string": "String"
+              }
+            ],
+            "default": null
+          }
+        ]
+      }
+    },
+    {
+      "name": "details",
+      "type": {
+        "type": "array",
+        "items": {
+          "doc": "Details of the DAR",
+          "type": "record",
+          "name": "Details",
+          "fields": [
+            {
+              "doc": "The signer UUID",
+              "type": "string",
+              "name": "actorUuid"
+            },
+            {
+              "name": "signDocuments",
+              "type": {
+                "type": "array",
+                "items": {
+                  "doc": "List of the document",
+                  "type": "record",
+                  "name": "SignDocument",
+                  "fields": [
+                    {
+                      "doc": "Name of the document",
+                      "type": "string",
+                      "name": "documentName"
+                    },
+                    {
+                      "doc": "URI of the document",
+                      "type": "string",
+                      "name": "documentUri"
+                    },
+                    {
+                      "doc": "Status of the document",
+                      "type": "string",
+                      "name": "status"
+                    },
+                    {
+                      "doc": "List of download documents if any.",
+                      "name": "downloadDocuments",
+                      "type": [
+                        "null",
+                        {
+                          "type": "array",
+                          "items": {
+                            "name": "DownloadDocument",
+                            "type": "record",
+                            "fields": [
+                              {
+                                "doc": "Name of the document",
+                                "type": "string",
+                                "name": "documentName"
+                              },
+                              {
+                                "doc": "URI of the document",
+                                "type": "string",
+                                "name": "documentUri"
+                              },
+                              {
+                                "doc": "The status of the document",
+                                "type": "string",
+                                "name": "status"
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "name": "legalNotice",
+                      "type": [
+                        "null",
+                        {
+                          "doc": "If has legal notice",
+                          "name": "LegalNotice",
+                          "type": "record",
+                          "fields": [
+                            {
+                              "doc": "The status of the legal notice",
+                              "type": "boolean",
+                              "name": "status"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

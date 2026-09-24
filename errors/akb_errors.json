@@ -1,0 +1,72 @@
+[
+  {
+    "code": "BGOS-17-000",
+    "severity": "critical",
+    "message": "Technical error",
+    "externalHttpStatus": 500,
+    "internalHttpStatus": 400
+  },
+  {
+    "code": "BGOS-17-002",
+    "severity": "critical",
+    "message": "Unauthorised access",
+    "externalHttpStatus": 500,
+    "internalHttpStatus": 403
+  },
+  {
+    "code": "BGOS-17-003",
+    "severity": "critical",
+    "message": "Technical error",
+    "externalHttpStatus": 500,
+    "internalHttpStatus": 404
+  },
+  {
+    "code": "BGOS-17-004",
+    "severity": "critical",
+    "message": "Technical error",
+    "externalHttpStatus": 500,
+    "internalHttpStatus": 406
+  },
+  {
+    "code": "BGOS-17-005",
+    "severity": "critical",
+    "message": "Technical error",
+    "externalHttpStatus": 500,
+    "internalHttpStatus": 408
+  },
+  {
+    "code": "BGOS-17-008",
+    "severity": "critical",
+    "message": "Technical error",
+    "externalHttpStatus": 500,
+    "internalHttpStatus": 500
+  },
+  {
+    "code": "BGOS-17-009",
+    "severity": "critical",
+    "message": "Technical error",
+    "externalHttpStatus": 500,
+    "internalHttpStatus": 502
+  },
+  {
+    "code": "BGOS-17-010",
+    "severity": "critical",
+    "message": "Technical error",
+    "externalHttpStatus": 500,
+    "internalHttpStatus": 503
+  },
+  {
+    "code": "BGOS-17-011",
+    "severity": "critical",
+    "message": "Technical error",
+    "externalHttpStatus": 404,
+    "internalHttpStatus": 204
+  },
+  {
+    "code": "BGOS-17-012",
+    "severity": "critical",
+    "message": "Permission api - gateway timeout",
+    "externalHttpStatus": 500,
+    "internalHttpStatus": 504
+  }
+]

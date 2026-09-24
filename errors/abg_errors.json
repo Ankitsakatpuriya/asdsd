@@ -1,0 +1,37 @@
+[
+  {
+    "code": "BGOS-18-000",
+    "severity": "critical",
+    "message": "Technical Error",
+    "externalHttpStatus": 500,
+    "internalHttpStatus": 400
+  },
+  {
+    "code": "BGOS-18-001",
+    "severity": "critical",
+    "message": "Technical Error",
+    "externalHttpStatus": 500,
+    "internalHttpStatus": 401
+  },
+  {
+    "code": "BGOS-18-002",
+    "severity": "critical",
+    "message": "Technical Error",
+    "externalHttpStatus": 500,
+    "internalHttpStatus": 500
+  },
+  {
+    "code": "BGOS-18-003",
+    "severity": "critical",
+    "message": "Technical Error",
+    "externalHttpStatus": 500,
+    "internalHttpStatus": 403
+  },
+  {
+    "code": "BGOS-18-004",
+    "severity": "critical",
+    "message": "Technical Error",
+    "externalHttpStatus": 500,
+    "internalHttpStatus": 201
+  }
+]

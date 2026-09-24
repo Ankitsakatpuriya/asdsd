@@ -1,0 +1,14 @@
+bgos:
+  cache:
+    default-configuration: initialCapacity=4,maximumSize=10,expireAfterWrite=5m
+    caches[0]:
+      name: countryNameTranslations
+      configuration: initialCapacity=50,maximumSize=5000,expireAfterWrite=1d
+    caches[1]:
+      name: bankGuaranteeGeneralInfo
+      configuration: initialCapacity=50,maximumSize=5000
+    caches[2]:
+      name: currencyCodes
+      configuration: initialCapacity=50,maximumSize=5000
+  reference-data:
+    cache-refresh-cron: '0 0 2 * * ?' #every morning at 2am

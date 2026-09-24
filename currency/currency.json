@@ -1,0 +1,1559 @@
+{
+  "currencies": [
+    {
+      "entryId": "CCRYISOBBLAED",
+      "tableName": "CCRYISOBBL",
+      "code": "AED",
+      "valueNL": "970",
+      "valueFR": "970",
+      "valueEN": "970"
+    },
+    {
+      "entryId": "CCRYISOBBLAFN",
+      "tableName": "CCRYISOBBL",
+      "code": "AFN",
+      "valueNL": "961",
+      "valueFR": "961",
+      "valueEN": "961",
+      "valueDE": "961"
+    },
+    {
+      "entryId": "CCRYISOBBLALL",
+      "tableName": "CCRYISOBBL",
+      "code": "ALL",
+      "valueNL": "291",
+      "valueFR": "291",
+      "valueEN": "291"
+    },
+    {
+      "entryId": "CCRYISOBBLAMD",
+      "tableName": "CCRYISOBBL",
+      "code": "AMD",
+      "valueNL": "255",
+      "valueFR": "255",
+      "valueEN": "255"
+    },
+    {
+      "entryId": "CCRYISOBBLANG",
+      "tableName": "CCRYISOBBL",
+      "code": "ANG",
+      "valueNL": "827",
+      "valueFR": "827",
+      "valueEN": "827"
+    },
+    {
+      "entryId": "CCRYISOBBLAOA",
+      "tableName": "CCRYISOBBL",
+      "code": "AOA",
+      "valueNL": "391",
+      "valueFR": "391",
+      "valueEN": "391"
+    },
+    {
+      "entryId": "CCRYISOBBLARS",
+      "tableName": "CCRYISOBBL",
+      "code": "ARS",
+      "valueNL": "611",
+      "valueFR": "611",
+      "valueEN": "611",
+      "valueDE": "611"
+    },
+    {
+      "entryId": "CCRYISOBBLATS",
+      "tableName": "CCRYISOBBL",
+      "code": "ATS",
+      "valueNL": "131",
+      "valueFR": "131",
+      "valueEN": "131"
+    },
+    {
+      "entryId": "CCRYISOBBLAUD",
+      "tableName": "CCRYISOBBL",
+      "code": "AUD",
+      "valueNL": "861",
+      "valueFR": "861",
+      "valueEN": "861"
+    },
+    {
+      "entryId": "CCRYISOBBLAWG",
+      "tableName": "CCRYISOBBL",
+      "code": "AWG",
+      "valueNL": "825",
+      "valueFR": "825",
+      "valueEN": "825"
+    },
+    {
+      "entryId": "CCRYISOBBLAZN",
+      "tableName": "CCRYISOBBL",
+      "code": "AZN",
+      "valueNL": "258",
+      "valueFR": "258",
+      "valueEN": "258",
+      "valueDE": "258"
+    },
+    {
+      "entryId": "CCRYISOBBLBAM",
+      "tableName": "CCRYISOBBL",
+      "code": "BAM",
+      "valueNL": "158",
+      "valueFR": "158",
+      "valueEN": "158"
+    },
+    {
+      "entryId": "CCRYISOBBLBBD",
+      "tableName": "CCRYISOBBL",
+      "code": "BBD",
+      "valueNL": "946",
+      "valueFR": "946",
+      "valueEN": "946"
+    },
+    {
+      "entryId": "CCRYISOBBLBDT",
+      "tableName": "CCRYISOBBL",
+      "code": "BDT",
+      "valueNL": "891",
+      "valueFR": "891",
+      "valueEN": "891"
+    },
+    {
+      "entryId": "CCRYISOBBLBEF",
+      "tableName": "CCRYISOBBL",
+      "code": "BEF",
+      "valueNL": "000",
+      "valueFR": "000",
+      "valueEN": "000"
+    },
+    {
+      "entryId": "CCRYISOBBLBGN",
+      "tableName": "CCRYISOBBL",
+      "code": "BGN",
+      "valueNL": "271",
+      "valueFR": "271",
+      "valueEN": "271"
+    },
+    {
+      "entryId": "CCRYISOBBLBHD",
+      "tableName": "CCRYISOBBL",
+      "code": "BHD",
+      "valueNL": "963",
+      "valueFR": "963",
+      "valueEN": "963"
+    },
+    {
+      "entryId": "CCRYISOBBLBIF",
+      "tableName": "CCRYISOBBL",
+      "code": "BIF",
+      "valueNL": "451",
+      "valueFR": "451",
+      "valueEN": "451"
+    },
+    {
+      "entryId": "CCRYISOBBLBMD",
+      "tableName": "CCRYISOBBL",
+      "code": "BMD",
+      "valueNL": "942",
+      "valueFR": "942",
+      "valueEN": "942"
+    },
+    {
+      "entryId": "CCRYISOBBLBND",
+      "tableName": "CCRYISOBBL",
+      "code": "BND",
+      "valueNL": "976",
+      "valueFR": "976",
+      "valueEN": "976"
+    },
+    {
+      "entryId": "CCRYISOBBLBOB",
+      "tableName": "CCRYISOBBL",
+      "code": "BOB",
+      "valueNL": "581",
+      "valueFR": "581",
+      "valueEN": "581"
+    },
+    {
+      "entryId": "CCRYISOBBLBRL",
+      "tableName": "CCRYISOBBL",
+      "code": "BRL",
+      "valueNL": "561",
+      "valueFR": "561",
+      "valueEN": "561"
+    },
+    {
+      "entryId": "CCRYISOBBLBSD",
+      "tableName": "CCRYISOBBL",
+      "code": "BSD",
+      "valueNL": "959",
+      "valueFR": "959",
+      "valueEN": "959"
+    },
+    {
+      "entryId": "CCRYISOBBLBTN",
+      "tableName": "CCRYISOBBL",
+      "code": "BTN",
+      "valueNL": "845",
+      "valueFR": "845",
+      "valueEN": "845"
+    },
+    {
+      "entryId": "CCRYISOBBLBWP",
+      "tableName": "CCRYISOBBL",
+      "code": "BWP",
+      "valueNL": "815",
+      "valueFR": "815",
+      "valueEN": "815"
+    },
+    {
+      "entryId": "CCRYISOBBLBYN",
+      "tableName": "CCRYISOBBL",
+      "code": "BYN",
+      "valueNL": "278",
+      "valueFR": "278",
+      "valueEN": "278",
+      "valueDE": "278"
+    },
+    {
+      "entryId": "CCRYISOBBLBYR",
+      "tableName": "CCRYISOBBL",
+      "code": "BYR",
+      "valueNL": "278",
+      "valueFR": "278",
+      "valueEN": "278"
+    },
+    {
+      "entryId": "CCRYISOBBLBZD",
+      "tableName": "CCRYISOBBL",
+      "code": "BZD",
+      "valueNL": "521",
+      "valueFR": "521",
+      "valueEN": "521"
+    },
+    {
+      "entryId": "CCRYISOBBLCAD",
+      "tableName": "CCRYISOBBL",
+      "code": "CAD",
+      "valueNL": "111",
+      "valueFR": "111",
+      "valueEN": "111"
+    },
+    {
+      "entryId": "CCRYISOBBLCDF",
+      "tableName": "CCRYISOBBL",
+      "code": "CDF",
+      "valueNL": "381",
+      "valueFR": "381",
+      "valueEN": "381"
+    },
+    {
+      "entryId": "CCRYISOBBLCHF",
+      "tableName": "CCRYISOBBL",
+      "code": "CHF",
+      "valueNL": "051",
+      "valueFR": "051",
+      "valueEN": "051"
+    },
+    {
+      "entryId": "CCRYISOBBLCLP",
+      "tableName": "CCRYISOBBL",
+      "code": "CLP",
+      "valueNL": "571",
+      "valueFR": "571",
+      "valueEN": "571"
+    },
+    {
+      "entryId": "CCRYISOBBLCNY",
+      "tableName": "CCRYISOBBL",
+      "code": "CNY",
+      "valueNL": "821",
+      "valueFR": "821",
+      "valueEN": "821"
+    },
+    {
+      "entryId": "CCRYISOBBLCOP",
+      "tableName": "CCRYISOBBL",
+      "code": "COP",
+      "valueNL": "531",
+      "valueFR": "531",
+      "valueEN": "531"
+    },
+    {
+      "entryId": "CCRYISOBBLCRC",
+      "tableName": "CCRYISOBBL",
+      "code": "CRC",
+      "valueNL": "631",
+      "valueFR": "631",
+      "valueEN": "631"
+    },
+    {
+      "entryId": "CCRYISOBBLCUP",
+      "tableName": "CCRYISOBBL",
+      "code": "CUP",
+      "valueNL": "511",
+      "valueFR": "511",
+      "valueEN": "511"
+    },
+    {
+      "entryId": "CCRYISOBBLCVE",
+      "tableName": "CCRYISOBBL",
+      "code": "CVE",
+      "valueNL": "908",
+      "valueFR": "908",
+      "valueEN": "908"
+    },
+    {
+      "entryId": "CCRYISOBBLCYP",
+      "tableName": "CCRYISOBBL",
+      "code": "CYP",
+      "valueNL": "960",
+      "valueFR": "960",
+      "valueEN": "960"
+    },
+    {
+      "entryId": "CCRYISOBBLCZK",
+      "tableName": "CCRYISOBBL",
+      "code": "CZK",
+      "valueNL": "286",
+      "valueFR": "286",
+      "valueEN": "286"
+    },
+    {
+      "entryId": "CCRYISOBBLDEM",
+      "tableName": "CCRYISOBBL",
+      "code": "DEM",
+      "valueNL": "061",
+      "valueFR": "061",
+      "valueEN": "061"
+    },
+    {
+      "entryId": "CCRYISOBBLDJF",
+      "tableName": "CCRYISOBBL",
+      "code": "DJF",
+      "valueNL": "931",
+      "valueFR": "931",
+      "valueEN": "931"
+    },
+    {
+      "entryId": "CCRYISOBBLDKK",
+      "tableName": "CCRYISOBBL",
+      "code": "DKK",
+      "valueNL": "101",
+      "valueFR": "101",
+      "valueEN": "101"
+    },
+    {
+      "entryId": "CCRYISOBBLDOP",
+      "tableName": "CCRYISOBBL",
+      "code": "DOP",
+      "valueNL": "950",
+      "valueFR": "950",
+      "valueEN": "950"
+    },
+    {
+      "entryId": "CCRYISOBBLDZD",
+      "tableName": "CCRYISOBBL",
+      "code": "DZD",
+      "valueNL": "311",
+      "valueFR": "311",
+      "valueEN": "311"
+    },
+    {
+      "entryId": "CCRYISOBBLEEK",
+      "tableName": "CCRYISOBBL",
+      "code": "EEK",
+      "valueNL": "205",
+      "valueFR": "205",
+      "valueEN": "205"
+    },
+    {
+      "entryId": "CCRYISOBBLEGP",
+      "tableName": "CCRYISOBBL",
+      "code": "EGP",
+      "valueNL": "331",
+      "valueFR": "331",
+      "valueEN": "331"
+    },
+    {
+      "entryId": "CCRYISOBBLERN",
+      "tableName": "CCRYISOBBL",
+      "code": "ERN",
+      "valueNL": "402",
+      "valueFR": "402",
+      "valueEN": "402"
+    },
+    {
+      "entryId": "CCRYISOBBLESP",
+      "tableName": "CCRYISOBBL",
+      "code": "ESP",
+      "valueNL": "141",
+      "valueFR": "141",
+      "valueEN": "141"
+    },
+    {
+      "entryId": "CCRYISOBBLETB",
+      "tableName": "CCRYISOBBL",
+      "code": "ETB",
+      "valueNL": "401",
+      "valueFR": "401",
+      "valueEN": "401"
+    },
+    {
+      "entryId": "CCRYISOBBLEUR",
+      "tableName": "CCRYISOBBL",
+      "code": "EUR",
+      "valueNL": "003",
+      "valueFR": "003",
+      "valueEN": "003"
+    },
+    {
+      "entryId": "CCRYISOBBLFIM",
+      "tableName": "CCRYISOBBL",
+      "code": "FIM",
+      "valueNL": "201",
+      "valueFR": "201",
+      "valueEN": "201"
+    },
+    {
+      "entryId": "CCRYISOBBLFJD",
+      "tableName": "CCRYISOBBL",
+      "code": "FJD",
+      "valueNL": "985",
+      "valueFR": "985",
+      "valueEN": "985"
+    },
+    {
+      "entryId": "CCRYISOBBLFKP",
+      "tableName": "CCRYISOBBL",
+      "code": "FKP",
+      "valueNL": "867",
+      "valueFR": "867",
+      "valueEN": "867"
+    },
+    {
+      "entryId": "CCRYISOBBLFRF",
+      "tableName": "CCRYISOBBL",
+      "code": "FRF",
+      "valueNL": "021",
+      "valueFR": "021",
+      "valueEN": "021"
+    },
+    {
+      "entryId": "CCRYISOBBLGBP",
+      "tableName": "CCRYISOBBL",
+      "code": "GBP",
+      "valueNL": "031",
+      "valueFR": "031",
+      "valueEN": "031"
+    },
+    {
+      "entryId": "CCRYISOBBLGEL",
+      "tableName": "CCRYISOBBL",
+      "code": "GEL",
+      "valueNL": "245",
+      "valueFR": "245",
+      "valueEN": "245"
+    },
+    {
+      "entryId": "CCRYISOBBLGHS",
+      "tableName": "CCRYISOBBL",
+      "code": "GHS",
+      "valueNL": "924",
+      "valueFR": "924",
+      "valueEN": "924",
+      "valueDE": "924"
+    },
+    {
+      "entryId": "CCRYISOBBLGIP",
+      "tableName": "CCRYISOBBL",
+      "code": "GIP",
+      "valueNL": "905",
+      "valueFR": "905",
+      "valueEN": "905"
+    },
+    {
+      "entryId": "CCRYISOBBLGMD",
+      "tableName": "CCRYISOBBL",
+      "code": "GMD",
+      "valueNL": "918",
+      "valueFR": "918",
+      "valueEN": "918"
+    },
+    {
+      "entryId": "CCRYISOBBLGNF",
+      "tableName": "CCRYISOBBL",
+      "code": "GNF",
+      "valueNL": "920",
+      "valueFR": "920",
+      "valueEN": "920"
+    },
+    {
+      "entryId": "CCRYISOBBLGRD",
+      "tableName": "CCRYISOBBL",
+      "code": "GRD",
+      "valueNL": "161",
+      "valueFR": "161",
+      "valueEN": "161"
+    },
+    {
+      "entryId": "CCRYISOBBLGTQ",
+      "tableName": "CCRYISOBBL",
+      "code": "GTQ",
+      "valueNL": "941",
+      "valueFR": "941",
+      "valueEN": "941"
+    },
+    {
+      "entryId": "CCRYISOBBLGYD",
+      "tableName": "CCRYISOBBL",
+      "code": "GYD",
+      "valueNL": "953",
+      "valueFR": "953",
+      "valueEN": "953"
+    },
+    {
+      "entryId": "CCRYISOBBLHKD",
+      "tableName": "CCRYISOBBL",
+      "code": "HKD",
+      "valueNL": "851",
+      "valueFR": "851",
+      "valueEN": "851"
+    },
+    {
+      "entryId": "CCRYISOBBLHNL",
+      "tableName": "CCRYISOBBL",
+      "code": "HNL",
+      "valueNL": "943",
+      "valueFR": "943",
+      "valueEN": "943"
+    },
+    {
+      "entryId": "CCRYISOBBLHRK",
+      "tableName": "CCRYISOBBL",
+      "code": "HRK",
+      "valueNL": "175",
+      "valueFR": "175",
+      "valueEN": "175"
+    },
+    {
+      "entryId": "CCRYISOBBLHTG",
+      "tableName": "CCRYISOBBL",
+      "code": "HTG",
+      "valueNL": "949",
+      "valueFR": "949",
+      "valueEN": "949"
+    },
+    {
+      "entryId": "CCRYISOBBLHUF",
+      "tableName": "CCRYISOBBL",
+      "code": "HUF",
+      "valueNL": "261",
+      "valueFR": "261",
+      "valueEN": "261"
+    },
+    {
+      "entryId": "CCRYISOBBLIDR",
+      "tableName": "CCRYISOBBL",
+      "code": "IDR",
+      "valueNL": "811",
+      "valueFR": "811",
+      "valueEN": "811"
+    },
+    {
+      "entryId": "CCRYISOBBLIEP",
+      "tableName": "CCRYISOBBL",
+      "code": "IEP",
+      "valueNL": "191",
+      "valueFR": "191",
+      "valueEN": "191"
+    },
+    {
+      "entryId": "CCRYISOBBLILS",
+      "tableName": "CCRYISOBBL",
+      "code": "ILS",
+      "valueNL": "741",
+      "valueFR": "741",
+      "valueEN": "741"
+    },
+    {
+      "entryId": "CCRYISOBBLINR",
+      "tableName": "CCRYISOBBL",
+      "code": "INR",
+      "valueNL": "781",
+      "valueFR": "781",
+      "valueEN": "781"
+    },
+    {
+      "entryId": "CCRYISOBBLIQD",
+      "tableName": "CCRYISOBBL",
+      "code": "IQD",
+      "valueNL": "721",
+      "valueFR": "721",
+      "valueEN": "721"
+    },
+    {
+      "entryId": "CCRYISOBBLIRR",
+      "tableName": "CCRYISOBBL",
+      "code": "IRR",
+      "valueNL": "731",
+      "valueFR": "731",
+      "valueEN": "731"
+    },
+    {
+      "entryId": "CCRYISOBBLISK",
+      "tableName": "CCRYISOBBL",
+      "code": "ISK",
+      "valueNL": "211",
+      "valueFR": "211",
+      "valueEN": "211"
+    },
+    {
+      "entryId": "CCRYISOBBLITL",
+      "tableName": "CCRYISOBBL",
+      "code": "ITL",
+      "valueNL": "071",
+      "valueFR": "071",
+      "valueEN": "071"
+    },
+    {
+      "entryId": "CCRYISOBBLJMD",
+      "tableName": "CCRYISOBBL",
+      "code": "JMD",
+      "valueNL": "958",
+      "valueFR": "958",
+      "valueEN": "958"
+    },
+    {
+      "entryId": "CCRYISOBBLJOD",
+      "tableName": "CCRYISOBBL",
+      "code": "JOD",
+      "valueNL": "962",
+      "valueFR": "962",
+      "valueEN": "962"
+    },
+    {
+      "entryId": "CCRYISOBBLJPY",
+      "tableName": "CCRYISOBBL",
+      "code": "JPY",
+      "valueNL": "831",
+      "valueFR": "831",
+      "valueEN": "831"
+    },
+    {
+      "entryId": "CCRYISOBBLKES",
+      "tableName": "CCRYISOBBL",
+      "code": "KES",
+      "valueNL": "933",
+      "valueFR": "933",
+      "valueEN": "933"
+    },
+    {
+      "entryId": "CCRYISOBBLKGS",
+      "tableName": "CCRYISOBBL",
+      "code": "KGS",
+      "valueNL": "239",
+      "valueFR": "239",
+      "valueEN": "239"
+    },
+    {
+      "entryId": "CCRYISOBBLKHR",
+      "tableName": "CCRYISOBBL",
+      "code": "KHR",
+      "valueNL": "974",
+      "valueFR": "974",
+      "valueEN": "974"
+    },
+    {
+      "entryId": "CCRYISOBBLKMF",
+      "tableName": "CCRYISOBBL",
+      "code": "KMF",
+      "valueNL": "651",
+      "valueFR": "651",
+      "valueEN": "651"
+    },
+    {
+      "entryId": "CCRYISOBBLKPW",
+      "tableName": "CCRYISOBBL",
+      "code": "KPW",
+      "valueNL": "980",
+      "valueFR": "980",
+      "valueEN": "980"
+    },
+    {
+      "entryId": "CCRYISOBBLKRW",
+      "tableName": "CCRYISOBBL",
+      "code": "KRW",
+      "valueNL": "981",
+      "valueFR": "981",
+      "valueEN": "981"
+    },
+    {
+      "entryId": "CCRYISOBBLKWD",
+      "tableName": "CCRYISOBBL",
+      "code": "KWD",
+      "valueNL": "761",
+      "valueFR": "761",
+      "valueEN": "761"
+    },
+    {
+      "entryId": "CCRYISOBBLKYD",
+      "tableName": "CCRYISOBBL",
+      "code": "KYD",
+      "valueNL": "661",
+      "valueFR": "661",
+      "valueEN": "661"
+    },
+    {
+      "entryId": "CCRYISOBBLKZT",
+      "tableName": "CCRYISOBBL",
+      "code": "KZT",
+      "valueNL": "235",
+      "valueFR": "235",
+      "valueEN": "235"
+    },
+    {
+      "entryId": "CCRYISOBBLLAK",
+      "tableName": "CCRYISOBBL",
+      "code": "LAK",
+      "valueNL": "971",
+      "valueFR": "971",
+      "valueEN": "971"
+    },
+    {
+      "entryId": "CCRYISOBBLLBP",
+      "tableName": "CCRYISOBBL",
+      "code": "LBP",
+      "valueNL": "701",
+      "valueFR": "701",
+      "valueEN": "701"
+    },
+    {
+      "entryId": "CCRYISOBBLLKR",
+      "tableName": "CCRYISOBBL",
+      "code": "LKR",
+      "valueNL": "791",
+      "valueFR": "791",
+      "valueEN": "791"
+    },
+    {
+      "entryId": "CCRYISOBBLLRD",
+      "tableName": "CCRYISOBBL",
+      "code": "LRD",
+      "valueNL": "922",
+      "valueFR": "922",
+      "valueEN": "922"
+    },
+    {
+      "entryId": "CCRYISOBBLLSL",
+      "tableName": "CCRYISOBBL",
+      "code": "LSL",
+      "valueNL": "819",
+      "valueFR": "819",
+      "valueEN": "819"
+    },
+    {
+      "entryId": "CCRYISOBBLLTL",
+      "tableName": "CCRYISOBBL",
+      "code": "LTL",
+      "valueNL": "207",
+      "valueFR": "207",
+      "valueEN": "207"
+    },
+    {
+      "entryId": "CCRYISOBBLLUF",
+      "tableName": "CCRYISOBBL",
+      "code": "LUF",
+      "valueNL": "151",
+      "valueFR": "151",
+      "valueEN": "151"
+    },
+    {
+      "entryId": "CCRYISOBBLLVL",
+      "tableName": "CCRYISOBBL",
+      "code": "LVL",
+      "valueNL": "206",
+      "valueFR": "206",
+      "valueEN": "206"
+    },
+    {
+      "entryId": "CCRYISOBBLLYD",
+      "tableName": "CCRYISOBBL",
+      "code": "LYD",
+      "valueNL": "911",
+      "valueFR": "911",
+      "valueEN": "911"
+    },
+    {
+      "entryId": "CCRYISOBBLMAD",
+      "tableName": "CCRYISOBBL",
+      "code": "MAD",
+      "valueNL": "301",
+      "valueFR": "301",
+      "valueEN": "301"
+    },
+    {
+      "entryId": "CCRYISOBBLMDL",
+      "tableName": "CCRYISOBBL",
+      "code": "MDL",
+      "valueNL": "249",
+      "valueFR": "249",
+      "valueEN": "249"
+    },
+    {
+      "entryId": "CCRYISOBBLMGA",
+      "tableName": "CCRYISOBBL",
+      "code": "MGA",
+      "valueNL": "421",
+      "valueFR": "421",
+      "valueEN": "421",
+      "valueDE": "421"
+    },
+    {
+      "entryId": "CCRYISOBBLMKD",
+      "tableName": "CCRYISOBBL",
+      "code": "MKD",
+      "valueNL": "169",
+      "valueFR": "169",
+      "valueEN": "169"
+    },
+    {
+      "entryId": "CCRYISOBBLMMK",
+      "tableName": "CCRYISOBBL",
+      "code": "MMK",
+      "valueNL": "969",
+      "valueFR": "969",
+      "valueEN": "969"
+    },
+    {
+      "entryId": "CCRYISOBBLMNT",
+      "tableName": "CCRYISOBBL",
+      "code": "MNT",
+      "valueNL": "979",
+      "valueFR": "979",
+      "valueEN": "979"
+    },
+    {
+      "entryId": "CCRYISOBBLMOP",
+      "tableName": "CCRYISOBBL",
+      "code": "MOP",
+      "valueNL": "978",
+      "valueFR": "978",
+      "valueEN": "978"
+    },
+    {
+      "entryId": "CCRYISOBBLMRO",
+      "tableName": "CCRYISOBBL",
+      "code": "MRO",
+      "valueNL": "912",
+      "valueFR": "912",
+      "valueEN": "912"
+    },
+    {
+      "entryId": "CCRYISOBBLMRU",
+      "tableName": "CCRYISOBBL",
+      "code": "MRU",
+      "valueNL": "912",
+      "valueFR": "912",
+      "valueEN": "912",
+      "valueDE": "912"
+    },
+    {
+      "entryId": "CCRYISOBBLMTL",
+      "tableName": "CCRYISOBBL",
+      "code": "MTL",
+      "valueNL": "906",
+      "valueFR": "906",
+      "valueEN": "906"
+    },
+    {
+      "entryId": "CCRYISOBBLMUR",
+      "tableName": "CCRYISOBBL",
+      "code": "MUR",
+      "valueNL": "936",
+      "valueFR": "936",
+      "valueEN": "936"
+    },
+    {
+      "entryId": "CCRYISOBBLMVR",
+      "tableName": "CCRYISOBBL",
+      "code": "MVR",
+      "valueNL": "992",
+      "valueFR": "992",
+      "valueEN": "992"
+    },
+    {
+      "entryId": "CCRYISOBBLMWK",
+      "tableName": "CCRYISOBBL",
+      "code": "MWK",
+      "valueNL": "939",
+      "valueFR": "939",
+      "valueEN": "939"
+    },
+    {
+      "entryId": "CCRYISOBBLMXN",
+      "tableName": "CCRYISOBBL",
+      "code": "MXN",
+      "valueNL": "501",
+      "valueFR": "501",
+      "valueEN": "501"
+    },
+    {
+      "entryId": "CCRYISOBBLMYR",
+      "tableName": "CCRYISOBBL",
+      "code": "MYR",
+      "valueNL": "801",
+      "valueFR": "801",
+      "valueEN": "801"
+    },
+    {
+      "entryId": "CCRYISOBBLMZN",
+      "tableName": "CCRYISOBBL",
+      "code": "MZN",
+      "valueNL": "411",
+      "valueFR": "411",
+      "valueEN": "411",
+      "valueDE": "411"
+    },
+    {
+      "entryId": "CCRYISOBBLNAD",
+      "tableName": "CCRYISOBBL",
+      "code": "NAD",
+      "valueNL": "993",
+      "valueFR": "993",
+      "valueEN": "993"
+    },
+    {
+      "entryId": "CCRYISOBBLNGN",
+      "tableName": "CCRYISOBBL",
+      "code": "NGN",
+      "valueNL": "361",
+      "valueFR": "361",
+      "valueEN": "361"
+    },
+    {
+      "entryId": "CCRYISOBBLNIO",
+      "tableName": "CCRYISOBBL",
+      "code": "NIO",
+      "valueNL": "945",
+      "valueFR": "945",
+      "valueEN": "945"
+    },
+    {
+      "entryId": "CCRYISOBBLNLG",
+      "tableName": "CCRYISOBBL",
+      "code": "NLG",
+      "valueNL": "041",
+      "valueFR": "041",
+      "valueEN": "041"
+    },
+    {
+      "entryId": "CCRYISOBBLNOK",
+      "tableName": "CCRYISOBBL",
+      "code": "NOK",
+      "valueNL": "091",
+      "valueFR": "091",
+      "valueEN": "091"
+    },
+    {
+      "entryId": "CCRYISOBBLNPR",
+      "tableName": "CCRYISOBBL",
+      "code": "NPR",
+      "valueNL": "829",
+      "valueFR": "829",
+      "valueEN": "829"
+    },
+    {
+      "entryId": "CCRYISOBBLNZD",
+      "tableName": "CCRYISOBBL",
+      "code": "NZD",
+      "valueNL": "871",
+      "valueFR": "871",
+      "valueEN": "871"
+    },
+    {
+      "entryId": "CCRYISOBBLOMR",
+      "tableName": "CCRYISOBBL",
+      "code": "OMR",
+      "valueNL": "965",
+      "valueFR": "965",
+      "valueEN": "965"
+    },
+    {
+      "entryId": "CCRYISOBBLPAB",
+      "tableName": "CCRYISOBBL",
+      "code": "PAB",
+      "valueNL": "947",
+      "valueFR": "947",
+      "valueEN": "947"
+    },
+    {
+      "entryId": "CCRYISOBBLPEN",
+      "tableName": "CCRYISOBBL",
+      "code": "PEN",
+      "valueNL": "551",
+      "valueFR": "551",
+      "valueEN": "551"
+    },
+    {
+      "entryId": "CCRYISOBBLPGK",
+      "tableName": "CCRYISOBBL",
+      "code": "PGK",
+      "valueNL": "987",
+      "valueFR": "987",
+      "valueEN": "987"
+    },
+    {
+      "entryId": "CCRYISOBBLPHP",
+      "tableName": "CCRYISOBBL",
+      "code": "PHP",
+      "valueNL": "977",
+      "valueFR": "977",
+      "valueEN": "977"
+    },
+    {
+      "entryId": "CCRYISOBBLPKR",
+      "tableName": "CCRYISOBBL",
+      "code": "PKR",
+      "valueNL": "771",
+      "valueFR": "771",
+      "valueEN": "771"
+    },
+    {
+      "entryId": "CCRYISOBBLPLN",
+      "tableName": "CCRYISOBBL",
+      "code": "PLN",
+      "valueNL": "231",
+      "valueFR": "231",
+      "valueEN": "231"
+    },
+    {
+      "entryId": "CCRYISOBBLPTE",
+      "tableName": "CCRYISOBBL",
+      "code": "PTE",
+      "valueNL": "121",
+      "valueFR": "121",
+      "valueEN": "121"
+    },
+    {
+      "entryId": "CCRYISOBBLPYG",
+      "tableName": "CCRYISOBBL",
+      "code": "PYG",
+      "valueNL": "591",
+      "valueFR": "591",
+      "valueEN": "591"
+    },
+    {
+      "entryId": "CCRYISOBBLQAR",
+      "tableName": "CCRYISOBBL",
+      "code": "QAR",
+      "valueNL": "964",
+      "valueFR": "964",
+      "valueEN": "964"
+    },
+    {
+      "entryId": "CCRYISOBBLRON",
+      "tableName": "CCRYISOBBL",
+      "code": "RON",
+      "valueNL": "281",
+      "valueFR": "281",
+      "valueEN": "281",
+      "valueDE": "281"
+    },
+    {
+      "entryId": "CCRYISOBBLRSD",
+      "tableName": "CCRYISOBBL",
+      "code": "RSD",
+      "valueNL": "173",
+      "valueFR": "173",
+      "valueEN": "173",
+      "valueDE": "173"
+    },
+    {
+      "entryId": "CCRYISOBBLRUB",
+      "tableName": "CCRYISOBBL",
+      "code": "RUB",
+      "valueNL": "226",
+      "valueFR": "226",
+      "valueEN": "226",
+      "valueDE": "226"
+    },
+    {
+      "entryId": "CCRYISOBBLRWF",
+      "tableName": "CCRYISOBBL",
+      "code": "RWF",
+      "valueNL": "371",
+      "valueFR": "371",
+      "valueEN": "371"
+    },
+    {
+      "entryId": "CCRYISOBBLSAR",
+      "tableName": "CCRYISOBBL",
+      "code": "SAR",
+      "valueNL": "751",
+      "valueFR": "751",
+      "valueEN": "751"
+    },
+    {
+      "entryId": "CCRYISOBBLSBD",
+      "tableName": "CCRYISOBBL",
+      "code": "SBD",
+      "valueNL": "885",
+      "valueFR": "885",
+      "valueEN": "885"
+    },
+    {
+      "entryId": "CCRYISOBBLSCR",
+      "tableName": "CCRYISOBBL",
+      "code": "SCR",
+      "valueNL": "641",
+      "valueFR": "641",
+      "valueEN": "641"
+    },
+    {
+      "entryId": "CCRYISOBBLSDG",
+      "tableName": "CCRYISOBBL",
+      "code": "SDG",
+      "valueNL": "341",
+      "valueFR": "341",
+      "valueEN": "341",
+      "valueDE": "341"
+    },
+    {
+      "entryId": "CCRYISOBBLSEK",
+      "tableName": "CCRYISOBBL",
+      "code": "SEK",
+      "valueNL": "081",
+      "valueFR": "081",
+      "valueEN": "081"
+    },
+    {
+      "entryId": "CCRYISOBBLSGD",
+      "tableName": "CCRYISOBBL",
+      "code": "SGD",
+      "valueNL": "975",
+      "valueFR": "975",
+      "valueEN": "975"
+    },
+    {
+      "entryId": "CCRYISOBBLSHP",
+      "tableName": "CCRYISOBBL",
+      "code": "SHP",
+      "valueNL": "869",
+      "valueFR": "869",
+      "valueEN": "869"
+    },
+    {
+      "entryId": "CCRYISOBBLSIT",
+      "tableName": "CCRYISOBBL",
+      "code": "SIT",
+      "valueNL": "178",
+      "valueFR": "178",
+      "valueEN": "178"
+    },
+    {
+      "entryId": "CCRYISOBBLSKK",
+      "tableName": "CCRYISOBBL",
+      "code": "SKK",
+      "valueNL": "288",
+      "valueFR": "288",
+      "valueEN": "288"
+    },
+    {
+      "entryId": "CCRYISOBBLSLL",
+      "tableName": "CCRYISOBBL",
+      "code": "SLL",
+      "valueNL": "921",
+      "valueFR": "921",
+      "valueEN": "921"
+    },
+    {
+      "entryId": "CCRYISOBBLSOS",
+      "tableName": "CCRYISOBBL",
+      "code": "SOS",
+      "valueNL": "932",
+      "valueFR": "932",
+      "valueEN": "932"
+    },
+    {
+      "entryId": "CCRYISOBBLSRD",
+      "tableName": "CCRYISOBBL",
+      "code": "SRD",
+      "valueNL": "954",
+      "valueFR": "954",
+      "valueEN": "954",
+      "valueDE": "954"
+    },
+    {
+      "entryId": "CCRYISOBBLSSP",
+      "tableName": "CCRYISOBBL",
+      "code": "SSP",
+      "valueNL": "345",
+      "valueFR": "345",
+      "valueEN": "345",
+      "valueDE": "345"
+    },
+    {
+      "entryId": "CCRYISOBBLSTD",
+      "tableName": "CCRYISOBBL",
+      "code": "STD",
+      "valueNL": "973",
+      "valueFR": "973",
+      "valueEN": "973"
+    },
+    {
+      "entryId": "CCRYISOBBLSTN",
+      "tableName": "CCRYISOBBL",
+      "code": "STN",
+      "valueNL": "973",
+      "valueFR": "973",
+      "valueEN": "973",
+      "valueDE": "973"
+    },
+    {
+      "entryId": "CCRYISOBBLSVC",
+      "tableName": "CCRYISOBBL",
+      "code": "SVC",
+      "valueNL": "944",
+      "valueFR": "944",
+      "valueEN": "944"
+    },
+    {
+      "entryId": "CCRYISOBBLSYP",
+      "tableName": "CCRYISOBBL",
+      "code": "SYP",
+      "valueNL": "711",
+      "valueFR": "711",
+      "valueEN": "711"
+    },
+    {
+      "entryId": "CCRYISOBBLSZL",
+      "tableName": "CCRYISOBBL",
+      "code": "SZL",
+      "valueNL": "817",
+      "valueFR": "817",
+      "valueEN": "817"
+    },
+    {
+      "entryId": "CCRYISOBBLTHB",
+      "tableName": "CCRYISOBBL",
+      "code": "THB",
+      "valueNL": "881",
+      "valueFR": "881",
+      "valueEN": "881"
+    },
+    {
+      "entryId": "CCRYISOBBLTJS",
+      "tableName": "CCRYISOBBL",
+      "code": "TJS",
+      "valueNL": "265",
+      "valueFR": "265",
+      "valueEN": "265"
+    },
+    {
+      "entryId": "CCRYISOBBLTMT",
+      "tableName": "CCRYISOBBL",
+      "code": "TMT",
+      "valueNL": "269",
+      "valueFR": "269",
+      "valueEN": "269",
+      "valueDE": "269"
+    },
+    {
+      "entryId": "CCRYISOBBLTND",
+      "tableName": "CCRYISOBBL",
+      "code": "TND",
+      "valueNL": "321",
+      "valueFR": "321",
+      "valueEN": "321"
+    },
+    {
+      "entryId": "CCRYISOBBLTOP",
+      "tableName": "CCRYISOBBL",
+      "code": "TOP",
+      "valueNL": "877",
+      "valueFR": "877",
+      "valueEN": "877"
+    },
+    {
+      "entryId": "CCRYISOBBLTRY",
+      "tableName": "CCRYISOBBL",
+      "code": "TRY",
+      "valueNL": "183",
+      "valueFR": "183",
+      "valueEN": "183",
+      "valueDE": "183"
+    },
+    {
+      "entryId": "CCRYISOBBLTTD",
+      "tableName": "CCRYISOBBL",
+      "code": "TTD",
+      "valueNL": "956",
+      "valueFR": "956",
+      "valueEN": "956"
+    },
+    {
+      "entryId": "CCRYISOBBLTWD",
+      "tableName": "CCRYISOBBL",
+      "code": "TWD",
+      "valueNL": "841",
+      "valueFR": "841",
+      "valueEN": "841"
+    },
+    {
+      "entryId": "CCRYISOBBLTZS",
+      "tableName": "CCRYISOBBL",
+      "code": "TZS",
+      "valueNL": "935",
+      "valueFR": "935",
+      "valueEN": "935"
+    },
+    {
+      "entryId": "CCRYISOBBLUAH",
+      "tableName": "CCRYISOBBL",
+      "code": "UAH",
+      "valueNL": "228",
+      "valueFR": "228",
+      "valueEN": "228"
+    },
+    {
+      "entryId": "CCRYISOBBLUGX",
+      "tableName": "CCRYISOBBL",
+      "code": "UGX",
+      "valueNL": "934",
+      "valueFR": "934",
+      "valueEN": "934"
+    },
+    {
+      "entryId": "CCRYISOBBLUSD",
+      "tableName": "CCRYISOBBL",
+      "code": "USD",
+      "valueNL": "011",
+      "valueFR": "011",
+      "valueEN": "011"
+    },
+    {
+      "entryId": "CCRYISOBBLUYU",
+      "tableName": "CCRYISOBBL",
+      "code": "UYU",
+      "valueNL": "601",
+      "valueFR": "601",
+      "valueEN": "601"
+    },
+    {
+      "entryId": "CCRYISOBBLUZS",
+      "tableName": "CCRYISOBBL",
+      "code": "UZS",
+      "valueNL": "275",
+      "valueFR": "275",
+      "valueEN": "275"
+    },
+    {
+      "entryId": "CCRYISOBBLVEF",
+      "tableName": "CCRYISOBBL",
+      "code": "VEF",
+      "valueNL": "541",
+      "valueFR": "541",
+      "valueEN": "541",
+      "valueDE": "541"
+    },
+    {
+      "entryId": "CCRYISOBBLVES",
+      "tableName": "CCRYISOBBL",
+      "code": "VES",
+      "valueNL": "542",
+      "valueFR": "542",
+      "valueEN": "542",
+      "valueDE": "542"
+    },
+    {
+      "entryId": "CCRYISOBBLVND",
+      "tableName": "CCRYISOBBL",
+      "code": "VND",
+      "valueNL": "972",
+      "valueFR": "972",
+      "valueEN": "972"
+    },
+    {
+      "entryId": "CCRYISOBBLVUV",
+      "tableName": "CCRYISOBBL",
+      "code": "VUV",
+      "valueNL": "887",
+      "valueFR": "887",
+      "valueEN": "887"
+    },
+    {
+      "entryId": "CCRYISOBBLWST",
+      "tableName": "CCRYISOBBL",
+      "code": "WST",
+      "valueNL": "986",
+      "valueFR": "986",
+      "valueEN": "986"
+    },
+    {
+      "entryId": "CCRYISOBBLXAF",
+      "tableName": "CCRYISOBBL",
+      "code": "XAF",
+      "valueNL": "927",
+      "valueFR": "927",
+      "valueEN": "927"
+    },
+    {
+      "entryId": "CCRYISOBBLXAG",
+      "tableName": "CCRYISOBBL",
+      "code": "XAG",
+      "valueNL": "474",
+      "valueFR": "474",
+      "valueEN": "474",
+      "valueDE": "474"
+    },
+    {
+      "entryId": "CCRYISOBBLXAU",
+      "tableName": "CCRYISOBBL",
+      "code": "XAU",
+      "valueNL": "475",
+      "valueFR": "475",
+      "valueEN": "475",
+      "valueDE": "475"
+    },
+    {
+      "entryId": "CCRYISOBBLXBA",
+      "tableName": "CCRYISOBBL",
+      "code": "XBA",
+      "valueNL": "998",
+      "valueFR": "998",
+      "valueEN": "998"
+    },
+    {
+      "entryId": "CCRYISOBBLXBB",
+      "tableName": "CCRYISOBBL",
+      "code": "XBB",
+      "valueNL": "997",
+      "valueFR": "997",
+      "valueEN": "997"
+    },
+    {
+      "entryId": "CCRYISOBBLXBC",
+      "tableName": "CCRYISOBBL",
+      "code": "XBC",
+      "valueNL": "999",
+      "valueFR": "999",
+      "valueEN": "999"
+    },
+    {
+      "entryId": "CCRYISOBBLXBD",
+      "tableName": "CCRYISOBBL",
+      "code": "XBD",
+      "valueNL": "996",
+      "valueFR": "996",
+      "valueEN": "996"
+    },
+    {
+      "entryId": "CCRYISOBBLXCD",
+      "tableName": "CCRYISOBBL",
+      "code": "XCD",
+      "valueNL": "481",
+      "valueFR": "481",
+      "valueEN": "481"
+    },
+    {
+      "entryId": "CCRYISOBBLXDR",
+      "tableName": "CCRYISOBBL",
+      "code": "XDR",
+      "valueNL": "994",
+      "valueFR": "994",
+      "valueEN": "994"
+    },
+    {
+      "entryId": "CCRYISOBBLXEU",
+      "tableName": "CCRYISOBBL",
+      "code": "XEU",
+      "valueNL": "995",
+      "valueFR": "995",
+      "valueEN": "995"
+    },
+    {
+      "entryId": "CCRYISOBBLXOF",
+      "tableName": "CCRYISOBBL",
+      "code": "XOF",
+      "valueNL": "917",
+      "valueFR": "917",
+      "valueEN": "917"
+    },
+    {
+      "entryId": "CCRYISOBBLXPD",
+      "tableName": "CCRYISOBBL",
+      "code": "XPD",
+      "valueNL": "472",
+      "valueFR": "472",
+      "valueEN": "472",
+      "valueDE": "472"
+    },
+    {
+      "entryId": "CCRYISOBBLXPF",
+      "tableName": "CCRYISOBBL",
+      "code": "XPF",
+      "valueNL": "857",
+      "valueFR": "857",
+      "valueEN": "857"
+    },
+    {
+      "entryId": "CCRYISOBBLXPT",
+      "tableName": "CCRYISOBBL",
+      "code": "XPT",
+      "valueNL": "473",
+      "valueFR": "473",
+      "valueEN": "473",
+      "valueDE": "473"
+    },
+    {
+      "entryId": "CCRYISOBBLXSU",
+      "tableName": "CCRYISOBBL",
+      "code": "XSU",
+      "valueNL": "585",
+      "valueFR": "585",
+      "valueEN": "585",
+      "valueDE": "585"
+    },
+    {
+      "entryId": "CCRYISOBBLYER",
+      "tableName": "CCRYISOBBL",
+      "code": "YER",
+      "valueNL": "966",
+      "valueFR": "966",
+      "valueEN": "966"
+    },
+    {
+      "entryId": "CCRYISOBBLZAR",
+      "tableName": "CCRYISOBBL",
+      "code": "ZAR",
+      "valueNL": "441",
+      "valueFR": "441",
+      "valueEN": "441"
+    },
+    {
+      "entryId": "CCRYISOBBLZMK",
+      "tableName": "CCRYISOBBL",
+      "code": "ZMK",
+      "valueNL": "431",
+      "valueFR": "431",
+      "valueEN": "431"
+    },
+    {
+      "entryId": "CCRYISOBBLZMW",
+      "tableName": "CCRYISOBBL",
+      "code": "ZMW",
+      "valueNL": "433",
+      "valueFR": "433",
+      "valueEN": "433",
+      "valueDE": "433"
+    },
+    {
+      "entryId": "CCRYISOBBLZWL",
+      "tableName": "CCRYISOBBL",
+      "code": "ZWL",
+      "valueNL": "938",
+      "valueFR": "938",
+      "valueEN": "938",
+      "valueDE": "938"
+    }
+  ]
+}
+

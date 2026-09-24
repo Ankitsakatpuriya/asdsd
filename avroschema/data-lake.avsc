@@ -1,0 +1,3340 @@
+{
+  "type": "record",
+  "name": "BankGuaranteesDataLakeEvent",
+  "namespace": "com.ing.bankguarantees.avro",
+  "doc": "This schema represents a bank guarantee event.",
+  "fields": [
+    {
+      "name": "header",
+      "type": {
+        "type": "record",
+        "name": "Header",
+        "fields": [
+          {
+            "name": "eventId",
+            "type": {
+              "type": "string",
+              "avro.java.string": "String"
+            },
+            "doc": "GUID (UUID) of the event in order to make it globally identifiable"
+          },
+          {
+            "name": "sessionId",
+            "type": {
+              "type": "string",
+              "avro.java.string": "String"
+            },
+            "doc": "The sessionId as provided by an access token"
+          },
+          {
+            "name": "traceId",
+            "type": {
+              "type": "string",
+              "avro.java.string": "String"
+            },
+            "doc": "Identifier which is set commonly to a number of events belonging to the same context (tree of execution)"
+          },
+          {
+            "name": "source",
+            "type": {
+              "type": "string",
+              "avro.java.string": "String"
+            },
+            "doc": "The source hostname of the message producer"
+          },
+          {
+            "name": "created",
+            "type": {
+              "type": "string",
+              "avro.java.string": "String"
+            },
+            "doc": "Event time creation"
+          },
+          {
+            "name": "eventName",
+            "type": {
+              "type": "enum",
+              "name": "EventName",
+              "symbols": [
+                "CREATED",
+                "DRAFT",
+                "SIGN_INITIATED",
+                "PARTIALLY_SIGNED",
+                "SIGNED",
+                "CANCELED",
+                "FULFILLED",
+                "FULFILMENT_STARTED",
+                "FULFILMENT_ERROR",
+                "ERROR"
+              ]
+            },
+            "doc": "The name of the event in order to indicate the business fact"
+          },
+          {
+            "name": "confidentiality",
+            "type": "int",
+            "doc": "Confidentiality level (1..4) of the information contained in the event, aligned with the level included in the TPA Message Headers. It's duplicated so the event is self contained"
+          },
+          {
+            "name": "version",
+            "type": {
+              "type": "string",
+              "avro.java.string": "String"
+            },
+            "doc": "The version of the event definition"
+          }
+        ]
+      },
+      "doc": "Global event header"
+    },
+    {
+      "name": "body",
+      "type": {
+        "type": "record",
+        "name": "BankGuaranteeEventBody",
+        "fields": [
+          {
+            "name": "id",
+            "type": "string",
+            "doc": "The global unique id for the bank guarantee request"
+          },
+          {
+            "name": "status",
+            "type": [
+              {
+                "type": "enum",
+                "name": "BankGuaranteeRequestStatus",
+                "symbols": [
+                  "CREATED",
+                  "DRAFT",
+                  "SIGN_INITIATED",
+                  "PARTIALLY_SIGNED",
+                  "SIGNED",
+                  "CANCELED",
+                  "FULFILLED",
+                  "FULFILMENT_STARTED",
+                  "FULFILMENT_ERROR",
+                  "ERROR"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "sessionId",
+            "type": "string"
+          },
+          {
+            "name": "bgRequest",
+            "type": {
+              "type": "record",
+              "name": "BankGuaranteeRequestData",
+              "fields": [
+                {
+                  "name": "translationLanguage",
+                  "type": "string"
+                },
+                {
+                  "name": "issueToAnotherParty",
+                  "type": "boolean"
+                },
+                {
+                  "name": "signingAllowed",
+                  "type": "boolean"
+                },
+                {
+                  "name": "signed",
+                  "type": "boolean"
+                },
+                {
+                  "name": "wbCustomer",
+                  "type": "boolean"
+                },
+                {
+                  "name": "stp",
+                  "type": "boolean"
+                },
+                {
+                  "name": "amountCapExceed",
+                  "type": "boolean"
+                },
+                {
+                  "name": "referenceNumber",
+                  "type": "string"
+                },
+                {
+                  "name": "instructingParty",
+                  "type": {
+                    "type": "record",
+                    "name": "InstructingPartyData",
+                    "fields": [
+                      {
+                        "name": "individual",
+                        "type": {
+                          "type": "record",
+                          "name": "IndividualData",
+                          "fields": [
+                            {
+                              "name": "legalRepId",
+                              "type": "string"
+                            },
+                            {
+                              "name": "individualName",
+                              "type": {
+                                "type": "record",
+                                "name": "IndividualNameLob",
+                                "fields": [
+                                  {
+                                    "name": "fullName",
+                                    "type": "string"
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "name": "digitalAddresses",
+                              "type": {
+                                "type": "array",
+                                "items": {
+                                  "type": "record",
+                                  "name": "DigitalAddressData",
+                                  "fields": [
+                                    {
+                                      "name": "id",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "name": "digitalAddressType",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "name": "digitalAddressUsageType",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "name": "fullDigitalAddress",
+                                      "type": [
+                                        "null",
+                                        "string"
+                                      ]
+                                    }
+                                  ]
+                                }
+                              }
+                            },
+                            {
+                              "name": "internalIdentifiers",
+                              "type": {
+                                "type": "array",
+                                "items": {
+                                  "type": "record",
+                                  "name": "Identifier",
+                                  "fields": [
+                                    {
+                                      "name": "id",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "name": "type",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "name": "value",
+                                      "type": "string"
+                                    }
+                                  ]
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "name": "organisation",
+                        "type": {
+                          "type": "record",
+                          "name": "OrganisationData",
+                          "fields": [
+                            {
+                              "name": "legalEntityId",
+                              "type": "string"
+                            },
+                            {
+                              "name": "cinNumber",
+                              "type": "string"
+                            },
+                            {
+                              "name": "organisationName",
+                              "type": {
+                                "type": "record",
+                                "name": "OrganisationNameData",
+                                "fields": [
+                                  {
+                                    "name": "type",
+                                    "type": "string"
+                                  },
+                                  {
+                                    "name": "fullName",
+                                    "type": "string"
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "name": "postalAddress",
+                              "type": {
+                                "type": "record",
+                                "name": "PostalAddressData",
+                                "fields": [
+                                  {
+                                    "name": "countryCode",
+                                    "type": "string"
+                                  },
+                                  {
+                                    "name": "cityName",
+                                    "type": "string"
+                                  },
+                                  {
+                                    "name": "postalCode",
+                                    "type": "string"
+                                  },
+                                  {
+                                    "name": "firstAddress",
+                                    "type": "string"
+                                  },
+                                  {
+                                    "name": "streetName",
+                                    "type": [
+                                      "null",
+                                      "string"
+                                    ]
+                                  },
+                                  {
+                                    "name": "houseNumber",
+                                    "type": [
+                                      "null",
+                                      "string"
+                                    ]
+                                  },
+                                  {
+                                    "name": "usageType",
+                                    "type": [
+                                      "null",
+                                      "string"
+                                    ]
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "name": "digitalAddresses",
+                              "type": {
+                                "type": "array",
+                                "items": "DigitalAddressData"
+                              }
+                            },
+                            {
+                              "name": "internalIdentifiers",
+                              "type": {
+                                "type": "array",
+                                "items": "Identifier"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "applicant",
+                  "type": [
+                    "null",
+                    {
+                      "type": "record",
+                      "name": "ApplicantData",
+                      "fields": [
+                        {
+                          "name": "cinNumber",
+                          "type": [
+                            "null",
+                            "string"
+                          ]
+                        },
+                        {
+                          "name": "organisationName",
+                          "type": [
+                            "null",
+                            {
+                              "type": "record",
+                              "name": "ApplicantOrganisationNameData",
+                              "fields": [
+                                {
+                                  "name": "fullName",
+                                  "type": [
+                                    "null",
+                                    "string"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "postalAddress",
+                          "type": [
+                            "null",
+                            {
+                              "type": "record",
+                              "name": "ApplicantPostalAddressData",
+                              "fields": [
+                                {
+                                  "name": "countryCode",
+                                  "type": [
+                                    "null",
+                                    "string"
+                                  ]
+                                },
+                                {
+                                  "name": "cityName",
+                                  "type": [
+                                    "null",
+                                    "string"
+                                  ]
+                                },
+                                {
+                                  "name": "postalCode",
+                                  "type": [
+                                    "null",
+                                    "string"
+                                  ]
+                                },
+                                {
+                                  "name": "firstAddress",
+                                  "type": [
+                                    "null",
+                                    "string"
+                                  ]
+                                },
+                                {
+                                  "name": "streetName",
+                                  "type": [
+                                    "null",
+                                    "string"
+                                  ]
+                                },
+                                {
+                                  "name": "houseNumber",
+                                  "type": [
+                                    "null",
+                                    "string"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "emailAddress",
+                          "type": [
+                            "null",
+                            {
+                              "type": "record",
+                              "name": "ApplicantEmailData",
+                              "fields": [
+                                {
+                                  "name": "emailIdInformation",
+                                  "type": [
+                                    "null",
+                                    "string"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "beneficiary",
+                  "type": [
+                    "null",
+                    {
+                      "type": "record",
+                      "name": "BeneficiaryData",
+                      "fields": [
+                        {
+                          "name": "cinNumber",
+                          "type": [
+                            "null",
+                            "string"
+                          ]
+                        },
+                        {
+                          "name": "beneficiaryType",
+                          "type": [
+                            "null",
+                            "string"
+                          ]
+                        },
+                        {
+                          "name": "organisationName",
+                          "type": [
+                            "null",
+                            {
+                              "type": "record",
+                              "name": "BeneficiaryOrganisationNameData",
+                              "fields": [
+                                {
+                                  "name": "fullName",
+                                  "type": [
+                                    "null",
+                                    "string"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "privateIndividual",
+                          "type": [
+                            "null",
+                            {
+                              "type": "record",
+                              "name": "BeneficiaryPrivateIndividualData",
+                              "fields": [
+                                {
+                                  "name": "belgiumCitizen",
+                                  "type": "boolean"
+                                },
+                                {
+                                  "name": "primaryBeneficiaryName",
+                                  "type": [
+                                    "null",
+                                    "string"
+                                  ]
+                                },
+                                {
+                                  "name": "primaryIdentificationReference",
+                                  "type": [
+                                    "null",
+                                    "string"
+                                  ]
+                                },
+                                {
+                                  "name": "primaryBeneficiaryDob",
+                                  "type": [
+                                    "null",
+                                    {
+                                      "type": "int",
+                                      "logicalType": "date"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "secondaryBeneficiaryName",
+                                  "type": [
+                                    "null",
+                                    "string"
+                                  ]
+                                },
+                                {
+                                  "name": "secondaryIdentificationReference",
+                                  "type": [
+                                    "null",
+                                    "string"
+                                  ]
+                                },
+                                {
+                                  "name": "secondaryBeneficiaryDob",
+                                  "type": [
+                                    "null",
+                                    {
+                                      "type": "int",
+                                      "logicalType": "date"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "postalAddress",
+                          "type": [
+                            "null",
+                            {
+                              "type": "record",
+                              "name": "BeneficiaryPostalAddressData",
+                              "fields": [
+                                {
+                                  "name": "countryCode",
+                                  "type": [
+                                    "null",
+                                    "string"
+                                  ]
+                                },
+                                {
+                                  "name": "cityName",
+                                  "type": [
+                                    "null",
+                                    "string"
+                                  ]
+                                },
+                                {
+                                  "name": "postalCode",
+                                  "type": [
+                                    "null",
+                                    "string"
+                                  ]
+                                },
+                                {
+                                  "name": "firstAddress",
+                                  "type": [
+                                    "null",
+                                    "string"
+                                  ]
+                                },
+                                {
+                                  "name": "streetName",
+                                  "type": [
+                                    "null",
+                                    "string"
+                                  ]
+                                },
+                                {
+                                  "name": "houseNumber",
+                                  "type": [
+                                    "null",
+                                    "string"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "emailAddress",
+                          "type": [
+                            "null",
+                            {
+                              "type": "record",
+                              "name": "BeneficiaryEmailData",
+                              "fields": [
+                                {
+                                  "name": "emailIdInformation",
+                                  "type": [
+                                    "null",
+                                    "string"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "financialInformation",
+                  "type": {
+                    "type": "record",
+                    "name": "FinancialInformationData",
+                    "fields": [
+                      {
+                        "name": "accountToBeDebited",
+                        "type": {
+                          "type": "record",
+                          "name": "AccountData",
+                          "fields": [
+                            {
+                              "name": "accountName",
+                              "type": "string"
+                            },
+                            {
+                              "name": "uuid",
+                              "type": [
+                                "null",
+                                "string"
+                              ]
+                            },
+                            {
+                              "name": "ibanNumber",
+                              "type": "string"
+                            },
+                            {
+                              "name": "accountCurrency",
+                              "type": "string"
+                            },
+                            {
+                              "name": "balanceAmount",
+                              "type": [
+                                "null",
+                                {
+                                  "type": "string",
+                                  "java-class": "java.math.BigDecimal"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "panNumber",
+                              "type": [
+                                "null",
+                                "string"
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "name": "creditLine",
+                        "type": [
+                          "null",
+                          {
+                            "type": "record",
+                            "name": "ContractDetailData",
+                            "fields": [
+                              {
+                                "name": "uuid",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ]
+                              },
+                              {
+                                "name": "accountName",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ]
+                              },
+                              {
+                                "name": "creditLineAccountNumber",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "string",
+                                    "java-class": "java.math.BigDecimal"
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "klcNumber",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "string",
+                                    "java-class": "java.math.BigDecimal"
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "ibanNumber",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ]
+                              },
+                              {
+                                "name": "currency",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ]
+                              },
+                              {
+                                "name": "amount",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "string",
+                                    "java-class": "java.math.BigDecimal"
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "endDate",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "int",
+                                    "logicalType": "date"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "alerDetails",
+                  "type": [
+                    "null",
+                    {
+                      "type": "record",
+                      "name": "AlerDetailsData",
+                      "fields": [
+                        {
+                          "name": "transactionId",
+                          "type": [
+                            "null",
+                            "string"
+                          ]
+                        },
+                        {
+                          "name": "transactionStatus",
+                          "type": [
+                            "null",
+                            "string"
+                          ]
+                        },
+                        {
+                          "name": "invokeAler",
+                          "type": "boolean"
+                        },
+                        {
+                          "name": "code",
+                          "type": [
+                            "null",
+                            "string"
+                          ]
+                        },
+                        {
+                          "name": "message",
+                          "type": [
+                            "null",
+                            "string"
+                          ]
+                        },
+                        {
+                          "name": "signers",
+                          "type": [
+                            "null",
+                            "string"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "guaranteeDetails",
+                  "type": {
+                    "type": "record",
+                    "name": "GuaranteeDetailsData",
+                    "fields": [
+                      {
+                        "name": "bgCode",
+                        "type": {
+                          "type": "enum",
+                          "name": "BankGuaranteeCode",
+                          "symbols": [
+                            "PUBLIC_CONTRACT",
+                            "PERFORMANCE_BOND",
+                            "RENTAL",
+                            "ADVANCE_PAYMENT",
+                            "PAYMENT_GUARANTEE",
+                            "MONEY_RETENTION_BOND",
+                            "BID_BOND",
+                            "REAL_ESTATE",
+                            "STATE_LOTTERY",
+                            "CUSTOM_1",
+                            "CUSTOM_2",
+                            "CUSTOM_4",
+                            "CUSTOM_5",
+                            "OVAM",
+                            "DCK_CDC",
+                            "WOODS_PROM_A",
+                            "WOODS_PROM_B",
+                            "WOODS_PROM_VLA",
+                            "WOODS_BGWAL_PUBLIC",
+                            "WOODS_BG_PRIVATE",
+                            "WOODS_BG_DISCHARGE",
+                            "WOODS_BGVLA_PUBLIC",
+                            "ABSTRACT_PROM",
+                            "PUBLIC_CONTRACT_PROM",
+                            "GOODS_TRANSPORT",
+                            "PASSENGER_TRANSPORT",
+                            "OPERATORS_TRANSPORT",
+                            "CUSTOMIZED_TEXT"
+                          ]
+                        }
+                      },
+                      {
+                        "name": "bgLanguage",
+                        "type": "string"
+                      },
+                      {
+                        "name": "bgAmount",
+                        "type": [
+                          "null",
+                          {
+                            "type": "string",
+                            "java-class": "java.math.BigDecimal"
+                          }
+                        ]
+                      },
+                      {
+                        "name": "bgCurrency",
+                        "type": "string"
+                      },
+                      {
+                        "name": "bankGuarantee",
+                        "type": [
+                          {
+                            "type": "record",
+                            "name": "PublicContract",
+                            "namespace": "com.ing.bankguarantees.avro.guaranteetype",
+                            "fields": [
+                              {
+                                "name": "tenderSpecification",
+                                "type": "boolean"
+                              },
+                              {
+                                "name": "referenceNumber",
+                                "type": "string"
+                              },
+                              {
+                                "name": "title",
+                                "type": "string"
+                              },
+                              {
+                                "name": "totalAmount",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "string",
+                                    "java-class": "java.math.BigDecimal"
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "totalAmtCurrency",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ]
+                              },
+                              {
+                                "name": "grantDate",
+                                "type": {
+                                  "type": "int",
+                                  "logicalType": "date"
+                                }
+                              },
+                              {
+                                "name": "expiryDate",
+                                "type": "string"
+                              }
+                            ]
+                          },
+                          {
+                            "type": "record",
+                            "name": "AdvancePayment",
+                            "namespace": "com.ing.bankguarantees.avro.guaranteetype",
+                            "fields": [
+                              {
+                                "name": "contractDescription",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ]
+                              },
+                              {
+                                "name": "referenceNumber",
+                                "type": "string"
+                              },
+                              {
+                                "name": "bankGuaranteeEnd",
+                                "type": "string"
+                              },
+                              {
+                                "name": "advancePaymentIBAN",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ]
+                              },
+                              {
+                                "name": "maturityDate",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "int",
+                                    "logicalType": "date"
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "bankGuaranteeEndType",
+                                "type": {
+                                  "type": "enum",
+                                  "name": "BankGuaranteeEndType",
+                                  "symbols": [
+                                    "SPECIFIED",
+                                    "UNSPECIFIED",
+                                    "ACCEPTANCE_WITH_EXPIRY_DATE",
+                                    "ACCEPTANCE_WITH_NO_EXPIRY_DATE",
+                                    "OTHER"
+                                  ]
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "record",
+                            "name": "BidBond",
+                            "namespace": "com.ing.bankguarantees.avro.guaranteetype",
+                            "fields": [
+                              {
+                                "name": "contractDescription",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ]
+                              },
+                              {
+                                "name": "referenceNumber",
+                                "type": "string"
+                              },
+                              {
+                                "name": "bankGuaranteeEnd",
+                                "type": "string"
+                              },
+                              {
+                                "name": "bankGuaranteeEndType",
+                                "type": {
+                                  "type": "enum",
+                                  "name": "BankGuaranteeEndType",
+                                  "symbols": [
+                                    "SPECIFIED",
+                                    "UNSPECIFIED",
+                                    "ACCEPTANCE_WITH_EXPIRY_DATE",
+                                    "ACCEPTANCE_WITH_NO_EXPIRY_DATE",
+                                    "OTHER"
+                                  ]
+                                }
+                              },
+                              {
+                                "name": "maturityDate",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "int",
+                                    "logicalType": "date"
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "otherOptionForPartial",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "type": "record",
+                            "name": "MoneyRetentionBond",
+                            "namespace": "com.ing.bankguarantees.avro.guaranteetype",
+                            "fields": [
+                              {
+                                "name": "contractDescription",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ]
+                              },
+                              {
+                                "name": "referenceNumber",
+                                "type": "string"
+                              },
+                              {
+                                "name": "bankGuaranteeEnd",
+                                "type": "string"
+                              },
+                              {
+                                "name": "advancePaymentIBAN",
+                                "type": "string"
+                              },
+                              {
+                                "name": "maturityDate",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "int",
+                                    "logicalType": "date"
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "bankGuaranteeEndType",
+                                "type": {
+                                  "type": "enum",
+                                  "name": "BankGuaranteeEndType",
+                                  "symbols": [
+                                    "SPECIFIED",
+                                    "UNSPECIFIED",
+                                    "ACCEPTANCE_WITH_EXPIRY_DATE",
+                                    "ACCEPTANCE_WITH_NO_EXPIRY_DATE",
+                                    "OTHER"
+                                  ]
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "record",
+                            "name": "Payment",
+                            "namespace": "com.ing.bankguarantees.avro.guaranteetype",
+                            "fields": [
+                              {
+                                "name": "contractDescription",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ]
+                              },
+                              {
+                                "name": "referenceNumber",
+                                "type": "string"
+                              },
+                              {
+                                "name": "bankGuaranteeEnd",
+                                "type": "string"
+                              },
+                              {
+                                "name": "bankGuaranteeEndType",
+                                "type": {
+                                  "type": "enum",
+                                  "name": "BankGuaranteeEndType",
+                                  "symbols": [
+                                    "SPECIFIED",
+                                    "UNSPECIFIED",
+                                    "ACCEPTANCE_WITH_EXPIRY_DATE",
+                                    "ACCEPTANCE_WITH_NO_EXPIRY_DATE",
+                                    "OTHER"
+                                  ]
+                                }
+                              },
+                              {
+                                "name": "maturityDate",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "int",
+                                    "logicalType": "date"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "type": "record",
+                            "name": "PerformanceBond",
+                            "namespace": "com.ing.bankguarantees.avro.guaranteetype",
+                            "fields": [
+                              {
+                                "name": "contractDescription",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ]
+                              },
+                              {
+                                "name": "referenceNumber",
+                                "type": "string"
+                              },
+                              {
+                                "name": "bankGuaranteeEnd",
+                                "type": "string"
+                              },
+                              {
+                                "name": "maturityDate",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "int",
+                                    "logicalType": "date"
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "bankGuaranteeEndType",
+                                "type": {
+                                  "type": "enum",
+                                  "name": "BankGuaranteeEndType",
+                                  "symbols": [
+                                    "SPECIFIED",
+                                    "UNSPECIFIED",
+                                    "ACCEPTANCE_WITH_EXPIRY_DATE",
+                                    "ACCEPTANCE_WITH_NO_EXPIRY_DATE",
+                                    "OTHER"
+                                  ]
+                                }
+                              },
+                              {
+                                "name": "immediateMaturityDate",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "int",
+                                    "logicalType": "date"
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "finalMaturityDate",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "int",
+                                    "logicalType": "date"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "type": "record",
+                            "name": "RealEstate",
+                            "namespace": "com.ing.bankguarantees.avro.guaranteetype",
+                            "fields": [
+                              {
+                                "name": "bankGuaranteeEnd",
+                                "type": "string"
+                              },
+                              {
+                                "name": "bankGuaranteeEndType",
+                                "type": {
+                                  "type": "enum",
+                                  "name": "BankGuaranteeEndType",
+                                  "symbols": [
+                                    "SPECIFIED",
+                                    "UNSPECIFIED",
+                                    "ACCEPTANCE_WITH_EXPIRY_DATE",
+                                    "ACCEPTANCE_WITH_NO_EXPIRY_DATE",
+                                    "OTHER"
+                                  ]
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "record",
+                            "name": "Rental",
+                            "namespace": "com.ing.bankguarantees.avro.guaranteetype",
+                            "fields": [
+                              {
+                                "name": "expiryDate",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ]
+                              },
+                              {
+                                "name": "street",
+                                "type": "string"
+                              },
+                              {
+                                "name": "postalCode",
+                                "type": "string"
+                              },
+                              {
+                                "name": "city",
+                                "type": "string"
+                              },
+                              {
+                                "name": "country",
+                                "type": "string"
+                              },
+                              {
+                                "name": "gracePeriod",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ]
+                              },
+                              {
+                                "name": "dateOfSignature",
+                                "type": {
+                                  "type": "int",
+                                  "logicalType": "date"
+                                }
+                              },
+                              {
+                                "name": "contractEndDate",
+                                "type": {
+                                  "type": "int",
+                                  "logicalType": "date"
+                                }
+                              },
+                              {
+                                "name": "rentalEndDate",
+                                "type": {
+                                  "type": "int",
+                                  "logicalType": "date"
+                                }
+                              },
+                              {
+                                "name": "referenceNumber",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "type": "record",
+                            "name": "StateLottery",
+                            "namespace": "com.ing.bankguarantees.avro.guaranteetype",
+                            "fields": [
+                              {
+                                "name": "bankGuaranteeEnd",
+                                "type": "string"
+                              },
+                              {
+                                "name": "bankGuaranteeEndType",
+                                "type": {
+                                  "type": "enum",
+                                  "name": "BankGuaranteeEndType",
+                                  "symbols": [
+                                    "SPECIFIED",
+                                    "UNSPECIFIED",
+                                    "ACCEPTANCE_WITH_EXPIRY_DATE",
+                                    "ACCEPTANCE_WITH_NO_EXPIRY_DATE",
+                                    "OTHER"
+                                  ]
+                                }
+                              },
+                              {
+                                "name": "dateOfAgreeInPrinc",
+                                "type": {
+                                  "type": "int",
+                                  "logicalType": "date"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "record",
+                            "name": "CustomTypeFive",
+                            "namespace": "com.ing.bankguarantees.avro.guaranteetype",
+                            "fields": [
+                              {
+                                "name": "bankGuaranteeEnd",
+                                "type": "string"
+                              },
+                              {
+                                "name": "bankGuaranteeEndType",
+                                "type": {
+                                  "type": "enum",
+                                  "name": "BankGuaranteeEndType",
+                                  "symbols": [
+                                    "SPECIFIED",
+                                    "UNSPECIFIED",
+                                    "ACCEPTANCE_WITH_EXPIRY_DATE",
+                                    "ACCEPTANCE_WITH_NO_EXPIRY_DATE",
+                                    "OTHER"
+                                  ]
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "record",
+                            "name": "CustomTypeFour",
+                            "namespace": "com.ing.bankguarantees.avro.guaranteetype",
+                            "fields": [
+                              {
+                                "name": "referenceNumber",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ]
+                              },
+                              {
+                                "name": "contractDescription",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ]
+                              },
+                              {
+                                "name": "bankGuaranteeEnd",
+                                "type": "string"
+                              },
+                              {
+                                "name": "bankGuaranteeEndType",
+                                "type": {
+                                  "type": "enum",
+                                  "name": "BankGuaranteeEndType",
+                                  "symbols": [
+                                    "SPECIFIED",
+                                    "UNSPECIFIED",
+                                    "ACCEPTANCE_WITH_EXPIRY_DATE",
+                                    "ACCEPTANCE_WITH_NO_EXPIRY_DATE",
+                                    "OTHER"
+                                  ]
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "record",
+                            "name": "CustomTypeOne",
+                            "namespace": "com.ing.bankguarantees.avro.guaranteetype",
+                            "fields": [
+                              {
+                                "name": "bankGuaranteeEnd",
+                                "type": "string"
+                              },
+                              {
+                                "name": "representing",
+                                "type": "string"
+                              },
+                              {
+                                "name": "bankGuaranteeEndType",
+                                "type": {
+                                  "type": "enum",
+                                  "name": "BankGuaranteeEndType",
+                                  "symbols": [
+                                    "SPECIFIED",
+                                    "UNSPECIFIED",
+                                    "ACCEPTANCE_WITH_EXPIRY_DATE",
+                                    "ACCEPTANCE_WITH_NO_EXPIRY_DATE",
+                                    "OTHER"
+                                  ]
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "record",
+                            "name": "CustomTypeTwo",
+                            "namespace": "com.ing.bankguarantees.avro.guaranteetype",
+                            "fields": [
+                              {
+                                "name": "bankGuaranteeEnd",
+                                "type": "string"
+                              },
+                              {
+                                "name": "bankGuaranteeEndType",
+                                "type": {
+                                  "type": "enum",
+                                  "name": "BankGuaranteeEndType",
+                                  "symbols": [
+                                    "SPECIFIED",
+                                    "UNSPECIFIED",
+                                    "ACCEPTANCE_WITH_EXPIRY_DATE",
+                                    "ACCEPTANCE_WITH_NO_EXPIRY_DATE",
+                                    "OTHER"
+                                  ]
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "record",
+                            "name": "Ovam",
+                            "namespace": "com.ing.bankguarantees.avro.guaranteetype",
+                            "fields": [
+                              {
+                                "name": "contractDescription",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ]
+                              },
+                              {
+                                "name": "referenceNumber",
+                                "type": "string"
+                              },
+                              {
+                                "name": "bankGuaranteeEnd",
+                                "type": "string"
+                              },
+                              {
+                                "name": "wasteTransportStartDate",
+                                "type": {
+                                  "type": "int",
+                                  "logicalType": "date"
+                                }
+                              },
+                              {
+                                "name": "wasteTransportEndDate",
+                                "type": {
+                                  "type": "int",
+                                  "logicalType": "date"
+                                }
+                              },
+                              {
+                                "name": "contractDueDate",
+                                "type": {
+                                  "type": "int",
+                                  "logicalType": "date"
+                                }
+                              },
+                              {
+                                "name": "bankGuaranteeEndType",
+                                "type": {
+                                  "type": "enum",
+                                  "name": "BankGuaranteeEndType",
+                                  "symbols": [
+                                    "SPECIFIED",
+                                    "UNSPECIFIED",
+                                    "ACCEPTANCE_WITH_EXPIRY_DATE",
+                                    "ACCEPTANCE_WITH_NO_EXPIRY_DATE",
+                                    "OTHER"
+                                  ]
+                                }
+                              },
+                              {
+                                "name": "contractValidityEndDate",
+                                "type": {
+                                  "type": "int",
+                                  "logicalType": "date"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "record",
+                            "name": "Dck",
+                            "namespace": "com.ing.bankguarantees.avro.guaranteetype",
+                            "fields": [
+                              {
+                                "name": "contractDescription",
+                                "type": "string"
+                              },
+                              {
+                                "name": "bankGuaranteeEndType",
+                                "type": {
+                                  "type": "enum",
+                                  "name": "BankGuaranteeEndType",
+                                  "symbols": [
+                                    "SPECIFIED",
+                                    "UNSPECIFIED",
+                                    "ACCEPTANCE_WITH_EXPIRY_DATE",
+                                    "ACCEPTANCE_WITH_NO_EXPIRY_DATE",
+                                    "OTHER"
+                                  ]
+                                }
+                              },
+                              {
+                                "name": "bankGuaranteeEnd",
+                                "type": "string"
+                              },
+                              {
+                                "name": "buildingAddress",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "record",
+                                    "name": "BuildingAddress",
+                                    "fields": [
+                                      {
+                                        "name": "street",
+                                        "type": [
+                                          "null",
+                                          "string"
+                                        ]
+                                      },
+                                      {
+                                        "name": "postalCode",
+                                        "type": [
+                                          "null",
+                                          "string"
+                                        ]
+                                      },
+                                      {
+                                        "name": "city",
+                                        "type": [
+                                          "null",
+                                          "string"
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "type": "record",
+                            "name": "WoodsWalloniaStandardPromise",
+                            "namespace": "com.ing.bankguarantees.avro.guaranteetype",
+                            "fields": [
+                              {
+                                "name": "region",
+                                "type": {
+                                  "type": "enum",
+                                  "name": "RegionCode",
+                                  "symbols": [
+                                    "WALLONIA",
+                                    "FLANDERS",
+                                    "FRANCE"
+                                  ]
+                                }
+                              },
+                              {
+                                "name": "salePlace",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ]
+                              },
+                              {
+                                "name": "saleDate",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "int",
+                                    "logicalType": "date"
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "promiseEndDate",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "int",
+                                    "logicalType": "date"
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "bankGuaranteeEnd",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "bankGuaranteeEndType",
+                                "type": {
+                                  "type": "enum",
+                                  "name": "BankGuaranteeEndType",
+                                  "symbols": [
+                                    "SPECIFIED",
+                                    "UNSPECIFIED",
+                                    "ACCEPTANCE_WITH_EXPIRY_DATE",
+                                    "ACCEPTANCE_WITH_NO_EXPIRY_DATE",
+                                    "OTHER"
+                                  ]
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "record",
+                            "name": "WoodsBlankPromise",
+                            "namespace": "com.ing.bankguarantees.avro.guaranteetype",
+                            "fields": [
+                              {
+                                "name": "lotsDescription",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "promiseEndDate",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "int",
+                                    "logicalType": "date"
+                                  }
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "region",
+                                "type": {
+                                  "type": "enum",
+                                  "name": "RegionCode",
+                                  "symbols": [
+                                    "WALLONIA",
+                                    "FLANDERS",
+                                    "FRANCE"
+                                  ]
+                                }
+                              },
+                              {
+                                "name": "bankGuaranteeEnd",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "bankGuaranteeEndType",
+                                "type": {
+                                  "type": "enum",
+                                  "name": "BankGuaranteeEndType",
+                                  "symbols": [
+                                    "SPECIFIED",
+                                    "UNSPECIFIED",
+                                    "ACCEPTANCE_WITH_EXPIRY_DATE",
+                                    "ACCEPTANCE_WITH_NO_EXPIRY_DATE",
+                                    "OTHER"
+                                  ]
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "record",
+                            "name": "WoodsFlandersStandardPromise",
+                            "namespace": "com.ing.bankguarantees.avro.guaranteetype",
+                            "fields": [
+                              {
+                                "name": "saleDate",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "int",
+                                    "logicalType": "date"
+                                  }
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "salePlace",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "promiseEndDate",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "int",
+                                    "logicalType": "date"
+                                  }
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "region",
+                                "type": {
+                                  "type": "enum",
+                                  "name": "RegionCode",
+                                  "symbols": [
+                                    "WALLONIA",
+                                    "FLANDERS",
+                                    "FRANCE"
+                                  ]
+                                }
+                              },
+                              {
+                                "name": "bankGuaranteeEnd",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "bankGuaranteeEndType",
+                                "type": {
+                                  "type": "enum",
+                                  "name": "BankGuaranteeEndType",
+                                  "symbols": [
+                                    "SPECIFIED",
+                                    "UNSPECIFIED",
+                                    "ACCEPTANCE_WITH_EXPIRY_DATE",
+                                    "ACCEPTANCE_WITH_NO_EXPIRY_DATE",
+                                    "OTHER"
+                                  ]
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "record",
+                            "name": "WoodsDischarge",
+                            "namespace": "com.ing.bankguarantees.avro.guaranteetype",
+                            "fields": [
+                              {
+                                "name": "region",
+                                "type": {
+                                  "type": "enum",
+                                  "name": "RegionCode",
+                                  "symbols": [
+                                    "WALLONIA",
+                                    "FLANDERS",
+                                    "FRANCE"
+                                  ]
+                                }
+                              },
+                              {
+                                "name": "saleDate",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "int",
+                                    "logicalType": "date"
+                                  }
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "salePlace",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "lotsDescription",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "replacePromise",
+                                "type": [
+                                  "null",
+                                  "boolean"
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "promiseIds",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "cash",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "string",
+                                    "java-class": "java.math.BigDecimal"
+                                  }
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "bankGuaranteeEnd",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "bankGuaranteeEndType",
+                                "type": {
+                                  "type": "enum",
+                                  "name": "BankGuaranteeEndType",
+                                  "symbols": [
+                                    "SPECIFIED",
+                                    "UNSPECIFIED",
+                                    "ACCEPTANCE_WITH_EXPIRY_DATE",
+                                    "ACCEPTANCE_WITH_NO_EXPIRY_DATE",
+                                    "OTHER"
+                                  ]
+                                }
+                              },
+                              {
+                                "name": "salePrice",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "string",
+                                    "java-class": "java.math.BigDecimal"
+                                  }
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "coverType",
+                                "type": {
+                                  "type": "enum",
+                                  "name": "CoverType",
+                                  "symbols": [
+                                    "CASH",
+                                    "REMAINING_AMOUNT"
+                                  ]
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "record",
+                            "name": "WoodsPrivate",
+                            "namespace": "com.ing.bankguarantees.avro.guaranteetype",
+                            "fields": [
+                              {
+                                "name": "region",
+                                "type": {
+                                  "type": "enum",
+                                  "name": "RegionCode",
+                                  "symbols": [
+                                    "WALLONIA",
+                                    "FLANDERS",
+                                    "FRANCE"
+                                  ]
+                                }
+                              },
+                              {
+                                "name": "saleDate",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "int",
+                                    "logicalType": "date"
+                                  }
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "salePlace",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "lotsDescription",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "replacePromise",
+                                "type": [
+                                  "null",
+                                  "boolean"
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "promiseIds",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "cash",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "string",
+                                    "java-class": "java.math.BigDecimal"
+                                  }
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "firstTransactionAmt",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "string",
+                                    "java-class": "java.math.BigDecimal"
+                                  }
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "firstDeadline",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "int",
+                                    "logicalType": "date"
+                                  }
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "secondTransactionAmt",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "string",
+                                    "java-class": "java.math.BigDecimal"
+                                  }
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "secondDeadline",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "int",
+                                    "logicalType": "date"
+                                  }
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "thirdTransactionAmt",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "string",
+                                    "java-class": "java.math.BigDecimal"
+                                  }
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "thirdDeadline",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "int",
+                                    "logicalType": "date"
+                                  }
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "fourthTransactionAmt",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "string",
+                                    "java-class": "java.math.BigDecimal"
+                                  }
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "fourthDeadline",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "int",
+                                    "logicalType": "date"
+                                  }
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "bankGuaranteeEnd",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "bankGuaranteeEndType",
+                                "type": {
+                                  "type": "enum",
+                                  "name": "BankGuaranteeEndType",
+                                  "symbols": [
+                                    "SPECIFIED",
+                                    "UNSPECIFIED",
+                                    "ACCEPTANCE_WITH_EXPIRY_DATE",
+                                    "ACCEPTANCE_WITH_NO_EXPIRY_DATE",
+                                    "OTHER"
+                                  ]
+                                }
+                              },
+                              {
+                                "name": "residualAmount",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "string",
+                                    "java-class": "java.math.BigDecimal"
+                                  }
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "maturityDate",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "int",
+                                    "logicalType": "date"
+                                  }
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "salePrice",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "string",
+                                    "java-class": "java.math.BigDecimal"
+                                  }
+                                ],
+                                "default": null
+                              }
+                            ]
+                          },
+                          {
+                            "type": "record",
+                            "name": "WoodsVLAPublic",
+                            "namespace": "com.ing.bankguarantees.avro.guaranteetype",
+                            "fields": [
+                              {
+                                "name": "region",
+                                "type": {
+                                  "type": "enum",
+                                  "name": "RegionCode",
+                                  "symbols": [
+                                    "WALLONIA",
+                                    "FLANDERS",
+                                    "FRANCE"
+                                  ]
+                                }
+                              },
+                              {
+                                "name": "saleDate",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "int",
+                                    "logicalType": "date"
+                                  }
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "salePlace",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "lotsDescription",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "replacePromise",
+                                "type": [
+                                  "null",
+                                  "boolean"
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "promiseIds",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "cash",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "string",
+                                    "java-class": "java.math.BigDecimal"
+                                  }
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "firstTransactionAmt",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "string",
+                                    "java-class": "java.math.BigDecimal"
+                                  }
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "firstDeadline",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "int",
+                                    "logicalType": "date"
+                                  }
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "secondTransactionAmt",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "string",
+                                    "java-class": "java.math.BigDecimal"
+                                  }
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "secondDeadline",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "int",
+                                    "logicalType": "date"
+                                  }
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "thirdTransactionAmt",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "string",
+                                    "java-class": "java.math.BigDecimal"
+                                  }
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "thirdDeadline",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "int",
+                                    "logicalType": "date"
+                                  }
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "fourthTransactionAmt",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "string",
+                                    "java-class": "java.math.BigDecimal"
+                                  }
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "fourthDeadline",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "int",
+                                    "logicalType": "date"
+                                  }
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "bankGuaranteeEnd",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "bankGuaranteeEndType",
+                                "type": {
+                                  "type": "enum",
+                                  "name": "BankGuaranteeEndType",
+                                  "symbols": [
+                                    "SPECIFIED",
+                                    "UNSPECIFIED",
+                                    "ACCEPTANCE_WITH_EXPIRY_DATE",
+                                    "ACCEPTANCE_WITH_NO_EXPIRY_DATE",
+                                    "OTHER"
+                                  ]
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "record",
+                            "name": "WoodsWALPublic",
+                            "namespace": "com.ing.bankguarantees.avro.guaranteetype",
+                            "fields": [
+                              {
+                                "name": "region",
+                                "type": {
+                                  "type": "enum",
+                                  "name": "RegionCode",
+                                  "symbols": [
+                                    "WALLONIA",
+                                    "FLANDERS",
+                                    "FRANCE"
+                                  ]
+                                }
+                              },
+                              {
+                                "name": "saleDate",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "int",
+                                    "logicalType": "date"
+                                  }
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "salePlace",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "lotsDescription",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "replacePromise",
+                                "type": [
+                                  "null",
+                                  "boolean"
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "promiseIds",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "cash",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "string",
+                                    "java-class": "java.math.BigDecimal"
+                                  }
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "firstTransactionAmt",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "string",
+                                    "java-class": "java.math.BigDecimal"
+                                  }
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "firstDeadline",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "int",
+                                    "logicalType": "date"
+                                  }
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "secondTransactionAmt",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "string",
+                                    "java-class": "java.math.BigDecimal"
+                                  }
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "secondDeadline",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "int",
+                                    "logicalType": "date"
+                                  }
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "thirdTransactionAmt",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "string",
+                                    "java-class": "java.math.BigDecimal"
+                                  }
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "thirdDeadline",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "int",
+                                    "logicalType": "date"
+                                  }
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "fourthTransactionAmt",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "string",
+                                    "java-class": "java.math.BigDecimal"
+                                  }
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "fourthDeadline",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "int",
+                                    "logicalType": "date"
+                                  }
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "bankGuaranteeEnd",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "bankGuaranteeEndType",
+                                "type": {
+                                  "type": "enum",
+                                  "name": "BankGuaranteeEndType",
+                                  "symbols": [
+                                    "SPECIFIED",
+                                    "UNSPECIFIED",
+                                    "ACCEPTANCE_WITH_EXPIRY_DATE",
+                                    "ACCEPTANCE_WITH_NO_EXPIRY_DATE",
+                                    "OTHER"
+                                  ]
+                                }
+                              },
+                              {
+                                "name": "salePrice",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "string",
+                                    "java-class": "java.math.BigDecimal"
+                                  }
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "coverType",
+                                "type": {
+                                  "type": "enum",
+                                  "name": "CoverType",
+                                  "symbols": [
+                                    "CASH",
+                                    "REMAINING_AMOUNT"
+                                  ]
+                                }
+                              },
+                              {
+                                "name": "residualAmount",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "string",
+                                    "java-class": "java.math.BigDecimal"
+                                  }
+                                ],
+                                "default": null
+                              }
+                            ]
+                          },
+                          {
+                            "type": "record",
+                            "name": "PromiseAbstract",
+                            "namespace": "com.ing.bankguarantees.avro.guaranteetype",
+                            "fields": [
+                              {
+                                "name": "contractDescription",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "referenceNumber",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "promiseEndDate",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "int",
+                                    "logicalType": "date"
+                                  }
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "bankGuaranteeEnd",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "bankGuaranteeEndType",
+                                "type": {
+                                  "type": "enum",
+                                  "name": "BankGuaranteeEndType",
+                                  "symbols": [
+                                    "SPECIFIED",
+                                    "UNSPECIFIED",
+                                    "ACCEPTANCE_WITH_EXPIRY_DATE",
+                                    "ACCEPTANCE_WITH_NO_EXPIRY_DATE",
+                                    "OTHER"
+                                  ]
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "record",
+                            "name": "PromisePublicContract",
+                            "namespace": "com.ing.bankguarantees.avro.guaranteetype",
+                            "fields": [
+                              {
+                                "name": "contractDescription",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "title",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "promiseEndDate",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "int",
+                                    "logicalType": "date"
+                                  }
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "bankGuaranteeEnd",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "bankGuaranteeEndType",
+                                "type": {
+                                  "type": "enum",
+                                  "name": "BankGuaranteeEndType",
+                                  "symbols": [
+                                    "SPECIFIED",
+                                    "UNSPECIFIED",
+                                    "ACCEPTANCE_WITH_EXPIRY_DATE",
+                                    "ACCEPTANCE_WITH_NO_EXPIRY_DATE",
+                                    "OTHER"
+                                  ]
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "record",
+                            "name": "GoodsTransport",
+                            "namespace": "com.ing.bankguarantees.avro.guaranteetype",
+                            "fields": [
+                              {
+                                "name": "licenseNumber",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "bankGuaranteeId",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "fodGuarantee",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "enum",
+                                    "name": "FodGuaranteeType",
+                                    "symbols": [
+                                      "DCK",
+                                      "FINANCIAL_INSTITUTION"
+                                    ]
+                                  }
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "noOfVehicle",
+                                "type": [
+                                  "null",
+                                  "int"
+                                ]
+                              },
+                              {
+                                "name": "bankGuaranteeEnd",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "bankGuaranteeEndType",
+                                "type": {
+                                  "type": "enum",
+                                  "name": "BankGuaranteeEndType",
+                                  "symbols": [
+                                    "SPECIFIED",
+                                    "UNSPECIFIED",
+                                    "ACCEPTANCE_WITH_EXPIRY_DATE",
+                                    "ACCEPTANCE_WITH_NO_EXPIRY_DATE",
+                                    "OTHER"
+                                  ]
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "record",
+                            "name": "OperatorsTransport",
+                            "namespace": "com.ing.bankguarantees.avro.guaranteetype",
+                            "fields": [
+                              {
+                                "name": "licenseNumber",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "transportOperatorActivityType",
+                                "type": {
+                                  "type": "enum",
+                                  "name": "TransportOperatorActivityType",
+                                  "symbols": [
+                                    "FORWARDING_AGENT",
+                                    "FORWARDING_BROKER"
+                                  ]
+                                }
+                              },
+                              {
+                                "name": "noOfVehicle",
+                                "type": [
+                                  "null",
+                                  "int"
+                                ]
+                              },
+                              {
+                                "name": "bankGuaranteeEnd",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "bankGuaranteeEndType",
+                                "type": {
+                                  "type": "enum",
+                                  "name": "BankGuaranteeEndType",
+                                  "symbols": [
+                                    "SPECIFIED",
+                                    "UNSPECIFIED",
+                                    "ACCEPTANCE_WITH_EXPIRY_DATE",
+                                    "ACCEPTANCE_WITH_NO_EXPIRY_DATE",
+                                    "OTHER"
+                                  ]
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "record",
+                            "name": "PassengerTransport",
+                            "namespace": "com.ing.bankguarantees.avro.guaranteetype",
+                            "fields": [
+                              {
+                                "name": "licenseNumber",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "bankGuaranteeId",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "fodGuarantee",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "enum",
+                                    "name": "FodGuaranteeType",
+                                    "symbols": [
+                                      "DCK",
+                                      "FINANCIAL_INSTITUTION"
+                                    ]
+                                  }
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "noOfVehicle",
+                                "type": [
+                                  "null",
+                                  "int"
+                                ]
+                              },
+                              {
+                                "name": "bankGuaranteeEnd",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "bankGuaranteeEndType",
+                                "type": {
+                                  "type": "enum",
+                                  "name": "BankGuaranteeEndType",
+                                  "symbols": [
+                                    "SPECIFIED",
+                                    "UNSPECIFIED",
+                                    "ACCEPTANCE_WITH_EXPIRY_DATE",
+                                    "ACCEPTANCE_WITH_NO_EXPIRY_DATE",
+                                    "OTHER"
+                                  ]
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "record",
+                            "name": "CustomizedText",
+                            "namespace": "com.ing.bankguarantees.avro.guaranteetype",
+                            "fields": [
+                              {
+                                "name": "contractDescription",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "referenceNumber",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "maturityDate",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "int",
+                                    "logicalType": "date"
+                                  }
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "bankGuaranteeEnd",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "bankGuaranteeEndType",
+                                "type": {
+                                  "type": "enum",
+                                  "name": "BankGuaranteeEndType",
+                                  "symbols": [
+                                    "SPECIFIED",
+                                    "UNSPECIFIED",
+                                    "ACCEPTANCE_WITH_EXPIRY_DATE",
+                                    "ACCEPTANCE_WITH_NO_EXPIRY_DATE",
+                                    "OTHER"
+                                  ]
+                                }
+                              },
+                              {
+                                "name": "comments",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "otherOptionForPartial",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "default": null
+                              },
+                              {
+                                "name": "subBgCode",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "default": null
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "deliveryInformation",
+                  "type": {
+                    "type": "record",
+                    "name": "DeliveryInformationData",
+                    "fields": [
+                      {
+                        "name": "recipient",
+                        "type": {
+                          "type": "enum",
+                          "name": "BankGuaranteeRecipient",
+                          "symbols": [
+                            "ME",
+                            "BENEFICIARY"
+                          ]
+                        }
+                      },
+                      {
+                        "name": "mode",
+                        "type": {
+                          "type": "enum",
+                          "name": "BankGuaranteeDeliveryMode",
+                          "symbols": [
+                            "EMAIL_ONLY",
+                            "REGISTERED_POST",
+                            "COURIER_SERVICE"
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "legalRepresentatives",
+                  "type": {
+                    "type": "array",
+                    "items": {
+                      "type": "record",
+                      "name": "LegalRepresentativeData",
+                      "fields": [
+                        {
+                          "name": "id",
+                          "type": "string"
+                        },
+                        {
+                          "name": "uuid",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "default": null
+                        },
+                        {
+                          "name": "firstSigner",
+                          "type": [
+                            "null",
+                            "boolean"
+                          ],
+                          "default": null
+                        },
+                        {
+                          "name": "fullName",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "default": null
+                        },
+                        {
+                          "name": "emailId",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "default": null
+                        },
+                        {
+                          "name": "signer",
+                          "type": [
+                            "null",
+                            "boolean"
+                          ],
+                          "default": null
+                        },
+                        {
+                          "name": "signingPower",
+                          "type": [
+                            "null",
+                            "int"
+                          ],
+                          "default": null
+                        },
+                        {
+                          "name": "active",
+                          "type": [
+                            "null",
+                            "boolean"
+                          ],
+                          "default": null
+                        },
+                        {
+                          "name": "preferredLanguage",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "default": null
+                        },
+                        {
+                          "name": "internalIdentifiers",
+                          "type": {
+                            "type": "array",
+                            "items": "Identifier"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "name": "dossierInformation",
+                  "type": [
+                    "null",
+                    {
+                      "type": "record",
+                      "name": "DossierData",
+                      "fields": [
+                        {
+                          "name": "dossierResponseId",
+                          "type": [
+                            "null",
+                            "string"
+                          ]
+                        },
+                        {
+                          "name": "agreementDossierResponseId",
+                          "type": [
+                            "null",
+                            "string"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "stpResult",
+            "type": {
+              "type": "record",
+              "name": "StpResultDataSet",
+              "fields": [
+                {
+                  "name": "stpResults",
+                  "type": {
+                    "type": "array",
+                    "items": {
+                      "type": "record",
+                      "name": "STPResultData",
+                      "fields": [
+                        {
+                          "name": "id",
+                          "type": "string"
+                        },
+                        {
+                          "name": "name",
+                          "type": [
+                            "null",
+                            "string"
+                          ]
+                        },
+                        {
+                          "name": "type",
+                          "type": {
+                            "type": "enum",
+                            "name": "StpCriteriaType",
+                            "symbols": [
+                              "LGL_REP_COUNT",
+                              "CURRENCY_EUR",
+                              "DELIVERY_MODE_EMAIL",
+                              "APPLICANT_UNAVAILABLE",
+                              "PARTY_FROM_BELGIUM",
+                              "SDS_RESPONSE",
+                              "BENEFICIARY_NAME_SCREENING",
+                              "APPLICANT_NAME_SCREENING",
+                              "BID_BOND_NOT_OTHER",
+                              "GUARANTEE_SCOPE",
+                              "CREDIT_LINE_BALANCE",
+                              "INSTRUCTING_PARTY_CDD",
+                              "LEGAL_REP_CDD",
+                              "GUARANTEE_STP_ALLOWED",
+                              "PROMISE_REPLACER",
+                              "CUSTOMER_SIGN_ALLOWED",
+                              "SIGNER_POWER"
+                            ]
+                          }
+                        },
+                        {
+                          "name": "stpPossible",
+                          "type": "boolean"
+                        },
+                        {
+                          "name": "timestamp",
+                          "type": [
+                            "null",
+                            "string"
+                          ]
+                        },
+                        {
+                          "name": "justification",
+                          "type": [
+                            "null",
+                            "string"
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "name": "totalRowCountInfo",
+            "type": {
+              "type": "record",
+              "name": "TotalRowCountInfo",
+              "fields": [
+                {
+                  "name": "totalRowsInBankGuaranteeRequest",
+                  "type": "int"
+                },
+                {
+                  "name": "totalRowsInIndividual",
+                  "type": "int"
+                },
+                {
+                  "name": "totalRowsInOrganisation",
+                  "type": "int"
+                },
+                {
+                  "name": "totalRowsInApplicant",
+                  "type": "int"
+                },
+                {
+                  "name": "totalRowsInBeneficiary",
+                  "type": "int"
+                },
+                {
+                  "name": "totalRowsInAccountToDebited",
+                  "type": "int"
+                },
+                {
+                  "name": "totalRowsInCreditLine",
+                  "type": "int"
+                },
+                {
+                  "name": "totalRowsInGuaranteeDetails",
+                  "type": "int"
+                },
+                {
+                  "name": "totalRowsInPublicContract",
+                  "type": "int"
+                },
+                {
+                  "name": "totalRowsInAdvancePayment",
+                  "type": "int"
+                },
+                {
+                  "name": "totalRowsInBidBond",
+                  "type": "int"
+                },
+                {
+                  "name": "totalRowsInMoneyRetentionBond",
+                  "type": "int"
+                },
+                {
+                  "name": "totalRowsInPayment",
+                  "type": "int"
+                },
+                {
+                  "name": "totalRowsInPerformanceBond",
+                  "type": "int"
+                },
+                {
+                  "name": "totalRowsInRealEstate",
+                  "type": "int"
+                },
+                {
+                  "name": "totalRowsInRental",
+                  "type": "int"
+                },
+                {
+                  "name": "totalRowsInStateLottery",
+                  "type": "int"
+                },
+                {
+                  "name": "totalRowsInCustomTypeFive",
+                  "type": "int"
+                },
+                {
+                  "name": "totalRowsInCustomTypeFour",
+                  "type": "int"
+                },
+                {
+                  "name": "totalRowsInCustomTypeOne",
+                  "type": "int"
+                },
+                {
+                  "name": "totalRowsInCustomTypeTwo",
+                  "type": "int"
+                },
+                {
+                  "name": "totalRowsInOvam",
+                  "type": "int"
+                },
+                {
+                  "name": "totalRowsInDeliveryInformation",
+                  "type": "int"
+                },
+                {
+                  "name": "totalRowsInLegalRepresentatives",
+                  "type": "int"
+                },
+                {
+                  "name": "totalRowsInDossierInformation",
+                  "type": "int"
+                },
+                {
+                  "name": "totalRowsInStpResults",
+                  "type": "int"
+                },
+                {
+                  "name": "totalRowsInDigitalAddress",
+                  "type": "int"
+                },
+                {
+                  "name": "totalRowsInInternalIdentifier",
+                  "type": "int"
+                },
+                {
+                  "name": "totalRowsInDck",
+                  "type": "int"
+                },
+                {
+                  "name": "totalRowsInWoodsBgWalPublic",
+                  "type": "int"
+                },
+                {
+                  "name": "totalRowsInWoodsBgDischarge",
+                  "type": "int"
+                },
+                {
+                  "name": "totalRowsInWoodsBgVlaPublic",
+                  "type": "int"
+                },
+                {
+                  "name": "totalRowsInWoodsBgPrivate",
+                  "type": "int"
+                },
+                {
+                  "name": "totalRowsInWoodsPromA",
+                  "type": "int"
+                },
+                {
+                  "name": "totalRowsInWoodsPromB",
+                  "type": "int"
+                },
+                {
+                  "name": "totalRowsInWoodsPromVla",
+                  "type": "int"
+                },
+                {
+                  "name": "totalRowsInAbstractProm",
+                  "type": "int"
+                },
+                {
+                  "name": "totalRowsInPublicContractProm",
+                  "type": "int"
+                },
+                {
+                  "name": "totalRowsInGoodsTransport",
+                  "type": "int"
+                },
+                {
+                  "name": "totalRowsInPassengerTransport",
+                  "type": "int"
+                },
+                {
+                  "name": "totalRowsInOperatorsTransport",
+                  "type": "int"
+                },
+                {
+                  "name": "totalRowsInCustomizedText",
+                  "type": "int"
+                },
+                {
+                  "name": "totalRowsInAlerDetail",
+                  "type": "int"
+                }
+              ]
+            }
+          },
+          {
+            "name": "createdBy",
+            "type": "string"
+          },
+          {
+            "name": "updatedBy",
+            "type": "string"
+          },
+          {
+            "name": "darId",
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          {
+            "name": "pegaCaseId",
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          {
+            "name": "masterReferenceNumber",
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          {
+            "name": "createdTimestamp",
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          {
+            "name": "updatedTimestamp",
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
