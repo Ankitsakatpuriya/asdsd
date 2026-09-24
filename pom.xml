@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <parent>
+        <artifactId>BankGuaranteesBEOnline_API</artifactId>
+        <groupId>com.ing.bankguarantees</groupId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>web</artifactId>
+    <name>web</name>
+    <packaging>jar</packaging>
+    <modelVersion>4.0.0</modelVersion>
+
+    <properties>
+        <jacoco-maven-plugin.unit.line.coverage.minimum>0.8</jacoco-maven-plugin.unit.line.coverage.minimum>
+        <jacoco-maven-plugin.unit.branch.coverage.minimum>0.6</jacoco-maven-plugin.unit.branch.coverage.minimum>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.ing.apisdk</groupId>
+            <artifactId>merak-springmvc-spring-boot-starter_${scala-compiler.version}</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ing.apisdk</groupId>
+            <artifactId>merak-kafka-application-logging-spring-boot-starter_${scala-compiler.version}</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ing.apisdk</groupId>
+            <artifactId>merak-prometheus-spring-boot-starter_${scala-compiler.version}</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ing.apisdk</groupId>
+            <artifactId>toolkit-connectivity-transport-routing-http_${scala-compiler.version}</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ing.apisdk</groupId>
+            <artifactId>toolkit-connectivity-kafka-avro-serialization_${scala-compiler.version}</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ing.apisdk</groupId>
+            <artifactId>toolkit-connectivity-kafka-protobuf-serialization_${scala-compiler.version}</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ing.apisdk</groupId>
+            <artifactId>merak-sem-a-spring-boot-starter_${scala-compiler.version}</artifactId>
+            <version>${apisdk.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ing.apisdk</groupId>
+            <artifactId>merak-phoenix-spring-boot-starter_${scala-compiler.version}</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-cache</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.ben-manes.caffeine</groupId>
+            <artifactId>caffeine</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.oracle.database.jdbc</groupId>
+            <artifactId>ojdbc17</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ing.tpa.esuite.oee</groupId>
+            <artifactId>oee-external-feedback-event</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ing.tpa.esuite.oee</groupId>
+            <artifactId>oee-engagement-suite-notification-event</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok-mapstruct-binding</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct-processor</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>net.javacrumbs.shedlock</groupId>
+            <artifactId>shedlock-spring</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>net.javacrumbs.shedlock</groupId>
+            <artifactId>shedlock-provider-jdbc-template</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.awaitility</groupId>
+            <artifactId>awaitility</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <profiles>
+        <profile>
+            <id>local</id>
+            <build>
+                <resources>
+                    <resource>
+                        <directory>src/main/resources</directory>
+                        <filtering>false</filtering>
+                    </resource>
+                    <resource>
+                        <directory>${project.basedir}/../conf/src/main/local</directory>
+                        <includes>
+                            <include>**/*</include>
+                        </includes>
+                        <filtering>false</filtering>
+                    </resource>
+                </resources>
+                <plugins>
+                    <plugin>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-maven-plugin</artifactId>
+                        <configuration>
+                            <jvmArguments>
+                                -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005
+                            </jvmArguments>
+                            <mainClass>com.ing.bankguarantees.Application</mainClass>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>H2DB</id>
+            <dependencies>
+                <dependency>
+                    <groupId>com.h2database</groupId>
+                    <artifactId>h2</artifactId>
+                    <scope>runtime</scope>
+                </dependency>
+            </dependencies>
+        </profile>
+    </profiles>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.ing.bankguarantees.Application</mainClass>
+                    <layout>ZIP</layout>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>**/Application.*</exclude>
+                        <exclude>**/*Mock*.class</exclude>
+                        <exclude>**/*Config.*</exclude>
+                        <exclude>**/*Properties.*</exclude>
+                        <exclude>**/model/**</exclude>
+                        <exclude>**/saac/**</exclude>
+                        <exclude>**/mapper/**</exclude>
+                        <exclude>**/logger/**</exclude>
+                        <exclude>**/*model*/**</exclude>
+                        <exclude>**/configuration/**</exclude>
+                        <exclude>**/interceptors/**</exclude>
+                    </excludes>
+                    <outputDirectory>${project.reporting.outputDirectory}/jacoco</outputDirectory>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>jacoco-initialize</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>jacoco-report</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>unit</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <rule>
+                                    <element>BUNDLE</element>
+                                    <limits>
+                                        <limit>
+                                            <counter>LINE</counter>
+                                            <value>COVEREDRATIO</value>
+                                            <minimum>${jacoco-maven-plugin.unit.line.coverage.minimum}</minimum>
+                                        </limit>
+                                        <limit>
+                                            <counter>BRANCH</counter>
+                                            <value>COVEREDRATIO</value>
+                                            <minimum>${jacoco-maven-plugin.unit.branch.coverage.minimum}</minimum>
+                                        </limit>
+                                    </limits>
+                                </rule>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.avro</groupId>
+                <artifactId>avro-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>schema</goal>
+                        </goals>
+                        <configuration>
+                            <stringType>String</stringType>
+                            <enableDecimalLogicalType>true</enableDecimalLogicalType>
+                            <sourceDirectory>src/main/resources/avroschema</sourceDirectory>
+                            <outputDirectory>${project.basedir}/target/generated-sources</outputDirectory>
+                            <fieldVisibility>PRIVATE</fieldVisibility>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
