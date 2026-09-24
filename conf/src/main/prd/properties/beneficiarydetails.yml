@@ -1,0 +1,120 @@
+beneficiary:
+  cbe-nos:
+    [ '0877248501','0403231968','0404021727','0885778858','0403482188','0400106291','0400082042','0420902596','0455835167','0403048262',
+      '0413630071','0402375301','0425342624','0890082292','0448826918','0435112207','0416911245','0437018652','0426184049','0400464795',
+      '0402537726','0440712867','0242069537','0402623937','0403170701','0475028202','0405619851','0404358950','0403907307','0400471428',
+      '0402443595','0447550872','0463894481','0402973335','0424078555','0422924651','0218843678','0427223434','0453102935','0414666585',
+      '0405829588','0413352434','0203430576','0543696579','0478098845','0400378485','0223459690','0403093495','0436410522','0413906324',
+      '0403063902','0404586901','0416451583','0232987862','0424905926','404616494','0452184405','0216173309','0447690830','0412597022' ]
+  warning:
+    en: "This beneficiary may require a specific Bank Guarantee text. If the beneficiary has requested specific wording, select \"My Own Text\" in the text selection. You may use the standard text if it is accepted by the beneficiary."
+    fr: "Ce bénéficiaire peut exiger son propre texte de garantie bancaire, nous vous suggérons de vérifier si un texte spécifique a été requis. Si c'est le cas, veuillez choisir \"Mon propre text\" dans la sélection du texte, vous pouvez cependant continuer si notre text standard est accepté."
+    nl: "Deze begunstigde kan een specifieke tekst voor de bankgarantie vereisen. Indien de begunstigde een specifieke tekst heeft gevraagd, selecteer dan \"Mijn eigen tekst\" bij de tekstkeuze. Je kunt de standaardtekst gebruiken als deze door de begunstigde wordt aanvaard."
+  ovam:
+    page-description: 'OVAM'
+    email: 'inuit@ovam.be'
+    postal-code: 'B-2800'
+    country-code: 'BE'
+    beneficiaryDetails:
+      en:
+        name: 'Openbare Vlaamse Afvalstoffenmaatschappij (OVAM)'
+        first-address: 'Stationsstraat 110'
+        city-name: 'Mechelen'
+      nl:
+        name: 'Openbare Vlaamse Afvalstoffenmaatschappij (OVAM)'
+        first-address: 'Stationsstraat 110'
+        city-name: 'Mechelen'
+      fr:
+        name: 'Openbare Vlaamse Afvalstoffenmaatschappij (OVAM)'
+        first-address: 'Stationsstraat 110'
+        city-name: 'Mechelen'
+  custom:
+    page-description: 'Customs'
+    email: 'da.accounting.guarantees@minfin.fed.be'
+    postal-code: '1030'
+    country-code: 'BE'
+    beneficiaryDetails:
+      en:
+        name: 'Département comptabilité des Douanes et Accises'
+        first-address: 'North Galaxy A7 Boulevard du Roi Albert II 33 boîte 388'
+        city-name: 'Brussel'
+      nl:
+        name: 'Algemene Administratie Douane en Accijnzen - Borgtochten en Uitgaven'
+        first-address: 'Noord Galaxy A7 Koning Albert II-laan 33, bus 388'
+        city-name: 'Brussel'
+      fr:
+        name: 'Administration Générale Douane et Accises - Cautions et Dépenses'
+        first-address: 'North Galaxy A7 Boulevard du Roi Albert II 33 boîte 388'
+        city-name: 'Bruxelles'
+  state-lottery:
+    page-description: 'State Lottery'
+    email: 'sophie.dandoy@loterie-nationale.be'
+    postal-code: '1040'
+    country-code: 'BE'
+    beneficiaryDetails:
+      en:
+        name: 'La Loterie Nationale'
+        first-address: 'Rue Belliard 25 - 33'
+        city-name: 'Brussels'
+      nl:
+        name: 'Nationale Loterij'
+        first-address: 'Rue Belliard 25 - 33'
+        city-name: 'Brussel'
+      fr:
+        name: 'La Loterie Nationale'
+        first-address: 'Rue Belliard 25 - 33'
+        city-name: 'Bruxelles'
+  goods-transport:
+    page-description: 'Transport'
+    email: 'expediteur.routier@mobilit.fgov.be'
+    postal-code: '1210'
+    country-code: 'BE'
+    beneficiaryDetails:
+      en:
+        name: 'FOD MOBILITEIT & VERVOER DG WEGVERVOER EN VERKEERSVEILIGHEID DIENST TOEGANG TOT HET BEROEP EN TOT DE MARKT GOEDERENVERVOER'
+        first-address: 'Vooruitgangstraat 56'
+        city-name: 'Brussels'
+      nl:
+        name: 'FOD MOBILITEIT & VERVOER DG WEGVERVOER EN VERKEERSVEILIGHEID DIENST TOEGANG TOT HET BEROEP EN TOT DE MARKT GOEDERENVERVOER'
+        first-address: 'Vooruitgangstraat 56'
+        city-name: 'Brussel'
+      fr:
+        name: 'SPF Mobilité & Transports – DG Transp routier & Sécurité routière – Serv accès profession & marché transp de marchandises'
+        first-address: 'Rue du Progrès 56'
+        city-name: 'BRUXELLES'
+  passenger-transport:
+    page-description: 'Transport'
+    email: 'expediteur.routier@mobilit.fgov.be'
+    postal-code: '1210'
+    country-code: 'BE'
+    beneficiaryDetails:
+      en:
+        name: 'FOD MOBILITEIT & VERVOER DG WEGVERVOER EN VERKEERSVEILIGHEID DIENST TOEGANG TOT HET BEROEP EN TOT DE MARKT REIZIGERSVERVOER'
+        first-address: 'Vooruitgangstraat 56'
+        city-name: 'Brussels'
+      nl:
+        name: 'FOD MOBILITEIT & VERVOER DG WEGVERVOER EN VERKEERSVEILIGHEID DIENST TOEGANG TOT HET BEROEP EN TOT DE MARKT REIZIGERSVERVOER'
+        first-address: 'Vooruitgangstraat 56'
+        city-name: 'Brussel'
+      fr:
+        name: 'SPF Mobilité & Transports – DG Transp routier & Sécurité routière – Serv accès profession & marché transp de voyageurs'
+        first-address: 'Rue du Progrès 56'
+        city-name: 'BRUXELLES'
+  operator-transport:
+    page-description: 'Transport'
+    email: 'expediteur.routier@mobilit.fgov.be'
+    postal-code: '1210'
+    country-code: 'BE'
+    beneficiaryDetails:
+      en:
+        name: 'FOD MOBILITEIT & VERVOER DG WEGVERVOER EN VERKEERSVEILIGHEID DIENST INTERMODALITEIT – TRANSPORTORGANISATOREN'
+        first-address: 'Vooruitgangstraat 56'
+        city-name: 'Brussels'
+      nl:
+        name: 'FOD MOBILITEIT & VERVOER DG WEGVERVOER EN VERKEERSVEILIGHEID DIENST INTERMODALITEIT – TRANSPORTORGANISATOREN'
+        first-address: 'Vooruitgangstraat 56'
+        city-name: 'Brussel'
+      fr:
+        name: 'SPF Mobilité & Transports – DG Transp routier & Sécurité routière – Serv intermodalité – organisateurs de transport'
+        first-address: 'Rue du Progrès 56'
+        city-name: 'BRUXELLES'

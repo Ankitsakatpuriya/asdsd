@@ -1,0 +1,79 @@
+beneficiary:
+  cbe-nos:
+    [ '0104317263','0141127674','0299513828','029951382' ]
+  warning:
+    en: "This beneficiary may require a specific Bank Guarantee text. If the beneficiary has requested specific wording, select \"My Own Text\" in the text selection. You may use the standard text if it is accepted by the beneficiary."
+    fr: "Ce bénéficiaire peut exiger son propre texte de garantie bancaire, nous vous suggérons de vérifier si un texte spécifique a été requis. Si c'est le cas, veuillez choisir \"Mon propre text\" dans la sélection du texte, vous pouvez cependant continuer si notre text standard est accepté."
+    nl: "Deze begunstigde kan een specifieke tekst voor de bankgarantie vereisen. Indien de begunstigde een specifieke tekst heeft gevraagd, selecteer dan \"Mijn eigen tekst\" bij de tekstkeuze. Je kunt de standaardtekst gebruiken als deze door de begunstigde wordt aanvaard."
+  ovam:
+    page-description: 'OVAM'
+    email: 'srinivas.naragoni@ing.com'
+    postal-code: 'B-2800'
+    country-code: 'BE'
+    beneficiaryDetails:
+      en:
+        name: 'Openbare Vlaamse Afvalstoffenmaatschappij (OVAM)'
+        first-address: 'Stationsstraat 110'
+        city-name: 'Mechelen'
+      nl:
+        name: 'Openbare Vlaamse Afvalstoffenmaatschappij (OVAM)'
+        first-address: 'Stationsstraat 110'
+        city-name: 'Mechelen'
+      fr:
+        name: 'Openbare Vlaamse Afvalstoffenmaatschappij (OVAM)'
+        first-address: 'Stationsstraat 110'
+        city-name: 'B-2800'
+  custom:
+    page-description: 'Customs'
+    email: 'srinivas.naragoni@ing.com'
+    postal-code: '1030'
+    country-code: 'BE'
+    beneficiaryDetails:
+      en:
+        name: 'Département comptabilité des Douanes et Accises'
+        first-address: 'North Galaxy A7 Boulevard du Roi Albert II 33 boîte 388'
+        city-name: 'Brussel'
+      nl:
+        name: 'Algemene Administratie Douane en Accijnzen - Borgtochten en Uitgaven'
+        first-address: 'Noord Galaxy A7 Koning Albert II-laan 33, bus 388'
+        city-name: 'Brussel'
+      fr:
+        name: 'Administration Générale Douane et Accises - Cautions et Dépenses'
+        first-address: 'North Galaxy A7 Boulevard du Roi Albert II 33 boîte 388'
+        city-name: 'Brussel'
+  state-lottery:
+    page-description: 'State Lottery'
+    email: 'srinivas.naragoni@ing.com'
+    postal-code: '1040'
+    country-code: 'BE'
+    beneficiaryDetails:
+      en:
+        name: 'La Loterie Nationale'
+        first-address: 'Rue Belliard 25 - 33'
+        city-name: 'Brussels'
+      nl:
+        name: 'Nationale Loterij'
+        first-address: 'Rue Belliard 25 - 33'
+        city-name: 'Brussels'
+      fr:
+        name: 'La Loterie Nationale'
+        first-address: 'Rue Belliard 25 - 33'
+        city-name: 'Brussels'
+  transport:
+    page-description: 'Transport'
+    email: 'srinivas.naragoni@ing.com'
+    postal-code: 'B-1210'
+    country-code: 'BE'
+    beneficiaryDetails:
+      en:
+        name: 'Federale Overheidsdienst Mobiliteit en Vervoer Directoraat-generaal Wegvervoer en Verkeersveiligheid Dienst Toegang tot het beroep en tot de markt Goederenvervoer'
+        first-address: 'Vooruitgangstraat 56'
+        city-name: 'Brussels'
+      nl:
+        name: 'Federale Overheidsdienst Mobiliteit en Vervoer Directoraat-generaal Wegvervoer en Verkeersveiligheid Dienst Toegang tot het beroep en tot de markt Goederenvervoer'
+        first-address: 'Vooruitgangstraat 56'
+        city-name: 'Brussels'
+      fr:
+        name: 'Service public fédéral mobilité et transports Direction générale Transport routier et Sécurité routière'
+        first-address: 'Rue du Progrès 56'
+        city-name: 'BRUXELLES'

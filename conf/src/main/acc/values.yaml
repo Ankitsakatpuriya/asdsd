@@ -1,0 +1,27 @@
+# The number of pod replicas that will be configured on the kubernetes deployment. If none is specified, it will be defaulted to 1.
+replicaCount: 1
+
+# this is a required variable in order for the prometheus to work
+namespace: buba-bgo-acc
+
+# resources that the pods will use
+# Requests are what the container is guaranteed to get. If a container requests a resource, Kubernetes
+# will only schedule it on a node that can give it that resource. Limits, on the other hand, make sure
+# a container never goes above a certain value. The container is only allowed to go up to the limit,
+# and then it is restricted.
+# https://cloud.google.com/blog/products/gcp/kubernetes-best-practices-resource-requests-and-limits
+resources:
+  #Limits the resources of the pod, has to be less than or equal to the java parameter -Xmx
+  limits:
+    # cpu can be represented in mili cores (as it can be seen in the example) or by units. Example: 0.1, 0.5, 1
+    # NOTE: 1000m = 1 core
+    cpu: 1000m
+    # memory in Mi, Gi or M, G.
+    # 1Gi = 2^30 bytes. 1G = 10^9 bytes. 1Gi = 1.074G
+    memory: 2G
+  requests:
+    # requests is the initial value that a pod starts with. It's similar to java parameter -Xms
+    #ICHP allocates 10x CPU for bursts (like startup)
+    cpu: 200m
+    # For memory, limit should be equal to requests as it is not a compressible resource.
+    memory: 1G

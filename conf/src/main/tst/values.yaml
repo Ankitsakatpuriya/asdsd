@@ -1,0 +1,5 @@
+# The number of pod replicas that will be configured on the kubernetes deployment. If none is specified, it will be defaulted to 1.
+replicaCount: 1
+
+# This is a required variable in order for the prometheus to work
+namespace: buba-bgo-tst

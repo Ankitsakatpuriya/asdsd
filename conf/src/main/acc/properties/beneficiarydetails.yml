@@ -1,0 +1,115 @@
+beneficiary:
+  cbe-nos:
+    [ '0803074876','0802779918','0822817148','0825232052','1051110905','0801942352' ]
+  warning:
+    en: "This beneficiary may require a specific Bank Guarantee text. If the beneficiary has requested specific wording, select \"My Own Text\" in the text selection. You may use the standard text if it is accepted by the beneficiary."
+    fr: "Ce bénéficiaire peut exiger son propre texte de garantie bancaire, nous vous suggérons de vérifier si un texte spécifique a été requis. Si c'est le cas, veuillez choisir \"Mon propre text\" dans la sélection du texte, vous pouvez cependant continuer si notre text standard est accepté."
+    nl: "Deze begunstigde kan een specifieke tekst voor de bankgarantie vereisen. Indien de begunstigde een specifieke tekst heeft gevraagd, selecteer dan \"Mijn eigen tekst\" bij de tekstkeuze. Je kunt de standaardtekst gebruiken als deze door de begunstigde wordt aanvaard."
+  ovam:
+    page-description: 'OVAM'
+    email: 'srinivas.naragoni@ing.com'
+    postal-code: 'B-2800'
+    country-code: 'BE'
+    beneficiaryDetails:
+      en:
+        name: 'Openbare Vlaamse Afvalstoffenmaatschappij (OVAM)'
+        first-address: 'Stationsstraat 110'
+        city-name: 'Mechelen'
+      nl:
+        name: 'Openbare Vlaamse Afvalstoffenmaatschappij (OVAM)'
+        first-address: 'Stationsstraat 110'
+        city-name: 'Mechelen'
+      fr:
+        name: 'Openbare Vlaamse Afvalstoffenmaatschappij (OVAM)'
+        first-address: 'Stationsstraat 110'
+        city-name: 'Mechelen'
+  custom:
+    page-description: 'Customs'
+    email: 'srinivas.naragoni@ing.com'
+    postal-code: '1030'
+    country-code: 'BE'
+    beneficiaryDetails:
+      en:
+        name: 'Département comptabilité des Douanes et Accises'
+        first-address: 'North Galaxy A7 Boulevard du Roi Albert II 33 boîte 388'
+        city-name: 'Brussel'
+      nl:
+        name: 'Algemene Administratie Douane en Accijnzen - Borgtochten en Uitgaven'
+        first-address: 'Noord Galaxy A7 Koning Albert II-laan 33, bus 388'
+        city-name: 'Brussel'
+      fr:
+        name: 'Administration Générale Douane et Accises - Cautions et Dépenses'
+        first-address: 'North Galaxy A7 Boulevard du Roi Albert II 33 boîte 388'
+        city-name: 'Brussel'
+  state-lottery:
+    page-description: 'State Lottery'
+    email: 'srinivas.naragoni@ing.com'
+    postal-code: '1040'
+    country-code: 'BE'
+    beneficiaryDetails:
+      en:
+        name: 'La Loterie Nationale'
+        first-address: 'Rue Belliard 25 - 33'
+        city-name: 'Brussels'
+      nl:
+        name: 'Nationale Loterij'
+        first-address: 'Rue Belliard 25 - 33'
+        city-name: 'Brussels'
+      fr:
+        name: 'La Loterie Nationale'
+        first-address: 'Rue Belliard 25 - 33'
+        city-name: 'Brussels'
+  goods-transport:
+    page-description: 'Transport'
+    email: 'srinivas.naragoni@ing.com'
+    postal-code: '1210'
+    country-code: 'BE'
+    beneficiaryDetails:
+      en:
+        name: 'FOD MOBILITEIT & VERVOER DG WEGVERVOER EN VERKEERSVEILIGHEID DIENST TOEGANG TOT HET BEROEP EN TOT DE MARKT GOEDERENVERVOER'
+        first-address: 'Vooruitgangstraat 56'
+        city-name: 'Brussels'
+      nl:
+        name: 'FOD MOBILITEIT & VERVOER DG WEGVERVOER EN VERKEERSVEILIGHEID DIENST TOEGANG TOT HET BEROEP EN TOT DE MARKT GOEDERENVERVOER'
+        first-address: 'Vooruitgangstraat 56'
+        city-name: 'Brussel'
+      fr:
+        name: 'SPF Mobilité & Transports – DG Transp routier & Sécurité routière – Serv accès profession & marché transp de marchandises'
+        first-address: 'Rue du Progrès 56'
+        city-name: 'BRUXELLES'
+  passenger-transport:
+    page-description: 'Transport'
+    email: 'srinivas.naragoni@ing.com'
+    postal-code: '1210'
+    country-code: 'BE'
+    beneficiaryDetails:
+      en:
+        name: 'FOD MOBILITEIT & VERVOER DG WEGVERVOER EN VERKEERSVEILIGHEID DIENST TOEGANG TOT HET BEROEP EN TOT DE MARKT REIZIGERSVERVOER'
+        first-address: 'Vooruitgangstraat 56'
+        city-name: 'Brussels'
+      nl:
+        name: 'FOD MOBILITEIT & VERVOER DG WEGVERVOER EN VERKEERSVEILIGHEID DIENST TOEGANG TOT HET BEROEP EN TOT DE MARKT REIZIGERSVERVOER'
+        first-address: 'Vooruitgangstraat 56'
+        city-name: 'Brussel'
+      fr:
+        name: 'SPF Mobilité & Transports – DG Transp routier & Sécurité routière – Serv accès profession & marché transp de voyageurs'
+        first-address: 'Rue du Progrès 56'
+        city-name: 'BRUXELLES'
+  operator-transport:
+    page-description: 'Transport'
+    email: 'srinivas.naragoni@ing.com'
+    postal-code: '1210'
+    country-code: 'BE'
+    beneficiaryDetails:
+      en:
+        name: 'FOD MOBILITEIT & VERVOER DG WEGVERVOER EN VERKEERSVEILIGHEID DIENST INTERMODALITEIT – TRANSPORTORGANISATOREN'
+        first-address: 'Vooruitgangstraat 56'
+        city-name: 'Brussels'
+      nl:
+        name: 'FOD MOBILITEIT & VERVOER DG WEGVERVOER EN VERKEERSVEILIGHEID DIENST INTERMODALITEIT – TRANSPORTORGANISATOREN'
+        first-address: 'Vooruitgangstraat 56'
+        city-name: 'Brussel'
+      fr:
+        name: 'SPF Mobilité & Transports – DG Transp routier & Sécurité routière – Serv intermodalité – organisateurs de transport'
+        first-address: 'Rue du Progrès 56'
+        city-name: 'BRUXELLES'

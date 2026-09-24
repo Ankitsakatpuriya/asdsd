@@ -1,0 +1,110 @@
+# Default values for helm-chart-templates.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# application values #
+
+# description:
+# the implementation for application's container provides a user the option to 
+# adjust / change behavior or structure of the application using The Kingsroad 
+# pipeline templates, we take care of most of the variables for you but there 
+# are application specific details that are best for the user to specify.
+
+# number of pod replicas that runs at any given time. 
+#replicaCount: 1
+
+# name of the application as it is registered in cmdb / set in pom.xml
+cmdb_name: "BankGuaranteesBEOnline_API"
+
+
+# variables that will be exposed as environment variables to the pod
+variables:
+  # all the JVM options will be exposed when the application starts and are required 
+  # for the application to start NOTE: whenever you want to specify a large 
+  # string, '>-' needs to be present
+  - name: "JVM_OPTS"
+    value: >-
+      -Dloader.path=/conf,/certs 
+      -Dspring.profiles.active=datacenter
+      -XX:+UseStringDeduplication 
+
+# resources that the pods will use
+# Requests are what the container is guaranteed to get. If a container requests a resource, Kubernetes 
+# will only schedule it on a node that can give it that resource. Limits, on the other hand, make sure 
+# a container never goes above a certain value. The container is only allowed to go up to the limit, 
+# and then it is restricted.
+# https://cloud.google.com/blog/products/gcp/kubernetes-best-practices-resource-requests-and-limits
+resources:
+  #Limits the resources of the pod, has to be less than or equal to the java parameter -Xmx
+  limits:
+    # cpu can be represented in milicors (as it can be seen in the example) or by units. Example: 0.1, 0.5, 1
+    # NOTE: 1000m = 1 core
+    cpu: 500m
+    # memory needs to be represented in Mi, Gi, Ti, etc. 1Gi = 1 Gibibyte. Example: https://www.gbmb.org/gib-to-gb
+    memory: 1Gi
+  requests:
+    # requests is the initial value that a pod starts with. It's similar to java parameter -Xms
+    cpu: 500m
+    memory: 1Gi
+
+probes:
+  enabled: true
+  readinessProbe:
+    httpGet:
+      path: /admin/health/readiness
+      port: 10080
+      scheme: HTTPS
+    initialDelaySeconds: 180
+    periodSeconds: 10
+    successThreshold: 1
+    failureThreshold: 20
+  livenessProbe:
+    httpGet:
+      path: /admin/health/liveness
+      port: 10080
+      scheme: HTTPS
+    initialDelaySeconds: 180
+    periodSeconds: 10
+    successThreshold: 1
+    failureThreshold: 10
+
+# ports that will be exposed by the container. They have a key-value pair format.
+ports:
+  - name: https
+    containerPort: 8443
+  - name: metrics
+    containerPort: 10080
+
+autoscaler:
+  namespace:
+    enabled: true
+    scaleDown:
+      cpu_policy: 50
+      memory_policy: 50
+    scaleUp:
+      cpu_policy: 70
+      memory_policy: 70
+    minCpu: 400m
+    minMemory: 4000Mi
+
+# prometheus block refers to the prometheus implementation and the parameters that a user can change.
+prometheus:
+  # serviceMetrics block refers to the service used by the application.
+  # resources for the prometheus deployment (prometheus object)
+  # user can set limits of the pod in order to avoid crash that will prevent to get the memtrics required
+  # NOTE: if not set, default is cpu: 100m and memory: 100Mi
+  # [OPTIONAL]
+  resources:
+    cpu: 200m
+    memory: 256Mi
+  # serviceMonitor block refers to the service used by the prometheus.
+  serviceMonitor:
+    # this is the squad that is doing the deployment
+    # [MANDATORY]
+    squad: "Indigo"
+    # applicationId is default on cmdb_name set in values file. This is optional parameter
+    # [OPTIONAL]
+    applicationId: "BankGuaranteesBEOnline_API"
+    # protocol is default on http, this is optional parameter
+    # [OPTIONAL]
+    protocol: https

@@ -1,0 +1,158 @@
+<configuration scan="true" scanPeriod="60 seconds">
+    <property resource="log.properties"/>
+    <property resource="log-env.properties"/>
+    <property name="log_pattern"
+              value='%d{"dd/MM/yyyy HH:mm:ss,SSS"} || ${HOSTNAME} || %-5level || %-4marker || ${APP_NAME} || %logger{1} || %X{EVENT_ID:-EVENT_ID_NOT_SET} || %msg%n'/>
+
+    <appender name="APPLOG" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+            <layout class="com.ing.api.bankswitch.masking.PatternMaskingLayout">
+
+                <maskPattern>\"fullName\"\s*:\s*\{"typ":(.*?),"styp":"(.*?)","val"s*:\s*\"(.*?)\"}</maskPattern>
+                <maskPattern>fullName\s*:\s*(.*?),</maskPattern>
+                <maskPattern>\"fullName\"\s*:\s*\"(.*?)\"</maskPattern>
+                <maskPattern>\"fullName\"\s*=\s*\'(.*?)\'</maskPattern>
+                <maskPattern>fullName\s*:\s*(.*?)\n</maskPattern>
+                <maskPattern>prefixTitle\s*:\s*(.*?)\n</maskPattern>
+                <maskPattern>\"prefixTitle\"\s*:\s*\"(.*?)\"</maskPattern>
+                <maskPattern>nickName\s*:\s*(.*?)\n</maskPattern>
+                <maskPattern>\"nickName\"\s*:\s*\"(.*?)\"</maskPattern>
+                <maskPattern>(?i)\w*firstName\d*\w*\s*:\s*(.*?)\n</maskPattern>
+                <maskPattern>(?i)\w*firstName\d*\w*\s*=\s*(.*?),</maskPattern>
+                <maskPattern>(?i)\"\w*firstName\d*\w*\"\s*:\s*\"(.*?)\"</maskPattern>
+                <maskPattern>(?i)\w*lastName\d*\w*\s*:\s*(.*?)\n</maskPattern>
+                <maskPattern>(?i)\"\w*lastName\"\d*\w*\s*:\s*\"(.*?)\"</maskPattern>
+                <maskPattern>\"lastName\"\s*:\s*\'(.*?)\'</maskPattern>
+                <maskPattern>(?i)\"\w*firstName\d*\w*\s*=\s*(.*?),</maskPattern>
+                <maskPattern>\"lastName\w*\"\s*:\s*\{"typ":(.*?),"styp":"(.*?)","val"s*:\s*\"(.*?)\"}</maskPattern>
+                <maskPattern>(?i)\w*birth\w*\s*:\s*(.*?)\n</maskPattern>
+                <maskPattern>(?i)\"\w*birth\w*\"\s*:\s*\"(.*?)\"</maskPattern>
+                <maskPattern>(?i)\w*birth\w*\s*=\s*\'(.*?)\'</maskPattern>
+                <maskPattern>death\w*\s*:\s*(.*?)\n</maskPattern>
+                <maskPattern>\"death\w*\"\s*:\s*\"(.*?)\"</maskPattern>
+                <maskPattern>death\w*\s*:\s*(.*?),</maskPattern>
+                <maskPattern>\"issue\w*\"\s*:\s*\"(.*?)\"</maskPattern>
+                <maskPattern>(?i)\w*registrationNumber\s*:\s*(.*?)\n</maskPattern>
+                <maskPattern>(?i)\"\w*registrationNumber\"\s*:\s*\"(.*?)\"</maskPattern>
+                <maskPattern>(?i)\"\w*registrationNumber\"\s*:\s*(.*?),</maskPattern>
+                <maskPattern>issuingMunicipality\s*:\s*(.*?)\n</maskPattern>
+                <maskPattern>\"issuingMunicipality\"\s*:\s*\"(.*?)\"</maskPattern>
+
+                <maskPattern>street\w*\s*=\s*\'(.*?)\'</maskPattern>
+                <maskPattern>street\w*\s*:\s*(.*?)\n</maskPattern>
+                <maskPattern>street\w*\s*=\s*(.*?),</maskPattern>
+                <maskPattern>\"street\w*\"\s*:\s*\"(.*?)\"</maskPattern>
+                <maskPattern>\"street\w*\"\s*:\s*\{"typ":(.*?),"styp":"(.*?)","val"s*:\s*\"(.*?)\"}</maskPattern>
+                <maskPattern>country\w*\s*=\s*\'(.*?)\'</maskPattern>
+                <maskPattern>city\w*\s*=\s*\'(.*?)\'</maskPattern>
+                <maskPattern>city\w*\s*:\s*(.*?)\n</maskPattern>
+                <maskPattern>\"city\w*\"\s*:\s*\"(.*?)\"</maskPattern>
+                <maskPattern>\"street\w*\"\s*:\s*\{"typ":(.*?),"styp":"(.*?)","val"s*:\s*\"(.*?)\"}</maskPattern>
+                <maskPattern>\"postalCode\"\s*:\s*\"(.*?)\"</maskPattern>
+                <maskPattern>postalCode\s*=\s*\'(.*?)\'</maskPattern>
+                <maskPattern>\"postalCode\"\s*:\s*\"(.*?)\"</maskPattern>
+                <maskPattern>\"postalCode\"\s*:\s*(.*?),</maskPattern>
+                <maskPattern>postalCode\s*:\s*(.*?)\n</maskPattern>
+                <maskPattern>location\s*:\s*(.*?)\n</maskPattern>
+                <maskPattern>\"location\"\s*:\s*\"(.*?)\"</maskPattern>
+                <maskPattern>(?i)\w*houseNumber\w*\s*:\s*(.*?)\n</maskPattern>
+                <maskPattern>\"(?i)\w*house\w*"\s*:\s*\"(.*?)\"</maskPattern>
+                <maskPattern>(?i)\"\w*house\w*"\s*:\s*(.*?),</maskPattern>
+                <maskPattern>(?i)\"(?i)\w*address\d*\w*\"\s*:\s*\"(.*?)\"</maskPattern>
+                <maskPattern>\"apartment\w*"\s*:\s*\"(.*?)\"</maskPattern>
+                <maskPattern>\"apartment\w*\"\s*:\s*(.*?),</maskPattern>
+                <maskPattern>country\w*\s*=\s*\'(.*?)\'</maskPattern>
+                <maskPattern>country\w*\s*:\s*(.*?)\n</maskPattern>
+                <maskPattern>\"country\w*\"\s*:\s*\"(.*?)\"</maskPattern>
+                <maskPattern>preferredLanguage\s*:\s*(.*?)\n</maskPattern>
+                <maskPattern>\"preferredLanguage\"\s*:\s*\"(.*?)\"</maskPattern>
+                <maskPattern>\"preferredLanguage\"\s*:\s*(.*?),</maskPattern>
+                <maskPattern>\"legalCompetencyStatusType\"\s*:\s*\"(.*?)\"</maskPattern>
+                <maskPattern>\"legalCompetencyStatusType\"\s*:\s*(.*?)\n</maskPattern>
+                <maskPattern>\"financialLegalStatusType\"\s*:\s*\"(.*?)\"</maskPattern>
+                <maskPattern>financialLegalStatusType\s*:\s*(.*?)\n</maskPattern>
+                <maskPattern>\"buildingName\"\s*:\s*\"(.*?)\"</maskPattern>
+                <maskPattern>buildingName\s*:\s*(.*?)\n</maskPattern>
+                <maskPattern>buildingName\s*=\s*(.*?),</maskPattern>
+                <maskPattern>\"involvedPartyInternalIdentifierValue\"\s*:\s*\"(.*?)\"</maskPattern>
+                <maskPattern>involvedPartyInternalIdentifierValue\s*:\s*(.*?)\n</maskPattern>
+
+                <maskPattern>\w*NumberInformation\s*:\s*(.*?)\n</maskPattern>
+                <maskPattern>\"\w*NumberInformation\"\s*:\s*\"(.*?)\"</maskPattern>
+                <maskPattern>\w*NumberInformation\s*=\s*(.*?),</maskPattern>
+
+                <maskPattern>(\w+@\w+\.\w+)</maskPattern> <!-- Email pattern -->
+                <maskPattern>\"iban\"\s*:\s*\{"typ":(.*?),"styp":"(.*?)","val"s*:\s*\"(.*?)\"}</maskPattern>
+                <maskPattern>iban\s*=\s*(.*?),</maskPattern> <!-- iban -->
+                <maskPattern>\"bban\"\s*:\s*\{"typ":(.*?),"styp":"(.*?)","val"s*:\s*\"(.*?)\"}</maskPattern>
+                <maskPattern>bban\s*=\s*(.*?),</maskPattern> <!-- bban -->
+                <maskPattern>\"natureCode\"\s*:\s*\"(.*?)\"</maskPattern>
+                <maskPattern>natureCode\s*:\s*(.*?)\n</maskPattern>
+                <maskPattern>\"embossedNameLine\d*\"\s*:\s*\"(.*?)\"</maskPattern>
+                <maskPattern>embossedNameLine\d*\s*:\s*(.*?)\n</maskPattern>
+                <maskPattern>embossedNameLine\d*\s*=\s*(.*?),</maskPattern>
+                <maskPattern>\"embossedNameLine\d*\"\s*:\s*\{"typ":(.*?),"styp":"(.*?)","val"s*:\s*\"(.*?)\"}
+                </maskPattern>
+                <maskPattern>\"cardId\d*\"\s*:\s*\"(.*?)\"</maskPattern>
+                <maskPattern>\w*cardId\d*\s*=\s*(.*?),</maskPattern>
+                <maskPattern>cardId\d*\s*:\s*(.*?)\n</maskPattern>
+                <maskPattern>\"\w*(A|a)cardId\d*\"\s*:\s*\{"typ":(.*?),"styp":"(.*?)","val"s*:\s*\"(.*?)\"}
+                </maskPattern>
+                <maskPattern>(?i)\"\w*accountNumber\d*\"\s*:\s*\"(.*?)\"</maskPattern>
+                <maskPattern>(?i)\w*accountNumber\d*\s*:\s*(.*?)\n</maskPattern>
+                <maskPattern>(?i)\w*accountNumber\d*\s*=\s*(.*?),</maskPattern>
+                <maskPattern>(?i)\"\w*accountNumber\d*\"\s*:\s*\{"typ":(.*?),"styp":"(.*?)","val"s*:\s*\"(.*?)\"}
+                </maskPattern>
+                <maskPattern>\"accountHolder\"\s*:\s*\"(.*?)\"</maskPattern>
+                <maskPattern>accountHolder\s*:\s*(.*?)\n</maskPattern>
+                <maskPattern>accountHolder\s*=\s*(.*?),</maskPattern>
+                <maskPattern>\"accountHolder\"\s*:\s*\{"typ":(.*?),"styp":"(.*?)","val"s*:\s*\"(.*?)\"}</maskPattern>
+                <maskPattern>\"natureCode\"\s*:\s*\"(.*?)\"</maskPattern>
+                <maskPattern>natureCode\s*:\s*(.*?)\n</maskPattern>
+                <maskPattern>natureCode\s*=\s*(.*?),</maskPattern>
+                <maskPattern>\"natureCode\"\s*:\s*\{"typ":(.*?),"styp":"(.*?)","val"s*:\s*\"(.*?)\"}</maskPattern>
+                <maskPattern>\"contractHolder\"\s*:\s*\"(.*?)\"</maskPattern>
+                <maskPattern>contractHolder\s*:\s*(.*?)\n</maskPattern>
+                <maskPattern>contractHolder\s*=\s*(.*?),</maskPattern>
+                <maskPattern>\"contractHolder\"\s*:\s*\{"typ":(.*?),"styp":"(.*?)","val"s*:\s*\"(.*?)\"}</maskPattern>
+
+                <pattern>%-5p [%d{ISO8601,UTC}] [%thread] %c: %m%n%rootException</pattern>
+            </layout>
+        </encoder>
+    </appender>
+
+    <appender name="ASYNC_APPLOG" class="ch.qos.logback.classic.AsyncAppender">
+        <queueSize>1024</queueSize>
+        <discardingThreshold>0</discardingThreshold>
+        <appender-ref ref="APPLOG"/>
+    </appender>
+
+    <!-- Always muted loggers -->
+    <logger name="springfox.documentation" level="INFO"/>
+    <logger name="org.hibernate" level="INFO"/>
+    <logger name="io.netty" level="INFO"/>
+    <logger name="org.jose4j" level="INFO"/>
+    <logger name="org.apache.kafka.common.metrics.Metrics" level="INFO"/>
+
+    <!-- Framework log messages configuration -->
+    <logger name="org.springframework" level="${SPRING_LOG_LEVEL}"/>
+
+    <logger name="com.datastax.driver" level="${CASSANDRA_LOG_LEVEL}"/>
+    <logger name="nl.ing.supernova" level="${CASSANDRA_LOG_LEVEL}"/>
+
+    <logger name="org.apache.kafka" level="${KAFKA_LOG_LEVEL}"/>
+    <logger name="io.confluent.kafka" level="${KAFKA_LOG_LEVEL}"/>
+    <logger name="nl.ing.domestic.common.kafka" level="${KAFKA_LOG_LEVEL}"/>
+
+    <logger name="com.ing.apisdk.toolkit.connectivity.discovery.phoenix" level="${SERVICE_DISCOVERY_LOG_LEVEL}"/>
+
+    <!-- Application log messages configuration -->
+    <logger name="AbstractDao" level="${DAO_LOG_LEVEL}"/>
+    <logger name="com.ing.touchpoint.clients" level="${REST_CLIENTS_LOG_LEVEL}"/>
+    <logger name="com.ing.apisdk.toolkit.connectivity.transport.core.finagle.filter"
+            level="${REST_CLIENTS_LOG_LEVEL}"/>
+
+    <root level="${LOG_LEVEL}">
+        <appender-ref ref="ASYNC_APPLOG"/>
+    </root>
+</configuration>

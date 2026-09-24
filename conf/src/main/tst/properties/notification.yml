@@ -1,0 +1,66 @@
+notification:
+  nonStpEmailNotificationProperties:
+    sender-address: 'noreply@ing.com'
+    recipient-address: 'srinivas.naragoni@ing.com'
+    cc-addresses: 'sowmya.a@ing.com,tushar.sakharkar@ing.com, karuna.singh@ing.com, theiventhiran.sivalingam@ing.com'
+    template-reference: 'P31464/Template/non-stp-html-document'
+    attachment-template-reference: 'P31464/Template/non-stp-xml-document'
+    attachment-file-name: '%s_%s.xml'
+    attachment-content-type: 'text/xml'
+    channel: email
+    topic: EngagementSuite_OperationalNotificationEvent
+  stpResultsEmailNotificationProperties:
+    sender-address: 'noreply@ing.com'
+    recipient-address: 'srinivas.naragoni@ing.com'
+    cc-addresses: 'sowmya.a@ing.com,tushar.sakharkar@ing.com, karuna.singh@ing.com, theiventhiran.sivalingam@ing.com,ankush.sukhdeve2@ing.com'
+    template-reference: 'P31464/Template/stp-results-html-document'
+    channel: email
+    topic: EngagementSuite_OperationalNotificationEvent
+  customerEmailNotificationProperties:
+    sender-address: 'noreply@ing.com'
+    cc-addresses: 'sowmya.a@ing.com,tushar.sakharkar@ing.com, ankush.sukhdeve2@ing.com'
+    template-reference: 'P31464/Template/customer-html-document'
+    channel: email
+    topic: EngagementSuite_OperationalNotificationEvent
+    aed-endpoint: '/endpoint/api.ing.com/GET/gcc/:repository:/:objecttype:/:id:/content'
+    attachment-url: 'https://api.ing.com/gcc/case-management/documents/%s/content'
+  beneficiaryEmailNotificationProperties:
+    sender-address: 'noreply@ing.com'
+    cc-addresses: 'sowmya.a@ing.com,tushar.sakharkar@ing.com, ankush.sukhdeve2@ing.com'
+    template-reference: 'P31464/Template/beneficiary-html-document'
+    channel: email
+    topic: EngagementSuite_OperationalNotificationEvent
+    aed-endpoint: '/endpoint/api.ing.com/GET/gcc/:repository:/:objecttype:/:id:/content'
+    attachment-url: 'https://api.ing.com/gcc/case-management/documents/%s/content'
+  fulfilmentFailureEmailNotificationProperties:
+    sender-address: 'noreply@ing.com'
+    cc-addresses: 'sowmya.a@ing.com,tushar.sakharkar@ing.com, ankush.sukhdeve2@ing.com'
+    template-reference: 'P31464/Template/fulfilment-failure-html-document'
+    channel: email
+    topic: EngagementSuite_OperationalNotificationEvent
+    aed-endpoint: '/endpoint/api.ing.com/GET/gcc/:repository:/:objecttype:/:id:/content'
+    attachment-url: 'https://api.ing.com/gcc/case-management/documents/%s/content'
+  signCompletionEmailNotificationProperties:
+    sender-address: 'noreply@ing.com'
+    cc-addresses: 'sowmya.a@ing.com,tushar.sakharkar@ing.com, ankush.sukhdeve2@ing.com'
+    template-reference: 'P31464/Template/signature-completion-html-document'
+    channel: email
+    topic: EngagementSuite_OperationalNotificationEvent
+    aed-endpoint: '/endpoint/api.ing.com/GET/gcc/:repository:/:objecttype:/:id:/content'
+    attachment-url: 'https://api.ing.com/gcc/case-management/documents/%s/content'
+  signatureReminderEmailNotificationProperties:
+    sender-address: 'noreply@ing.com'
+    cc-addresses: 'sowmya.a@ing.com,tushar.sakharkar@ing.com, ankush.sukhdeve2@ing.com'
+    template-reference: 'P31464/Template/signature-reminder-html-document'
+    channel: email
+    topic: EngagementSuite_OperationalNotificationEvent
+    aed-endpoint: '/endpoint/api.ing.com/GET/gcc/:repository:/:objecttype:/:id:/content'
+    attachment-url: 'https://api.ing.com/gcc/case-management/documents/%s/content'
+  requesterPartiallySignedEmailNotificationProperties:
+    sender-address: 'noreply@ing.com'
+    cc-addresses: 'sowmya.a@ing.com,tushar.sakharkar@ing.com, ankush.sukhdeve2@ing.com'
+    template-reference: 'P31464/Template/requester-partially-signed-html-document'
+    channel: email
+    topic: EngagementSuite_OperationalNotificationEvent
+    aed-endpoint: '/endpoint/api.ing.com/GET/gcc/:repository:/:objecttype:/:id:/content'
+    attachment-url: 'https://api.ing.com/gcc/case-management/documents/%s/content'
