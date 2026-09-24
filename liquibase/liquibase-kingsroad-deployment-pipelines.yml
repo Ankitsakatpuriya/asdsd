@@ -1,0 +1,72 @@
+---
+trigger: none
+variables:
+  - template: dbaas/config/common-values.yml
+  - template: dbaas/config/${{ parameters.chooseEnvironment }}/values.yml
+
+parameters:
+  - name: liquibaseStrategy
+    type: string
+    default: status
+    values:
+      - status
+      - validate
+      - history
+      - clear-checksums
+      - release-locks
+      - generate-changelog
+      - changelog-sync
+      - roll-forward
+      - tag
+      - rollback-to-tag
+      - none
+  - name: chooseEnvironment
+    type: string
+    default: test
+    values:
+      - development
+      - test
+      - acceptance
+      - production
+  - name: tagVersion
+    displayName: 'TagVersion(major.minor.patch)'
+    type: string
+    default: 'N/A'
+
+resources:
+  repositories:
+    - repository: tp
+      type: git
+      name: IngOne/P05859-global-templates
+      ref: refs/tags/ww.9.17.1
+
+stages:
+  - template: "/api/manage-db/liquibase/template.yml@tp"
+    parameters:
+      ${{ if eq(parameters.chooseEnvironment, 'development')  }}:
+        azureKeyVault: '${{ variables.azureKeyVaultDEV }}'
+        azureSubscription: '${{ variables.azureSubscriptionNonPRD }}'
+
+      ${{ if eq(parameters.chooseEnvironment, 'test')  }}:
+        azureKeyVault: '${{ variables.azureKeyVaultTST }}'
+        azureSubscription: '${{ variables.azureSubscriptionNonPRD }}'
+
+      ${{ if eq(parameters.chooseEnvironment, 'acceptance') }}:
+        azureKeyVault: '${{ variables.azureKeyVaultACC }}'
+        azureSubscription: '${{ variables.azureSubscriptionNonPRD }}'
+
+      ${{ if eq(parameters.chooseEnvironment, 'production') }}:
+        azureKeyVault: '${{ variables.azureKeyVaultPRD }}'
+        azureSubscription: '${{ variables.azureSubscriptionPRD }}'
+
+      liquibasePropertiesPath: 'liquibase/dbaas/config/${{ parameters.chooseEnvironment }}'
+      liquibasePropertiesFile: liquibase-oracle-dbaas.properties
+      liquibaseChangelogPath: 'liquibase/dbaas/db/changelog'
+      liquibaseChangelogFile: db.changelog-master.xml
+      liquibaseStrategy: ${{ parameters.liquibaseStrategy }}
+      liquibaseSchemaName: ${{ variables.ownerSchema }}
+      liquibaseRollbackTag: '${{ parameters.tagVersion }}'
+      liquibaseStageName: '${{ parameters.chooseEnvironment }}_stage_liquibase_manage_db'
+      liquibaseUsernameName: BANKGUARANTEES-DB-OWNER-USERNAME
+      liquibasePasswordName: BANKGUARANTEES-DB-OWNER-PASSWORD
+      agentType: CDaaSLinux

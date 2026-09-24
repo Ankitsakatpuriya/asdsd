@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="create_table_guarantee_request" author="${author}">
+        <comment>Create table for bg_request</comment>
+        <createTable tableName="BG_REQUEST" schemaName="${ownerSchema}" tablespace="BGOS_AA" remarks="BANK GUARANTEE REQUEST TABLE">
+            <column name="ID" type="VARCHAR2(40)" remarks="ID">
+                <constraints primaryKeyName="PK_BG_REQUEST" primaryKey="true" nullable="false"/>
+            </column>
+            <column name="REQUEST_ID" type="VARCHAR2(40)" remarks="REQUEST ID OF BANK GUARANTEE">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="STATUS" type="VARCHAR2(20)" remarks="STATUS OF BANK GUARANTEE"/>
+            <column name="ORGANISATION_ID" type="VARCHAR2(36)" remarks="ORGANISATION ID"/>
+            <column name="SESSION_ID" type="VARCHAR2(36)" remarks="SESSION ID"/>
+            <column name="INDIVIDUAL_ID" type="VARCHAR2(36)" remarks="INDIVIDUAL ID"/>
+            <column name="BG_REQUEST" type="CLOB" remarks="BANK GUARANTEE REQUEST"/>
+            <column name="PEGA_CASE_ID" type="VARCHAR2(36)" remarks="PEGA CASE ID"/>
+            <column name="MASTER_REF_NUMBER" type="VARCHAR2(40)" remarks="MASTER REFERENCE NUMBER"/>
+            <column name="TMS_CREATE" type="TIMESTAMP WITH TIME ZONE DEFAULT SYSTIMESTAMP" remarks="TIMESTAMP WHEN THE ROW WAS CREATED">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CREATED_BY" type="VARCHAR2(36 CHAR)" remarks="USER WHO CREATED THE ROW">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TMS_UPDATE" type="TIMESTAMP WITH TIME ZONE DEFAULT SYSTIMESTAMP" remarks="TIMESTAMP WHEN THE ROW WAS UPDATED">
+                <constraints nullable="false"/>
+            </column>
+            <column name="UPDATED_BY" type="VARCHAR2(36 CHAR)" remarks="USER WHO UPDATED THE ROW">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable tableName="BG_REQUEST"/>
+        </rollback>
+    </changeSet>
+    <changeSet author="${author}" id="grant_table_bg_request">
+        <preConditions onFail="CONTINUE">
+            <dbms type="oracle"/>
+        </preConditions>
+        <sql>
+            GRANT SELECT, INSERT, UPDATE, DELETE ON ${ownerSchema}.BG_REQUEST TO ${roleName};
+        </sql>
+    </changeSet>
+    <changeSet author="${author}" id="synonym_table_bg_request">
+        <preConditions onFail="CONTINUE">
+            <dbms type="oracle"/>
+        </preConditions>
+        <sql>
+            CREATE OR REPLACE PUBLIC SYNONYM BG_REQUEST FOR ${ownerSchema}.BG_REQUEST;
+        </sql>
+    </changeSet>
+
+    <changeSet id="create_table_documents" author="${author}">
+        <comment>Create table for documents</comment>
+        <createTable tableName="DOCUMENTS" schemaName="${ownerSchema}" tablespace="BGOS_AA" remarks="BANK GUARANTEE DOCUMENTS TABLE">
+            <column name="ID" type="VARCHAR2(40)" remarks="ID">
+                <constraints primaryKeyName="PK_DOCUMENTS" primaryKey="true" nullable="false"/>
+            </column>
+            <column name="REQUEST_ID" type="VARCHAR2(40)" remarks="BANK GUARANTEE REQUEST ID">
+                <constraints nullable="false" foreignKeyName="FK_BG_REQUEST"
+                             references="${ownerSchema}.BG_REQUEST(REQUEST_ID)"/>
+            </column>
+            <column name="DOC_ID" type="VARCHAR2(20)" remarks="DOCUMENT ID"/>
+            <column name="STATUS" type="VARCHAR2(20)" remarks="DOCUMENT STATUS"/>
+            <column name="DOC_TYPE" type="VARCHAR2(20)" remarks="DOCUMENT TYPE"/>
+            <column name="ORGANISATION_ID" type="VARCHAR2(36)" remarks="ORGANISATION ID"/>
+            <column name="TMS_CREATE" type="TIMESTAMP WITH TIME ZONE DEFAULT SYSTIMESTAMP" remarks="TIMESTAMP WHEN THE ROW WAS CREATED">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CREATED_BY" type="VARCHAR2(36 CHAR)" remarks="USER WHO CREATED THE ROW">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TMS_UPDATE" type="TIMESTAMP WITH TIME ZONE DEFAULT SYSTIMESTAMP" remarks="TIMESTAMP WHEN THE ROW WAS UPDATED">
+                <constraints nullable="false"/>
+            </column>
+            <column name="UPDATED_BY" type="VARCHAR2(36 CHAR)" remarks="USER WHO UPDATED THE ROW">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable tableName="DOCUMENTS"/>
+        </rollback>
+    </changeSet>
+    <changeSet author="${author}" id="grant_table_documents">
+        <preConditions onFail="CONTINUE">
+            <dbms type="oracle"/>
+        </preConditions>
+        <sql>
+            GRANT SELECT, INSERT, UPDATE, DELETE ON ${ownerSchema}.DOCUMENTS TO ${roleName};
+        </sql>
+    </changeSet>
+    <changeSet author="${author}" id="synonym_table_documents">
+        <preConditions onFail="CONTINUE">
+            <dbms type="oracle"/>
+        </preConditions>
+        <sql>
+            CREATE OR REPLACE PUBLIC SYNONYM DOCUMENTS FOR ${ownerSchema}.DOCUMENTS;
+        </sql>
+    </changeSet>
+
+    <changeSet id="create_table_reporting" author="${author}">
+        <comment>Create table for reporting</comment>
+        <createTable tableName="REPORTING" schemaName="${ownerSchema}" tablespace="BGOS_AA" remarks="BANK GUARANTEE REPORTING TABLE">
+            <column name="ID" type="VARCHAR2(40)" remarks="ID">
+                <constraints primaryKeyName="PK_REPORTING" primaryKey="true" nullable="false"/>
+            </column>
+            <column name="REQUEST_ID" type="VARCHAR2(40)" remarks="BANK GUARANTEE REQUEST ID">
+                <constraints nullable="false" foreignKeyName="FK_BG_REQUEST_REPORTING" references="${ownerSchema}.BG_REQUEST(REQUEST_ID)"/>
+            </column>
+            <column name="REPORTING_STATUS" type="VARCHAR2(20)" remarks="STATUS"/>
+            <column name="STP" type="VARCHAR2(20)" remarks="STP"/>
+            <column name="TMS_CREATE" type="TIMESTAMP WITH TIME ZONE DEFAULT SYSTIMESTAMP" remarks="TIMESTAMP WHEN THE ROW WAS CREATED">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CREATED_BY" type="VARCHAR2(36 CHAR)" remarks="USER WHO CREATED THE ROW">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TMS_UPDATE" type="TIMESTAMP WITH TIME ZONE DEFAULT SYSTIMESTAMP" remarks="TIMESTAMP WHEN THE ROW WAS UPDATED">
+                <constraints nullable="false"/>
+            </column>
+            <column name="UPDATED_BY" type="VARCHAR2(36 CHAR)" remarks="USER WHO UPDATED THE ROW">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable tableName="REPORTING"/>
+        </rollback>
+    </changeSet>
+    <changeSet author="${author}" id="grant_table_reporting">
+        <preConditions onFail="CONTINUE">
+            <dbms type="oracle"/>
+        </preConditions>
+        <sql>
+            GRANT SELECT, INSERT, UPDATE, DELETE ON ${ownerSchema}.REPORTING TO ${roleName};
+        </sql>
+    </changeSet>
+    <changeSet author="${author}" id="synonym_table_reporting">
+        <preConditions onFail="CONTINUE">
+            <dbms type="oracle"/>
+        </preConditions>
+        <sql>
+            CREATE OR REPLACE PUBLIC SYNONYM REPORTING FOR ${ownerSchema}.REPORTING;
+        </sql>
+    </changeSet>
+
+    <changeSet id="create_table_shed_lock" author="${author}">
+        <comment>Create table for shedlock</comment>
+        <createTable tableName="SHEDLOCK" schemaName="${ownerSchema}" tablespace="BGOS_AA" remarks="SHEDLOCK TABLE">
+            <column name="NAME" type="VARCHAR2(64)" remarks="NAME">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="lock_until" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="locked_at" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="locked_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable tableName="SHEDLOCK"/>
+        </rollback>
+    </changeSet>
+    <changeSet author="${author}" id="grant_table_bg_shedlock">
+        <preConditions onFail="CONTINUE">
+            <dbms type="oracle"/>
+        </preConditions>
+        <sql>
+            GRANT SELECT, INSERT, UPDATE, DELETE ON ${ownerSchema}.SHEDLOCK TO ${roleName};
+        </sql>
+    </changeSet>
+    <changeSet author="${author}" id="synonym_table_bg_shedlock">
+        <preConditions onFail="CONTINUE">
+            <dbms type="oracle"/>
+        </preConditions>
+        <sql>
+            CREATE OR REPLACE PUBLIC SYNONYM SHEDLOCK FOR ${ownerSchema}.SHEDLOCK;
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,3 @@
+DROP TABLE ${schemaName}.DOCUMENTS;
+DROP TABLE ${schemaName}.BG_REQUEST;
+DROP TABLE ${schemaName}.REPORTING;

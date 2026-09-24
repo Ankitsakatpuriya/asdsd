@@ -1,0 +1,18 @@
+# In this file we place all the variables for the Liquibase DbaaS setup File
+
+variables:
+
+  #The connection strings per environment
+  DB_CONNECTION_STRING_TST: 'jdbc:oracle:thin:@(DESCRIPTION=(CONNECT_TIMEOUT=30)(RETRY_COUNT=20)(RETRY_DELAY=3)(ADDRESS_LIST=(LOAD_BALANCE=ON)(ADDRESS=(PROTOCOL=TCP)(HOST=xbi317-scan.dbaas.ing.net)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=bankguaranteestst_23470_ac_dbaas)))'
+  DB_CONNECTION_STRING_ACC: 'jdbc:oracle:thin:@(DESCRIPTION=(CONNECT_TIMEOUT=30)(RETRY_COUNT=20)(RETRY_DELAY=3)(ADDRESS_LIST=(LOAD_BALANCE=ON)(ADDRESS=(PROTOCOL=TCP)(HOST=xbi417-scan.dbaas.ing.net)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=bankguaranteesacc_23568_ac_dbaas)))'
+  DB_CONNECTION_STRING_PRD: 'jdbc:oracle:thin:@(DESCRIPTION=(CONNECT_TIMEOUT=30)(RETRY_COUNT=20)(RETRY_DELAY=3)(FAILOVER=ON)(LOAD_BALANCE=OFF)(ADDRESS_LIST=(LOAD_BALANCE=ON)(ADDRESS=(PROTOCOL=TCP)(HOST=xbi422cl01-scan.dbaas.ing.net)(PORT=1521)))(ADDRESS_LIST=(LOAD_BALANCE=ON)(ADDRESS=(PROTOCOL=TCP)(HOST=xbi322cl01-scan.dbaas.ing.net)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=bankguaranteesprd_23971_ac_dbaas)))'
+
+
+  # Azure service Connection values
+  azureSubscriptionNonPRD: "P31464-KeyVault-SVC-NONPROD"
+  azureSubscriptionPRD: "P31464-KeyVault-SVC-PROD"
+  azureKeyVaultTST: "P31464-BankGua-KvT"
+  azureKeyVaultACC: "P31464-BankGua-KvA"
+  azureKeyVaultPRD: "P31464-BankGua-KvP"
+
+

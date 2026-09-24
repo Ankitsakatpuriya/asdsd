@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="create_table_custom_documents" author="${author}">
+        <comment>Create table for bg_request</comment>
+        <createTable tableName="CUSTOM_DOCUMENTS" schemaName="${ownerSchema}" tablespace="BGOS_AA" remarks="CUSTOM DOCUMENTS TABLE">
+            <column name="ID" type="VARCHAR2(40)" remarks="ID">
+                <constraints primaryKeyName="PK_CUSTOM_DOC" primaryKey="true" nullable="false"/>
+            </column>
+            <column name="REQUEST_ID" type="VARCHAR2(40)" remarks="REQUEST ID OF CUSTOM DOCUMENT">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="STATUS" type="VARCHAR2(20)" remarks="STATUS OF CUSTOM DOCUMENT"/>
+            <column name="ORGANISATION_ID" type="VARCHAR2(36)" remarks="ORGANISATION ID"/>
+            <column name="DOSSIER_ID" type="VARCHAR2(36)" remarks="DOSSIER ID"/>
+            <column name="DOC_ID" type="VARCHAR2(36)" remarks="DOC ID"/>
+            <column name="AGREEMENT_DOSSIER_ID" type="VARCHAR2(36)" remarks="AGREEMENT DOSSIER ID"/>
+            <column name="TMS_CREATE" type="TIMESTAMP WITH TIME ZONE DEFAULT SYSTIMESTAMP" remarks="TIMESTAMP WHEN THE ROW WAS CREATED">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CREATED_BY" type="VARCHAR2(36 CHAR)" remarks="USER WHO CREATED THE ROW">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TMS_UPDATE" type="TIMESTAMP WITH TIME ZONE DEFAULT SYSTIMESTAMP" remarks="TIMESTAMP WHEN THE ROW WAS UPDATED">
+                <constraints nullable="false"/>
+            </column>
+            <column name="UPDATED_BY" type="VARCHAR2(36 CHAR)" remarks="USER WHO UPDATED THE ROW">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable tableName="BG_REQUEST"/>
+        </rollback>
+    </changeSet>
+    <changeSet author="${author}" id="grant_table_bg_request">
+        <preConditions onFail="CONTINUE">
+            <dbms type="oracle"/>
+        </preConditions>
+        <sql>
+            GRANT SELECT, INSERT, UPDATE, DELETE ON ${ownerSchema}.CUSTOM_DOCUMENTS TO ${roleName};
+        </sql>
+    </changeSet>
+    <changeSet author="${author}" id="synonym_table_bg_request">
+        <preConditions onFail="CONTINUE">
+            <dbms type="oracle"/>
+        </preConditions>
+        <sql>
+            CREATE OR REPLACE PUBLIC SYNONYM CUSTOM_DOCUMENTS FOR ${ownerSchema}.CUSTOM_DOCUMENTS;
+        </sql>
+    </changeSet>
+</databaseChangeLog>

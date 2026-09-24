@@ -1,0 +1,8 @@
+# In this file we place all the variables for the Liquibase DbaaS setup File
+
+variables:
+  ownerSchema: 'BGOS_OWNER_ACC'
+  roleName: 'ROLE_BGOS_USER_NEW_ACC'
+
+
+
