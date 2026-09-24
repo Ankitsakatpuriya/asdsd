@@ -1,0 +1,16 @@
+package com.ing.bankguarantees.remote.rest.involveparty.grantees.model.response;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Builder
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class InvPartyGrantorResponse {
+    private String id;
+    private String type;
+    private String involvedPartyType;
+}
